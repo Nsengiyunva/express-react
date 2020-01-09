@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import FormField from '../FormField'
 
 import './TopNavbar.css';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MdShoppingCart, MdAccountCircle } from 'react-icons/md'
 const showBookCategories = () => {
     console.log('test')
 }
@@ -51,10 +50,10 @@ export default ({ style }) => {
                     <input type='text' name='search' className='search-field' placeholder='search' />
                 </div>
                 <div>
-                    <Link to='/register'>Register</Link>
+                   <Link to='/register'><MdAccountCircle size={30} color='white'/></Link> 
                 </div>
-                <div style={{ margin: '0px 20px'}}>
-                    <Link to='/cart'>Cart</Link>
+                <div style={{ margin: '0px 50px'}}>
+                    <Link to='/cart'><MdShoppingCart size={30} color='white'/></Link>
                 </div>
             </div>
     );

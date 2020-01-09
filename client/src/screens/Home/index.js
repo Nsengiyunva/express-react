@@ -45,7 +45,7 @@ import boss from '../../images/boss.PNG'
 
 export default () => {
     return (
-        <div className="main-container">
+      <div className="main-container">
       <TopNavBar />
       <div style={{ display: 'flex',justifyContent: 'center', alignItems: 'center', 
                     paddingTop: '50px'}}>

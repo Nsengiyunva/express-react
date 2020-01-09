@@ -7,19 +7,22 @@
     height: 100px;
     color: white;
 }
+.top-icons {
+    line-height: 24px;
+}
 .searchContainer {
-    padding-top: 10px;
-    margin: 0px 25px;
-    width: auto;
-    height: auto;
+    display: flex;
+    margin: 0px 15px;
+    width: 350px;
 }
 .searchContainer .search-field {
     font-family: inherit;
     border-radius: 8px;
-    padding: 5px;
+    padding: 2px;
     border: 0px;
-    width: inherit;
+    width: 90%;
     background-color: #ddd;
+    height: 20px;
 }
 .links ul {
     display: flex;
