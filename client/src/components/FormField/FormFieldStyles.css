@@ -1,0 +1,30 @@
+.field-container {
+    width: inherit;
+    height: 50px;
+    margin: 5px 10px;
+}
+.field-container .form-field {
+    font-family: inherit;
+    font-weight: bold;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+textarea {
+    width: 80%;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 2px;
+}
+.button {
+    width: auto;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 10px;
+    border: 0px solid #666;
+    border-radius: 2px;
+    color: white;
+}

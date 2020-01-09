@@ -1,0 +1,28 @@
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.picture-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+}
+.profile-detail-image-container {
+    width: inherit;
+    height: inherit;
+}
+.profile-detail-image-container img {
+    border-radius: 55px;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+    object-fit: cover;
+}
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+}

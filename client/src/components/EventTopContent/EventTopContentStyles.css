@@ -1,0 +1,32 @@
+.event-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 2px 10px;
+}
+.date-event-banner {
+    width: 50%;
+    height: 15px;
+    background-color: green;
+    margin-top: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 8px;
+    color: #FFF;
+}
+.day-event-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.month-year-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+}

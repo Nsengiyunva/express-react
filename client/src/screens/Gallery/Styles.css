@@ -1,0 +1,65 @@
+.gallery-body-container {
+    width: 98%;
+    height: auto;
+    margin: auto;
+}
+.gallery-image-row-1, .gallery-image-row-2, .gallery-image-row-3 {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+}
+.gallery-image-row-1 .gallery-image-1 {
+    flex: 2;
+    margin-right: 10px;
+    height: 200px;
+    overflow: hidden;
+}
+.gallery-image-row-1 .gallery-image-2 {
+    flex: 4;
+    height: 200px;
+    overflow: hidden;
+}
+.gallery-image-row-2 {
+    margin-top: 10px;
+}
+.gallery-image-row-2 .gallery-image-1 {
+    flex: 2;
+    margin-right: 10px;
+    height: 410px;
+    overflow: hidden;
+}
+.gallery-image-section-2 {
+    flex: 2;
+    height: 100px;
+}
+.decked-img-container {
+    display: flex;
+    flex-direction: row;
+}
+.decked-img-container .gallery-image-1, 
+.decked-img-container .gallery-image-2,
+.gallery-image-section-2 .gallery-image-3
+{
+    flex: 1;
+    margin-right: 10px;
+    height: 200px;
+    overflow: hidden;
+}
+.gallery-image-section-2 .gallery-image-3 {
+    margin-top: 10px;
+}
+.gallery-image-row-3 {
+    margin: 10px 0px;
+}
+.gallery-image-row-3 .gallery-image-1,.gallery-image-row-3 .gallery-image-2, .gallery-image-row-3 .gallery-image-3 {
+    flex: 2;
+    margin-right: 10px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.gallery-image {
+    max-width: 100%;
+    height: auto;
+}

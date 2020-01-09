@@ -1,0 +1,11 @@
+.event-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 25px;
+    padding-bottom: 25px;
+    width: 30%;
+    height:auto;
+    border-radius: 5px;
+    border: 1px solid greenyellow;
+    margin-bottom: 25px;
+}
