@@ -4,8 +4,14 @@ import FormField from '../FormField'
 
 import './TopNavbar.css';
 import { MdShoppingCart, MdAccountCircle } from 'react-icons/md'
+
 const showBookCategories = () => {
     console.log('test')
+}
+
+const logout =() => {
+    console.log('to logout')
+    // localStorage.removeItem('userLogged')
 }
 
 export default ({ style }) => {
@@ -50,7 +56,7 @@ export default ({ style }) => {
                     <input type='text' name='search' className='search-field' placeholder='search' />
                 </div>
                 <div>
-                   <Link to='/register'><MdAccountCircle size={30} color='white'/></Link> 
+                    {localStorage.getItem('userLogged') ? <div><a href='javascript:void' onClick={logout()}>Logout</a></div>: <Link to='/login'><MdAccountCircle size={30} color='white'/></Link> }
                 </div>
                 <div style={{ margin: '0px 50px'}}>
                     <Link to='/cart'><MdShoppingCart size={30} color='white'/></Link>

@@ -1,16 +1,59 @@
 const express = require('express');
 const cowsay = require('cowsay');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const bodyparser = require('body-parser');
+const dotenv = require("dotenv");
+const nodemailer = require('nodemailer')
+
+dotenv.config();
+
+const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
+
+mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
+
+mongoose.connection.once('open', function(){
+  console.log('Connection has been established!');
+}).on('error', function(error){
+    console.log('Error is: ', error);
+});
+const corsOptions = {
+    origin: "*",
+    optionsSuccessStatus: 200
+};
+
 
 const app = express();
+app.use(cors(corsOptions));
+
+app.use(express.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+
+
+//serving up my front end web application
 const path = require('path')
-// Serve static files from the React frontend app
+
 app.use(express.static(path.join(__dirname, 'client/build')))
-// Anything that doesn't match the above, send back index.html
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
 
+
+
+//mongoose models
+const userModel = mongoose.model('User', {
+    firstname: String,
+    lastname: String,
+    emailAddress: String,
+    password: String,
+    confirmPassword: String,
+    phoneNumber: String,
+    country: String,
+    city: String
+})
+
+//endpoints
 app.get('/api/cow/:say', cors(), async( req, res, next ) => {
     try {
         const text = req.params.say;
@@ -29,6 +72,45 @@ app.get('/api/cow/', cors(), async( req, res, next ) => {
         next( err )
     }
 })
+
+
+//sign up
+app.post('/api/register', cors(), async( req, res, next ) => {
+    try {
+       const user = new userModel(req.body);
+       const result = await user.save()
+       res.status(200).json(result)
+    } catch(error){
+        res.status(500).json(error)
+    }
+})
+
+app.post('/api/login', cors(), async( req, res, next ) => {
+    try {
+        let emailAddress = req.body.emailAddress;
+        let password = req.body.password;
+        if(emailAddress.length > 0 && password.length > 0){
+            await userModel.findOne({ emailAddress }).then( response => {
+                res.status( 200 ).json( response )
+            })
+        }
+
+    } catch(error){
+        res.status( 500 ).json(error)
+    }
+})
+
+
+app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
+    try {
+        const { emailAddress, } = req.body;
+        res.status(200).json({ order: 1})
+    } catch( err ){
+        res.status( 500 ).json( err )
+    }
+})
+
+
 
 const PORT = process.env.PORT || 5000
 app.listen( PORT, () => {

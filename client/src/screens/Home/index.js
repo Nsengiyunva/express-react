@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './HomeStyle.css';
 import TopNavBar from '../../components/TopNavbar';
 import BookListingItem from '../../components/BookListingItem'
@@ -108,20 +109,18 @@ export default () => {
           <strong>About Us</strong>
           <ul>
             <li>
-              <a href='#'>Gallery</a>
+              <Link to='/gallery'>Gallery</Link>
             </li>
             <li>
-              <a href='#'>Categories</a>
+              <Link to=''>Categories</Link>
             </li>
             <li>
-              <a href='#'>Patterns</a>
+              <Link to='/partners'>Partners</Link>
             </li>
             <li>
-              <a href='#'>Help &</a>
+              <Link to='/help'>Help</Link>
             </li>
-            <li>
-              <a href='#'>Available on</a>
-            </li>
+              <strong>Available on</strong>
           </ul>
         </div>
         <div className='footer-section section-3'>
@@ -135,7 +134,7 @@ export default () => {
         </div>
         <div className='footer-section section-4'>
           <strong>Subscribe</strong>
-          <p>Subscribe today and get Latest Updates</p>
+          <p>Subscribe today and get latest Updates</p>
         </div>
       </div>
     </div>

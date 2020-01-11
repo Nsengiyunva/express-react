@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './screens/Home';
@@ -11,24 +11,26 @@ import Gallery from './screens/Gallery';
 import Register from './screens/Register';
 import Cart from './screens/Cart';
 import BookDescription from './screens/BookDescription';
+import Login from './screens/Login';
 
-function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/bookstores' component={BookStore} />
-        <Route path='/events' component={Events} />
-        <Route path='/gallery' component={Gallery} />
-        <Route path='/organisation' component={Organisation} />
-        <Route path='/partners' component={Partners} />
-        <Route path='/register' component={Register} />
-        <Route path='/cart' component={Cart} />
-        <Route path='/book-description' component={BookDescription} />
-      </Switch>
-    </Router>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/bookstores' component={BookStore} />
+          <Route path='/events' component={Events} />
+          <Route path='/gallery' component={Gallery} />
+          <Route path='/organisation' component={Organisation} />
+          <Route path='/partners' component={Partners} />
+          <Route path='/register' component={Register} />
+          <Route path='/cart' component={Cart} />
+          <Route path='/book-description' component={BookDescription} />
+          <Route path='/login' component={Login} />
+        </Switch>
+      </Router>
+    )
+  }
 }
-
-export default App;

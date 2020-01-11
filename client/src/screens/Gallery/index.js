@@ -20,10 +20,10 @@ export default () => {
             </p>
             <div className='gallery-image-row-1'>
                 <div className='gallery-image-1'>
-                    <img src={library} className='gallery-image'/>
+                    <img src={library} alt='gallery' className='gallery-image'/>
                 </div>
                 <div className='gallery-image-2'>
-                    <img src={library} className='gallery-image'/>
+                    <img src={library} alt='gallery' className='gallery-image'/>
                 </div>
             </div>
 
@@ -34,33 +34,27 @@ export default () => {
                 <div className='gallery-image-section-2'>
                     <div className='decked-img-container'>
                         <div className='gallery-image-1'>
-                            <img src={library} className='gallery-image'/>
+                            <img src={library} alt='gallery' className='gallery-image'/>
                         </div>
                         <div className='gallery-image-2'>
-                            <img src={library} className='gallery-image'/>
+                            <img src={library} alt='gallery' className='gallery-image'/>
                         </div>
                     </div>
                     <div className='gallery-image-3'>
-                        <img src={library} className='gallery-image'/>
+                        <img src={library} alt='gallery' className='gallery-image'/>
                     </div>
                 </div>
             </div>
             <div className='gallery-image-row-3'>
                 <div className='gallery-image-1'>
-                    <img src={library} className='gallery-image'/>
+                    <img src={library} alt='gallery' className='gallery-image'/>
                 </div>
                 <div className='gallery-image-2'>
-                    <img src={library} className='gallery-image'/>
+                    <img src={library} alt='gallery' className='gallery-image'/>
                 </div>
                 <div className='gallery-image-3'>
-                    <img src={library} className='gallery-image'/>
+                    <img src={library} alt='gallery' className='gallery-image'/>
                 </div>
-                {/* <div className='gallery-image-2'>
-                    <img src={library} className='gallery-image'/>
-                </div>
-                <div className='gallery-image-3'>
-                    <img src={library} className='gallery-image'/>
-                </div> */}
             </div>
          </div>
         </>
