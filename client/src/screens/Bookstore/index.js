@@ -4,14 +4,18 @@ import CountryLocationsCard from '../../components/CountryLocationsCard'
 import OverlayContent from '../../components/OverlayContent';
 
 import { stores } from '../../_fixtures';
-import './Bookstore.css'
+import map from '../../images/africa_map.png';
+import './Bookstore.scss'
 
 export default () => {
     console.log('test data', stores)
     return (
         <div>
             <TopNavBar />
-            <OverlayContent />
+            {/* <OverlayContent /> */}
+            <div className='image-header-container'>
+             <img src={map} alt='header-image' className='map-top-image'/>
+            </div>
             <div className='vertical-cards-container'>
                 {stores.map(({ country, locations }) => {
                     return <CountryLocationsCard country={country} locations={locations}/>

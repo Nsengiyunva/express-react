@@ -4,7 +4,7 @@ import './OverlayContent.css'
 export default ({ store, event }) => {
     return (
         <>
-            <div className='body-content' />
+            <div className='body-content'>xx</div>
                 <div className='body-overlay-content'>
                 <div className="overlay-content">
                         {store && (

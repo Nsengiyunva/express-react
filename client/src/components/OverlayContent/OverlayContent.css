@@ -4,7 +4,7 @@
     flex-direction: column;
     width: '100%';
     height: auto;
-    background-image: url('../../images/africa_map.png');
+    /* background-image: url('../../images/africa_map.png'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
