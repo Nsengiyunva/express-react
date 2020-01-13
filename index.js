@@ -103,10 +103,30 @@ app.post('/api/login', cors(), async( req, res, next ) => {
 
 app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
     try {
-        const { emailAddress, } = req.body;
-        res.status(200).json({ order: 1})
-    } catch( err ){
-        res.status( 500 ).json( err )
+        let transport = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'kingbecks07@gmail.com',
+                pass: 'kent@#2019'
+            }
+        });
+        const mailOptions = {
+            from: 'kingbecks07@gmail.com',
+            to: 'isaacnsengiyunva@gmail.com',
+            subject: 'mail sent to the willibooks',
+            html: '<p>This is a ecommerce mail</p>'
+        };
+        
+        transport.sendMail( mailOptions, function(err, info){
+            if(err){
+                res.status( 500 ).json( err )
+            }
+            else {
+                res.status( 200 ).json( info )
+            }
+        })
+    } catch(err) {
+        res.status( 500 ).send({ error: err })
     }
 })
 
