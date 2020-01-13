@@ -1,16 +1,14 @@
 import React from 'react';
 import './Styles.css'
 
-export default () => {
+export default ({ country, locations }) => {
     return (
         <div className='list-card-container'>
-            <h3>Uganda</h3>
+            <h3>{country}</h3>
             <ul>
-                <li>Kampala</li>
-                <li>Jinja</li>
-                <li>Mukono</li>
-                <li>Entebbe</li>
-                <li>Kabarole</li>
+                {locations.map( district => (
+                    <li key={district}>{district}</li>
+                ))}
             </ul>
         </div>
     )
