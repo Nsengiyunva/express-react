@@ -1,17 +1,38 @@
 import React from 'react';
-import './BookListingItem.css';
+import './BookListingItem.scss';
 import { Link } from 'react-router-dom'
-import mind from '../../images/your_mind.PNG'
+import { MdGrade } from "react-icons/md";
 
-export default ({ imgUrl }) => {
+
+const ratings = ( rate ) => {
+    return (<div className='rating-container'>
+                <MdGrade size={15} />
+                <MdGrade size={15} />
+                <MdGrade size={15} />
+                <MdGrade size={15} />
+                <MdGrade size={15} />
+                <span className='rating-number-figure'>
+                    <strong>{rate}</strong>
+                </span>
+            </div>          
+            )
+}
+
+
+export default ({ imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim video games', author = 'Sir Andrew Williams', price = 3000, year = '2019' }) => {
     return (
         <div className='image-container'>
             <Link to='/book-description'>
-                <img src={imgUrl || mind} className='list-item-image' alt='your mind' />
-                <p>Great Animations</p>
-                <span>Jonathan</span>
-                <span>2020-01-01</span>
-                <span>Stars</span>
+                <img src={imgUrl} className='list-item-image' alt={imgUrl} />
+                <div className='banner'><strong>NEW</strong></div>
+                <div className='home-image-details'>
+                    <span><strong>{`Title: ${title}`}</strong></span>
+                    <span><strong>{`Subtitle: ${subtitle}`}</strong></span>
+                    <span><strong>{`Year of release: ${year}`}</strong></span>
+                    <span><strong>{`Price: ${year}`}</strong></span>
+                    <span><strong>{`Order: ${order}`}</strong></span>
+                    {ratings(star)}
+                </div>
             </Link>
         </div>
     )

@@ -8,7 +8,6 @@ import map from '../../images/africa_map.png';
 import './Bookstore.scss'
 
 export default () => {
-    console.log('test data', stores)
     return (
         <div>
             <TopNavBar />
