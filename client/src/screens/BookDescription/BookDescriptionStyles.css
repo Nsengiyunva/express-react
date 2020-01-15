@@ -5,23 +5,22 @@
     align-items: center;
     width: inherit;
     height: auto;
-    /* border: 1px solid; */
-    padding: 20px 40px;
+    padding-top: 1em;
+    
 }
 .book-details {
     display: flex;
     flex-direction: column;
     width: 80%;
     height: auto;
-    /* border: 1px solid red; */
 }
 .book-details-info {
     display: flex;
     flex-direction: row;
+    /* border: 1px solid; */
 }
 .book-details-info .book-details-image {
-    flex: 1.5;
-    /* border: 1px solid burlywood; */
+    flex: 8;
 }
 .book-details-info .text-details-container {
     flex: 2;
@@ -46,11 +45,9 @@
     align-self: flex-start;
     width: 80%;
     margin: 5px 140px;
-    /* border: 1px solid; */
 }
 .editor-container {
     width: 80%;
-    /* border: 1px solid green; */
 }
 .review-container {
     display: flex;
