@@ -16,7 +16,7 @@ export default () => {
         <div className='items-content'>
           {booklistings.map( (item) => {
             return (
-              <BookListingItem imgUrl={item.imageUrl}/>
+              <BookListingItem  key={item.title} imgUrl={item.imageUrl} title={item.title}/>
             )
           })}
         </div>
