@@ -1,6 +1,6 @@
 import { API_BASE, SEND_REGISTER_REQUEST, SEND_REGISTER_SUCCESS, SEND_REGISTER_ERROR,
                    SEND_LOGIN_REQUEST,SEND_LOGIN_SUCCESS, SEND_LOGIN_ERROR,
-                   ADD_TO_CART_REQUEST, PLACE_ORDER_REQUEST
+                   ADD_TO_CART_REQUEST, PLACE_ORDER_REQUEST, ADD_DROPDOWN_FILTER,CLEAR_DROPDOWN_FILTER
         } from './constants';
 import axios from 'axios';
 
@@ -48,7 +48,15 @@ export const placeOrderRequest = () => ({
     type: PLACE_ORDER_REQUEST
 })
 
+export const addDropdownFilter = (filter, items) => ({
+    type: ADD_DROPDOWN_FILTER,
+    term: filter,
+    items
+})
 
+export const clearDropdownFilter = () => ({
+    type: CLEAR_DROPDOWN_FILTER
+})
 
 
 
@@ -97,5 +105,12 @@ export const sendOrderRequest = () => {
         axios.post(`${API_BASE}/forwardOrder`, {}).then( response => {
             console.log( 'result',response )
         })
+    }
+}
+
+export const sendFilterCategory = (term, books)=> {
+    return dispatch => {
+        dispatch( clearDropdownFilter() )
+        dispatch( addDropdownFilter(term,books) );
     }
 }

@@ -1,6 +1,4 @@
 
-import React from 'react';
-
 import confession from '../images/confession.PNG'
 import jesus from '../images/jesus.PNG'
 import marriage from '../images/marriage.PNG'
@@ -41,114 +39,160 @@ import prayer from '../images/prayer.PNG'
 import boss from '../images/boss.PNG'
 import mind from '../images/your_mind.PNG'
 
-
+export const categories = [
+    { id: 1, name: 'Wisdom Books'},
+    { id: 2, name: 'Kingdom Books'},
+    { id: 3, name: 'Leadership and General Books'},
+    { id:4,  name: 'Family books' },
+    { id:5,  name: 'Business books'}
+]
 export const booklistings  = [
     {
+        id: 1,
         imageUrl: mind,
         rating: 3,
-        title: 'Your Mind'
+        title: 'Your Mind',
+        category: 1
     },
     {
+        id: 2,
         imageUrl: confession,
         rating: 5,
-        title: 'Confession'
+        title: 'Confession',
+        category: 2
     },
     {
+        id: 3,
         imageUrl: jesus,
         rating: 4,
-        title: 'Jesus'
+        title: 'Who is Jesus',
+        category: 2
     },
     {
+        id: 4,
         imageUrl: marriage,
         rating: 10,
-        title: 'Marriage'
+        title: 'Marriage',
+        category: 4
     },
     {
+        id: 5,
         imageUrl: sin,
         rating: 5,
         title: 'Sin'
     },
     {
+        id: 6,
         imageUrl: boss,
         rating: 10,
-        title: 'Boss'
+        title: 'The Boss',
+        category: 5
     },
     {
+        id: 7,
         imageUrl: relationships,
         rating: 5,
-        title: 'Relationships'
+        title: 'Relationships',
+        category: 4
     },
     {
+        id: 8,
         imageUrl: think,
         rating: 5,
-        title: 'Think'
+        title: 'Think',
+        category: 3
     },
     {
+        id: 9,
         imageUrl: employer,
         rating: 5,
-        title: 'Employer'
+        title: 'Employer vs. Employee',
+        category: 5
     },
     {
+        id: 10,
         imageUrl: godly_home,
         rating: 5,
-        title: 'Godly Home'
+        title: 'A Godly Home',
+        category: 4
     },
     {
+        id: 11,
         imageUrl: miracles,
         rating: 5,
         title: 'Miracles'
     },
     {
+        id: 12,
         imageUrl: money,
         rating: 5,
-        title: 'Money'
+        title: 'Money',
+        category: 1
     },
     {
+        id: 13,
         imageUrl: purpose,
         rating: 5,
-        title: 'Purpose'
+        title: 'Purpose',
+        category: 1
     },
     {
+        id: 14,
         imageUrl: praise,
         rating: 10,
-        title: 'Praise'
+        title: 'Praise',
+        category: 2
     },
     {
+        id: 15,
         imageUrl: nation,
         rating: 5,
-        title: 'Nation'
+        title: 'Building a Better Nation',
+        category: null
     },
     {
+        id: 16,
         imageUrl: without,
         rating: 5,
-        title: 'Without'
+        title: 'Without God You Cannot',
+        category: 2
     },
     {
+        id: 17,
         imageUrl: wealth,
         rating: 5,
-        title: 'Wealth'
+        title: 'Wealth',
+        category: 1
     },
     {
+        id: 18,
         imageUrl: voice,
         rating: 5,
-        title:'Voice'
+        title:'The Voice of God',
+        category: 2
     },
     {
+        id: 19,
         imageUrl: god_head,
         rating: 5,
-        title: 'God Head'
+        title: 'The GodHead',
+        category: 2
     },
     {
+        id: 20,
         imageUrl: four_gifts,
         rating: 5,
-        title:'Four Gifts'
+        title:'Four Gifts of God',
+        category: 2
     },
     {
+        id: 21,
         imageUrl: favor,
         rating: 5,
         title: 'Favor'
     },
     {
+        id: 22,
         imageUrl: human_nature,
         rating: 5,
         title: 'Human Nature'
@@ -156,33 +200,122 @@ export const booklistings  = [
     {
         imageUrl: grace,
         rating: 5,
-        title: 'Grace'
+        title: 'Grace',
+        category: 2
     },
     {
+        id: 23,
         imageUrl: giving,
         rating: 5,
-        title: 'Giving'
+        title: 'Giving',
+        category: 2
     },
     {
+        id: 24,
         imageUrl: husband_wife,
         rating: 5,
-        title: 'Husband Wife'
+        title: 'Husband and Wife',
+        category: 4
     },
     {
+        id: 25,
         imageUrl: exodus,
         rating: 5,
-        title: 'Exodus'
+        title: 'Exodus',
+        category: 2
     },
     {
+        id: 26,
         imageUrl: kind_love,
         rating: 5,
-        title: 'Kind Love'
+        title: 'The God Kind of Love',
+        category: 2
     },
     {
+        id: 27,
         imageUrl: prayer,
         rating: 5,
-        title:'Prayer'
-    }
+        title:'Prayer',
+        category:2
+    },
+    {
+        id: 28,
+        imageUrl: confidence,
+        rating: 0,
+        title: 'Confidence',
+        category: 1
+    },
+    {
+        id: 29,
+        title: 'Growth',
+        imageUrl: growth,
+        rating:0,
+        category: null
+    },
+    {
+        id: 30,
+        title: 'The Laws of the Kingdom',
+        imageUrl: laws_kingdom,
+        rating:0,
+        category: 2
+    },
+    {
+        id: 31,
+        title: 'Strong and Courageous',
+        imageUrl: strong_courageous,
+        rating:0,
+        category: null
+    },
+    {
+        id: 32,
+        title: 'The Devil',
+        imageUrl: devil,
+        rating:0,
+        category: null
+    },
+    {
+        id: 33,
+        title: 'Leaders',
+        imageUrl: leaders,
+        rating:0,
+        category: 4
+    },
+    {
+        id: 34,
+        title: 'Worship',
+        imageUrl: worship,
+        rating:0,
+        category:null
+    },
+    {
+        id: 35,
+        title: 'How to get business Ideas',
+        imageUrl: business_ideas,
+        rating:0,
+        category: 4
+    },
+    {
+        id: 36,
+        title: 'Dating',
+        imageUrl: dating,
+        rating:0,
+        category: 4
+    },
+    {
+        id: 37,
+        title: 'Evil Spirits',
+        imageUrl: evil_spirits,
+        rating:0,
+        category: 2
+    },
+    {
+        id: 38,
+        title: 'Managing People',
+        imageUrl: managing_people,
+        rating:0,
+        category: 5
+    },
+
 ]
 
 export const stores = [

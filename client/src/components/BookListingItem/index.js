@@ -19,7 +19,8 @@ const ratings = ( rate ) => {
 }
 
 
-export default ({ imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim video games', author = 'Sir Andrew Williams', price = 3000, year = '2019' }) => {
+export default ({ imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim video games', 
+                  author = 'Sir Andrew Williams', price = 3000, year = '2019' }) => {
     return (
         <div className='image-container'>
             <Link to='/book-description'>
@@ -29,7 +30,7 @@ export default ({ imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim v
                     <span><strong>{`Title: ${title}`}</strong></span>
                     <span><strong>{`Subtitle: ${subtitle}`}</strong></span>
                     <span><strong>{`Year of release: ${year}`}</strong></span>
-                    <span><strong>{`Price: ${year}`}</strong></span>
+                    <span><strong>{`Price: ${price}`}</strong></span>
                     <span><strong>{`Order: ${order}`}</strong></span>
                     {ratings(star)}
                 </div>

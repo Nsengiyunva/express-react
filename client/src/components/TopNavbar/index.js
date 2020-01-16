@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 import FormField from '../FormField'
+import { MdShoppingCart, MdAccountCircle } from 'react-icons/md';
+import { categories, booklistings } from '../../_fixtures'
 
 import './TopNavbar.css';
-import { MdShoppingCart, MdAccountCircle } from 'react-icons/md'
+
+import { sendFilterCategory } from '../../_actions'
+
 
 
 const logout =() => {
@@ -19,10 +23,17 @@ class TopNavbar extends React.Component {
     showDropDown = () => {
         this.setState({ isVisible: !this.state.isVisible })
     }
-    bookBox = (label) => {
+    showCategoryBooks = (id) => {
+        let newBooks = booklistings.filter( book => {
+            return book.category === id
+        });
+        this.props.addFilter(id, newBooks)
+        this.setState({ isVisible: false })
+    }
+    bookBox = (label, id) => {
         return (
-                <div className='book-menu-container'>
-                     <a href="javascript:void(0)" onClick={() => alert('wisdom')}>
+                <div key={id} className='book-menu-container'>
+                     <a href="javascript:void(0)" onClick={() => this.showCategoryBooks(id)}>
                         <h5>{label}</h5>
                     </a>
                 </div>
@@ -31,13 +42,10 @@ class TopNavbar extends React.Component {
     render(){
         return (
             <div className='container' style={this.props.style}>
-                 {/* {this.state.isVisible ? this.renderModal: null} */}
                  {this.state.isVisible ? (<div className='modal-container'>
-                    {this.bookBox('Wisdom books')}
-                    {this.bookBox('Kingdom books')}
-                    {this.bookBox('Leadership and General books')}
-                    {this.bookBox('Family books')}
-                    {this.bookBox('Business books')}
+                     {categories.map( (item) => {
+                         return this.bookBox(item.name, item.id)
+                     })}
                  </div>) : null }
                  <div className='links'>
                      <ul>
@@ -89,4 +97,9 @@ const mapStateToProps = state => {
         books: state.cart.books_ordered
     }
 }
-export default connect(mapStateToProps, null)(TopNavbar);
+const mapDispatchToProps = dispatch => {
+    return {
+        addFilter: (term, books) => dispatch( sendFilterCategory(term, books) )
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(TopNavbar);
