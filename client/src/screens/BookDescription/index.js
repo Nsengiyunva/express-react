@@ -46,7 +46,10 @@ class BookDescription extends React.Component {
         }
     }
     render() {
-            const { currency = '$' ,price ='3,500', author = 'Steven Lubwama', title = 'Dont Make Me, Think'} = this.props;
+            const { imgUrl,currency = '$' ,price ='3,500', author = 'Steven Lubwama', 
+                    title = 'Dont Make Me, Think', isbn = 'xxx', 
+                    publisher = 'willi books', year =  2020,
+                    chapters = 12, pages = 257 } = this.props;
             return (
                 <>
                     <TopNavBar />
@@ -54,12 +57,24 @@ class BookDescription extends React.Component {
                        <div className='book-details'>
                             <div className='book-details-info'>
                                 <div className='book-details-image'>
-                                    <img src={mind} />
+                                    <img src={imgUrl || mind} />
                                 </div>
                                 <div className='text-details-container'>
                                     <h2>{title}</h2>
-                                    <strong>{`By ${author}`}</strong>
-                                    <strong>{`${currency} ${price}`}</strong>
+                                    {/* <strong>{`Author: ${author}`}</strong>
+                                    <strong>{`ISBN: ${isbn}`}</strong>
+                                    <strong>{`Publisher: ${publisher}`}</strong>
+                                    <strong>{`Release Year: ${year}`}</strong>
+                                    <strong>{`Number of chapters: ${year}`}</strong>
+                                    <strong>{`Number of pages: ${year}`}</strong>
+                                    <strong>{`${currency} ${price}`}</strong> */}
+
+                                    <ProductDetailsItem title='Author' value={author} />
+                                    <ProductDetailsItem title='ISBN' value={isbn} />
+                                    <ProductDetailsItem title='Publisher' value={publisher} />
+                                    <ProductDetailsItem title='Release Year' value={year} />
+                                    <ProductDetailsItem title='Number of chapters' value={chapters} />
+                                    <ProductDetailsItem title='Number of pages' value={pages} />
                                     <div className='cart-btns'>
                                         <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ id: 1, title, price, author})}/>
                                         <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
@@ -69,13 +84,13 @@ class BookDescription extends React.Component {
                         </div>
                         <div className='product-details-container'>
                             <h2>Product Details</h2>
-                            <ProductDetailsItem title='Paperback' value='278 pages' />
-                            <ProductDetailsItem title='Publisher' value='A.K Peters/CRC Press; 1 edition( January 27, 2019)' />
+                            <ProductDetailsItem title='Description' value='This is just a description please' />
+                            {/* <ProductDetailsItem title='Publisher' value='A.K Peters/CRC Press; 1 edition( January 27, 2019)' />
                             <ProductDetailsItem title='Language' value='English' />
                             <ProductDetailsItem title='ISBN-10' value='xxxxxx' />
                             <ProductDetailsItem title='ISBN-13' value='xxxxx' />
                             <ProductDetailsItem title='Product Dimensions' value='7 x 0.8 x 10 inches' />
-                            <ProductDetailsItem title='Shipping Weight' value='1.7 pounds' />
+                            <ProductDetailsItem title='Shipping Weight' value='1.7 pounds' /> */}
                         </div>
                         <div className='editor-container'>
                             <p>About the Author</p>

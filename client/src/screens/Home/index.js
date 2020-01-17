@@ -13,7 +13,7 @@ class Home extends React.Component {
       loading: false
     }
     componentDidMount(){
-      console.log('first time')
+      //console.log('first time')
     }
     render(){
       return (

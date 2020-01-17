@@ -506,8 +506,22 @@ export const partners = [
 
 
 
-export const events = [
+export const eventsData = [
     {
-        
+        title: 'Authors Hour',
+        description: "Attend our author's day event. This event is held once in a year at our business locations across Africa; 18:00 to 20:00 GMT last Saturday of January every year. Come and meet with Andrew Williams and other African Authors face to face as they talk about their passions, motivations and stories.",
+    
+    },
+    {
+        title: 'New book launching',
+        description: 'Be the first to read it! Join us in our new book alunching show in March every year, last Saturday, 15:00 to 17:00 GMT'
+    },
+    {
+        title: 'Readers Voice',
+        description: 'Do you have questions about any of our books you have read? At this event, Andrew Williams and other Adrican authors will honour the privilege to get all your questions answered. Join us in June every year, first Sunday, 16:00 to 18:00 GMT'
+    },
+    {
+        title: 'Book talk show',
+        description: 'Get into the authors head! Talk deeper and go beyond the boundaries of our books. Attend our book talk shows in December every year, last Saturday, 18:00 to 20:00 GMT'
     }
 ]

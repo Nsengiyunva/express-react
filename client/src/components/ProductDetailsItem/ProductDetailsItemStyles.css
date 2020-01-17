@@ -1,8 +1,10 @@
 .product-details {
     display: flex;
     flex-direction: row;
-    padding: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.25em
 }
 .product-details span {
-    padding-left: 10px;
+    padding-left: 0.5em;
 }

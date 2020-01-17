@@ -1,5 +1,6 @@
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar'
+import Footer from'../../components/Footer'
 import OverlayContent from '../../components/OverlayContent';
 import EventTopContent from '../../components/EventTopContent';
 import EventDescription from '../../components/EventDescription';
@@ -11,19 +12,20 @@ import { MdShoppingCart, MdAccountCircle } from 'react-icons/md'
 import './EventStyles.scss'
 import events from '../../images/events.png'
 
+import { eventsData } from '../../_fixtures'
+
 export default () => {
     return (
         <>
          <TopNavBar />
-         {/* <OverlayContent event/> */}
-         <div className='top-layer'>
+         {/* <div className='top-layer'>
             <span>
               <h1>Welcome to,</h1>
               <h2>Willibook Events</h2>
               <p>We are always at the<br />
               forefront of providing you with the best book events within the country</p>
             </span>
-         </div>
+         </div> */}
          <div className='image-header-container'>
              <img src={events} alt='header-image' className='events-top-image'/>
          </div>
@@ -38,57 +40,37 @@ export default () => {
             <VerticalTimeline>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2011 - present"
+                date=""
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 icon={<MdAccountCircle />}
             >
-                <EventDescription />
-                {/* <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-                <p>
-                Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-                </p> */}
+                <EventDescription title={eventsData[0].title} description={eventsData[0].description} />
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2010 - 2011"
+                date=""
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 icon={<MdAccountCircle />}
             >
-                <EventDescription />
-                {/* <h3 className="vertical-timeline-element-title">Art Director</h3>
-                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                <p>
-                Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-                </p> */}
+                <EventDescription title={eventsData[1].title} description={eventsData[1].description} />
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2008 - 2010"
+                date=""
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 icon={<MdAccountCircle />}
             >
-                <EventDescription />
-                {/* <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                <p>
-                User Experience, Visual Design
-                </p> */}
+                <EventDescription title={eventsData[2].title} description={eventsData[2].description} />
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2006 - 2008"
+                date=""
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 icon={<MdAccountCircle />}
             >
-                <EventDescription />
-                {/* <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                <p>
-                User Experience, Visual Design
-                </p> */}
+                <EventDescription title={eventsData[3].title} description={eventsData[3].description} />
             </VerticalTimelineElement>
-            <VerticalTimelineElement
+            {/* <VerticalTimelineElement
                 className="vertical-timeline-element--education"
                 date="April 2013"
                 iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
@@ -99,7 +81,7 @@ export default () => {
                 <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
                 <p>
                 Strategy, Social Media
-                </p> */}
+                </p> 
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--education"
@@ -108,11 +90,6 @@ export default () => {
                 icon={<MdAccountCircle />}
             >
                 <EventDescription />
-                {/* <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-                <p>
-                Creative Direction, User Experience, Visual Design
-                </p> */}
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--education"
@@ -121,14 +98,10 @@ export default () => {
                 icon={<MdAccountCircle />}
             >
                 <EventDescription />
-                {/* <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-                <p>
-                Creative Direction, Visual Design
-                </p> */}
-            </VerticalTimelineElement>
+            </VerticalTimelineElement> */}
             </VerticalTimeline>
         </div>
+        <Footer />
         </>
     )
 }

@@ -7,7 +7,7 @@ export default () => {
         <div className='profile-wrapper'>
            <ProfileThumbnail />
             <div className='profile-details'>
-                <strong>William</strong>
+                <strong>Sir Andrew Williams</strong>
                 <strong>Founder and CEO</strong>
             </div>
         </div>

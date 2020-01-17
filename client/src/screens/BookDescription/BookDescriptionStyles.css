@@ -7,6 +7,7 @@
     height: auto;
     padding-top: 1em;
     
+    
 }
 .book-details {
     display: flex;
@@ -34,7 +35,7 @@
 .text-details-container {
     display: flex;
     flex-direction: column;
-    padding: 0px 25px;
+    padding: 0 0.5em;
 }
 .text-details-container strong {
     padding: 5px 0px;
