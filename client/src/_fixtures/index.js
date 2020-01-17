@@ -503,3 +503,11 @@ export const partners = [
         email: "sirwilliamsconsultancyfirm@gmail.com"
     }
 ]
+
+
+
+export const events = [
+    {
+        
+    }
+]
