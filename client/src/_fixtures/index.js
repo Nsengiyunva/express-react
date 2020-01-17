@@ -352,3 +352,154 @@ export const stores = [
         locations: [ 'Lilongwe', 'Blantyre' ]
     }
 ]
+
+
+export const owners = [
+    {
+        id: 1,
+        name: 'Andrew Williams',
+        role: 'Managing Director'
+    },
+    {
+        id: 2,
+        name: 'Parental Africa Limited'
+    },
+    {
+        id: 3,
+        name: 'Tonny Lukungu'
+    },
+    {
+        id: 4,
+        name: 'Achinase Edward'
+    }
+]
+
+export const directors = [
+    {
+        id: 1,
+        name: 'Andrew Williams'
+    },
+    {
+        id: 2,
+        name: 'Joseph Ssebunya'
+    },
+    {
+        id: 3,
+        name: 'Patricia Nabuganda'
+    },
+    {
+        id: 4,
+        name: 'Anisha Nsimba'
+    }
+]
+
+
+export const departments = [
+    {
+        name: 'Accounting Department',
+        description: "At the willibooks accounting department,we take care of all accounting duties in the company. Our job includes but not limited to; willibooks' internal Financial Management, reporting, Analysis and Auditing",
+        emailAddress: 'accountingdepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'Marketing Department',
+        description: "At the willibooks marketing department,we take care of all marketing duties in the company. Our job includes but not limited to; willbooks' marketing, advertisement, event organizer and promotion",
+        emailAddress: 'marketingdepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'Human resource Department',
+        description: "At the willibooks human resource department,we take care of all human resource duties in the company. Our job includes but not limited to; willibooks' recruitment, training, etc",
+        emailAddress: 'hrdepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'Logistic Department',
+        description: "At the willibooks logistics department,we take care of all logistic duties in the company. Our job includes but not limited to; willibooks' delivery, store keeping, distributing etc",
+        emailAddress: 'logisticdepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'IT Department',
+        description: "At the willibooks IT department,we take care of all IT duties in the company. Our job includes but not limited to; willibooks' website and app management, computer hardware and software maintaining,and software upgrade etc",
+        emailAddress: 'itdepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'Publishing Department',
+        description: "At the willibooks publishing department,we take care of all publishing duties in the company. Our job includes but not limited to; book publishing and production etc",
+        emailAddress: 'publishingdepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'Production Department',
+        description: "At the willibooks production department,we take care of all book production within the company. Our job includes but not limited to; book production and protection etc",
+        emailAddress: 'productiondepartmentwbl@gmail.com',
+        whatsappNo: '256780116681',
+        phone: '256750116681'
+    },
+    {
+        name: 'General Manager',
+        description: "As the general manager at willibooks limited, my job is to manage the company's day to day business affairs",
+        emailAddress: 'generalmanagerwbl@gmail.com',
+        whatsappNo: null,
+        phone: null
+    },
+    {
+        name: 'Managing Director',
+        description: "As the general manager at willibooks limited, my job is to direct, guide and lead staff towards achieving the company's goals",
+        emailAddress: 'sirwilliamsceo@gmail.com',
+        whatsappNo: null,
+        phone: null
+    }
+]
+
+
+export const partners = [
+    {
+        name: "Parental Africa Limited",
+        website: "www.parentalafrica-ug.com",
+        email: "parentaluganda@gmail.com"
+    },
+    {
+        name: "Willidocument Limited",
+        website: "www.willidocument-ug.com",
+        email: "willidocument@gmail.com"
+    },
+    {
+        name: "Willihead Limited",
+        website: "www.willihead-ug.com",
+        email: "willihead@gmail.com"
+    },
+    {
+        name: "Willifarm Limited",
+        website: "www.willifarm-ug.com",
+        email: "willifarm@gmail.com"
+    },
+    {
+        name: "Sir Williams Law Firm",
+        website: "www.sirwilliamslawyers-ug.com",
+        email: "sirwilliamslawyers@gmail.com"
+    },
+    {
+        name: "Sir Williams Accounting Firm",
+        website: "www.sirwilliamsaccountants-ug.com",
+        email: "sirwilliamsaccountants@gmail.com"
+    },
+    {
+        name: "Sir Williams IT Firm",
+        website: "www.sirwilliamsitfirm-ug.com",
+        email: "sirwilliamsitfirm@gmail.com"
+    },
+    {
+        name: "Sir Williams Business Consultancy Firm",
+        website: "www.sirwilliamsconsultancyfirm-ug.com",
+        email: "sirwilliamsconsultancyfirm@gmail.com"
+    }
+]

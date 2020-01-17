@@ -20,7 +20,7 @@ class Home extends React.Component {
         <>
         <TopNavBar />
         <div className='items-wrapper-container'>
-          <h2>Top Trending</h2>
+         <h2>{this.props.headingTitle || `Top Trending`}</h2>
           <div className='items-content'>
             {this.props.bookItems && this.props.bookItems.length > 0 ? 
               this.props.bookItems.map( (item) => {
@@ -33,19 +33,6 @@ class Home extends React.Component {
                   <BookListingItem  key={item.title} imgUrl={item.imageUrl} title={item.title}/>
                 )
               })}
-            {/* {this.props.term.length > 0 ? booklistings.filter( 
-                  value => { 
-                    return value.category === this.props.term 
-                  } ).map( item => {
-              return (
-                <BookListingItem  key={item.title} imgUrl={item.imageUrl} title={item.title}/>
-              )
-            }):
-            booklistings.map( (item) => {
-              return (
-                <BookListingItem  key={item.title} imgUrl={item.imageUrl} title={item.title}/>
-              )
-            })} */}
           </div>
         </div>
         <Footer />
@@ -56,7 +43,8 @@ class Home extends React.Component {
 const mapStateToProps = state => {
   return {
     term: state.cart.dropdownTerm,
-    bookItems: state.cart.bookItems
+    bookItems: state.cart.bookItems,
+    headingTitle: state.cart.headingTitle
   }
 }
 export default connect(mapStateToProps, null)(Home)
