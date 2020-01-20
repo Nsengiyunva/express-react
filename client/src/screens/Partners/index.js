@@ -1,7 +1,9 @@
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar';
+import Footer from '../../components/Footer';
+
 import './PartnerStyles.css';
-import logo from '../../images/dating.PNG';
+import logo from '../../images/parental.png';
 
 const showLogo = () => {
     return (
@@ -25,6 +27,7 @@ export default () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

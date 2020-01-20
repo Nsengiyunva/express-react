@@ -1,17 +1,17 @@
 import React from 'react';
-import './TeamMember.css';
-import profile from '../../images/profile.jpg';
+import './TeamMember.scss';
+import profile from '../../images/man.jpg';
 
 
-export default () => {
+export default ({ name= 'Andrew Williams', detail='President and Partner'}) => {
     return (
         <div className='team-container'>
-           <div className='image-container'>
-                <img src={profile}  alt='team-member'/>
-           </div>
-           <div className='caption-container'>
-                <h3>Joseph Ssebunya</h3>
-                <h4>President and Partner</h4>
+           <div className='box'>
+               <img src={profile} />
+               <div className='image-text-description'>
+                <strong>{name}</strong>
+                <span>{detail}</span>
+               </div>
            </div>
         </div>
     )

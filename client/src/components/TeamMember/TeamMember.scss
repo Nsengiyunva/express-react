@@ -1,0 +1,27 @@
+.team-container {
+    width:20%;
+    height: inherit;
+    margin: 0 1em;
+
+    .box {
+        // border: 1px solid green;
+        width: 100%;
+        height: inherit;
+        border-bottom: 2px solid green;
+
+        img {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            object-fit: cover;
+        }
+        .image-text-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            line-height: 2em;
+            font-size: 1em;
+            padding-top: 0.75em;
+        }
+    }
+}

@@ -765,6 +765,24 @@ export const departments = [
 ]
 
 
+export const committees = [
+    {
+        name: 'Disciplinary committee',
+        description: "This committee oversees the following among the company's employees;",
+        issues: "Dispute, attendance, compliance to company's rules and regulations"
+    },
+    {
+        name: 'Learning committee',
+        description: "This committee oversees the following among the company's employees;",
+        issues: "Staff educations, staff conference and seminar invitations, staff training etc"
+    },
+    {
+        name: 'Welfare committee',
+        description: "This committee oversees the following among the company's employees;",
+        issues: "Staff wellbeing at workplace, work leave, sick leave, workplace safety etc"
+    },
+]
+
 export const partners = [
     {
         name: "Parental Africa Limited",
@@ -827,5 +845,57 @@ export const eventsData = [
     {
         title: 'Book talk show',
         description: 'Get into the authors head! Talk deeper and go beyond the boundaries of our books. Attend our book talk shows in December every year, last Saturday, 18:00 to 20:00 GMT'
+    }
+]
+
+export const team = [
+    {
+        id: 1,
+        name: 'Sir Andrew Williams',
+        detail: 'President and Partner',
+        owner: true,
+        director: true,
+    },
+    {
+        id: 2,
+        name: 'Parental Africa Limited',
+        detail: 'Founder and CEO',
+        owner: true,
+        director: false,
+    },
+    {
+        id: 3,
+        name: 'Tonny Lukungu',
+        detail: 'Senior Vice President of Demand Generation and Partner',
+        owner: true,
+        director: false,
+    },
+    {
+        id: 4,
+        name: 'Achinase Edward',
+        detail: 'Senior Director Operations',
+        owner: true,
+        director: false,
+    },
+    {
+        id: 5,
+        name: 'Joseph Ssebunya',
+        detail: 'President and Partner',
+        owner: false,
+        director: true,
+    },
+    {
+        id:6,
+        name: 'Patricia Nabuganda',
+        detail: 'Founder and CEO',
+        owner: false,
+        director: true,
+    },
+    {
+        id:7,
+        name: 'Anisha Nsimba',
+        detail: '',
+        owner: false,
+        director: true,
     }
 ]

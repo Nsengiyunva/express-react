@@ -20,7 +20,7 @@
     flex-direction: row;
 }
 .book-details-info .book-details-image {
-    flex: 8;
+    flex: 7;
 }
 .book-details-info .text-details-container {
     flex: 2;
