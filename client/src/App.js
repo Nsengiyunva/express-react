@@ -27,7 +27,7 @@ export default class App extends Component {
           <Route path='/partners' component={Partners} />
           <Route path='/register' component={Register} />
           <Route path='/cart' component={Cart} />
-          <Route path='/book-description' component={BookDescription} />
+          <Route path='/book-description/:bookId' component={BookDescription} />
           <Route path='/login' component={Login} />
         </Switch>
       </Router>

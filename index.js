@@ -8,8 +8,8 @@ const nodemailer = require('nodemailer')
 
 dotenv.config();
 
-const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
-
+//const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
+const db = 'mongodb://localhost/willi'
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', function(){
@@ -51,6 +51,13 @@ const userModel = mongoose.model('User', {
     phoneNumber: String,
     country: String,
     city: String
+})
+
+const commentModel = mongoose.model('Comment', {
+    emailAddress: String,
+    review: String,
+    bookReviewed: Number,
+    complete: Boolean
 })
 
 //endpoints
@@ -100,6 +107,35 @@ app.post('/api/login', cors(), async( req, res, next ) => {
     }
 })
 
+
+app.post('/api/addAReview', cors(), async( req, res, next )=> {
+    try {
+        let emailAddress = req.body.emailAddress;
+        let comment = req.body.comment;
+        let bookReviewed =  req.body.bookReviewed;
+        let completed = req.body.completed;
+
+       let result = new commentModel({ 
+           emailAddress, 
+           comment, 
+           bookReviewed,
+           completed })
+       const response = await result.save();
+       res.status( 200 ).json( response )
+    } catch( error ){
+        res.status( 500 ).json( error)
+    }
+})
+
+app.post('/api/getReviews', cors(), async(req, res, next) => {
+    try {
+       //let id = req.params.bookId;
+       const comments = await commentModel.find();
+       res.status( 200 ).json( comments )
+    } catch( err ){
+        res.status( 500 ).json( err )
+    }
+})
 
 app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
     try {

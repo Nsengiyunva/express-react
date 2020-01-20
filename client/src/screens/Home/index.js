@@ -25,12 +25,12 @@ class Home extends React.Component {
             {this.props.bookItems && this.props.bookItems.length > 0 ? 
               this.props.bookItems.map( (item) => {
                 return (
-                  <BookListingItem  key={item.title} imgUrl={item.imageUrl} title={item.title}/>
+                  <BookListingItem  bookId={item.id} key={item.title} imgUrl={item.imageUrl} title={item.title}/>
                 )
               }) :  
               booklistings.map( (item) => {
                 return (
-                  <BookListingItem  key={item.title} imgUrl={item.imageUrl} title={item.title}/>
+                  <BookListingItem  bookId={item.id} key={item.title} imgUrl={item.imageUrl} title={item.title}/>
                 )
               })}
           </div>

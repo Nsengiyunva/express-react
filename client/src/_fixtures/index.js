@@ -1,4 +1,3 @@
-
 import confession from '../images/confession.PNG'
 import jesus from '../images/jesus.PNG'
 import marriage from '../images/marriage.PNG'
@@ -52,268 +51,573 @@ export const booklistings  = [
         imageUrl: mind,
         rating: 3,
         title: 'Your Mind',
-        category: 1
+        category: 1,
+        author: 'Sir Andrew Williams'
     },
     {
         id: 2,
         imageUrl: confession,
         rating: 5,
         title: 'Confession',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 3,
         imageUrl: jesus,
         rating: 4,
         title: 'Who is Jesus',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 4,
         imageUrl: marriage,
         rating: 10,
         title: 'Marriage',
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 5,
         imageUrl: sin,
         rating: 5,
-        title: 'Sin'
+        title: 'Sin',
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 6,
         imageUrl: boss,
         rating: 10,
         title: 'The Boss',
-        category: 5
+        category: 5,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 7,
         imageUrl: relationships,
         rating: 5,
         title: 'Relationships',
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 8,
         imageUrl: think,
         rating: 5,
         title: 'Think',
-        category: 3
+        category: 3,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 9,
         imageUrl: employer,
         rating: 5,
         title: 'Employer vs. Employee',
-        category: 5
+        category: 5,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 10,
         imageUrl: godly_home,
         rating: 5,
         title: 'A Godly Home',
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 11,
         imageUrl: miracles,
         rating: 5,
-        title: 'Miracles'
+        title: 'Miracles',
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 12,
         imageUrl: money,
         rating: 5,
         title: 'Money',
-        category: 1
+        category: 1,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 13,
         imageUrl: purpose,
         rating: 5,
         title: 'Purpose',
-        category: 1
+        category: 1,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 14,
         imageUrl: praise,
         rating: 10,
         title: 'Praise',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 15,
         imageUrl: nation,
         rating: 5,
         title: 'Building a Better Nation',
-        category: null
+        category: null,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 16,
         imageUrl: without,
         rating: 5,
         title: 'Without God You Cannot',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 17,
         imageUrl: wealth,
         rating: 5,
         title: 'Wealth',
-        category: 1
+        category: 1,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 18,
         imageUrl: voice,
         rating: 5,
         title:'The Voice of God',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 19,
         imageUrl: god_head,
         rating: 5,
         title: 'The GodHead',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 20,
         imageUrl: four_gifts,
         rating: 5,
         title:'Four Gifts of God',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 21,
         imageUrl: favor,
         rating: 5,
-        title: 'Favor'
+        title: 'Favor',
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 22,
         imageUrl: human_nature,
         rating: 5,
-        title: 'Human Nature'
+        title: 'Human Nature',
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         imageUrl: grace,
         rating: 5,
         title: 'Grace',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 23,
         imageUrl: giving,
         rating: 5,
         title: 'Giving',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 24,
         imageUrl: husband_wife,
         rating: 5,
         title: 'Husband and Wife',
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 25,
         imageUrl: exodus,
         rating: 5,
         title: 'Exodus',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 26,
         imageUrl: kind_love,
         rating: 5,
         title: 'The God Kind of Love',
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 27,
         imageUrl: prayer,
         rating: 5,
         title:'Prayer',
-        category:2
+        category:2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 28,
         imageUrl: confidence,
         rating: 0,
         title: 'Confidence',
-        category: 1
+        category: 1,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 29,
         title: 'Growth',
         imageUrl: growth,
         rating:0,
-        category: null
+        category: null,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 30,
         title: 'The Laws of the Kingdom',
         imageUrl: laws_kingdom,
         rating:0,
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 31,
         title: 'Strong and Courageous',
         imageUrl: strong_courageous,
         rating:0,
-        category: null
+        category: null,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 32,
         title: 'The Devil',
         imageUrl: devil,
         rating:0,
-        category: null
+        category: null,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 33,
         title: 'Leaders',
         imageUrl: leaders,
         rating:0,
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 34,
         title: 'Worship',
         imageUrl: worship,
         rating:0,
-        category:null
+        category:null,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 35,
         title: 'How to get business Ideas',
         imageUrl: business_ideas,
         rating:0,
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 36,
         title: 'Dating',
         imageUrl: dating,
         rating:0,
-        category: 4
+        category: 4,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 37,
         title: 'Evil Spirits',
         imageUrl: evil_spirits,
         rating:0,
-        category: 2
+        category: 2,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
     {
         id: 38,
         title: 'Managing People',
         imageUrl: managing_people,
         rating:0,
-        category: 5
+        category: 5,
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'This is a new book please'
     },
 
 ]
