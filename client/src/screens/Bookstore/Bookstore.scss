@@ -60,7 +60,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 90%;
-    height: 400px;
+    height: auto;
     margin: auto;
     background-color: #fff;
 }
@@ -68,13 +68,44 @@
 
 
 .image-header-container {
+    position: relative;
     width: inherit;
     height: auto;
-    // border: 1px solid red;
 
     .map-top-image {
         width: 100%;
         height: auto;
         object-fit: cover;
+    }
+    .left-content-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 5em;
+        width: 40%;
+        left: 3em;
+        height: auto;
+        color: white;
+
+        .headerText {
+            font-size: 4em;
+        }
+        .tag {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1em;
+            font-size: 1.5em;
+            line-height:1.5em;
+        }
+        .lists-locations {
+            display: flex;
+            flex-direction: row;
+            line-height: 2em;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .first-column {
+            list-style-type: none;
+        }
     }
 }

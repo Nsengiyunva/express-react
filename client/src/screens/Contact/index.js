@@ -1,13 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import TopNavBar from '../../components/TopNavbar';
+import Footer from '../../components/Footer';
 import FormField from '../../components/FormField';
-import './ContactStyles.css'
+import './ContactStyles.css';
 
-const socialIcon = () => {
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+
+const socialIcon = ( icon, size ) => {
+
+    let iconColor = size === 'small' ? 'green' : 'white';
+    let iconSize = size === 'small' ? 15 : 30;
+
     return (
-        <div className='icon-container'>
-            <span>f</span>
+        <div className='icon-container' style={{ 
+                    width: size === 'small' && '25px',
+                    height: size === 'small' && '25px', 
+                    marginRight: size === 'small' && '2px',
+                    padding: size === 'small' && '1px', 
+                    backgroundColor: size === 'small' && 'white', 
+                    borderRadius: size === 'small' && '20px',
+                    marginTop: size === 'small' && '10px',
+                   }}>
+            {icon === 'facebook' && (<Link to='/cart'>
+                    <FaFacebookF size={iconSize} color={iconColor}/>
+            </Link>)}
+            {icon === 'twitter' && (<Link to='/cart'>
+                    <FaTwitter size={iconSize} color={iconColor}/>
+            </Link>)}
+            {icon === 'whatsapp' && (<Link to='/cart'>
+                    <FaWhatsapp size={iconSize} color={iconColor}/>
+            </Link>)}
+            {icon === 'linkedin' && (<Link to='/cart'>
+                    <FaLinkedinIn size={iconSize} color={iconColor}/>
+            </Link>)}
+            {icon === 'youtube' && (<Link to='/cart'>
+                    <FaYoutube size={iconSize} color={iconColor}/>
+            </Link>)}
         </div>
+    )
+}
+
+export const socialMediaListing = (size) => {
+    return (
+        <div className='social-links-container'>
+            {socialIcon('facebook', size)}
+            {socialIcon('twitter', size )}
+            {socialIcon('whatsapp', size )}
+            {socialIcon('linkedin', size )}
+            {socialIcon('youtube', size )}
+        </div> 
     )
 }
 export default () => {
@@ -55,15 +97,9 @@ export default () => {
                         </form>
                     </div>
                 </div>
-                <div className='social-links-container'>
-                    {socialIcon()}
-                    {socialIcon()}
-                    {socialIcon()}
-                    {socialIcon()}
-                    {socialIcon()}
-                    {socialIcon()}
-                </div>   
+                 {socialMediaListing()}
             </div>
+            <Footer />
         </>
     )
 }

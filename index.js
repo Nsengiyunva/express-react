@@ -41,7 +41,7 @@ app.get('*', (req, res) => {
 
 
 
-//mongoose models
+
 const userModel = mongoose.model('User', {
     firstname: String,
     lastname: String,
@@ -60,25 +60,26 @@ const commentModel = mongoose.model('Comment', {
     complete: Boolean
 })
 
-//endpoints
-app.get('/api/cow/:say', cors(), async( req, res, next ) => {
-    try {
-        const text = req.params.say;
-        const moo = cowsay.say({ text })
-        res.json({ moo })
-    } catch(err) {
-        next( err )
-    }
+const eventModel = mongoose.model('Event', {
+    emailAddress: String,
+    phoneNumber: String,
+    registrationDate: String,
+    phoneNumber: String,
+    shortMessage: String
 })
 
-app.get('/api/cow/', cors(), async( req, res, next ) => {
-    try {
-        const moo = cowsay.say({ text: 'Hello world!' })
-        res.json({ moo })
-    } catch( err ){
-        next( err )
-    }
+const subscriptionModel = mongoose.model('Subscription', {
+    emailAddress: String,
+    subscriptionDate: String
 })
+
+const contactModel = mongoose.model('Contact', {
+    emailAddress: String,
+    name: String,
+    subject: String,
+    message: String
+})
+
 
 
 //sign up
@@ -137,6 +138,29 @@ app.post('/api/getReviews', cors(), async(req, res, next) => {
     }
 })
 
+
+app.post('/api/registerEvent', cors(), async( req, res,next) => {
+    try {
+        const { emailAddress, phoneNumber, registrationDate, shortMessage } = req.body;
+        const event = new eventModel({ emailAddress, phoneNumber, registrationDate, shortMessage });
+        const result = await event.save();
+        res.status( 200 ).json( result )
+    } catch( error ){
+        res.status( 500 ).json(  error )
+    }
+})
+
+app.post('/api/saveContactUs', cors(), async( req, res, next) => {
+    try {
+        const { emailAddress, name, subject, message } = req.body;
+        let contact = new contactModel({ emailAddress, name, subject, message });
+        let result = await contact.save();
+        res.status( 200 ).json( result )
+    } catch( err ){
+        res.status( 500 ).json( err )
+    }
+})
+
 app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
     try {
         let transport = nodemailer.createTransport({
@@ -163,6 +187,17 @@ app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
         })
     } catch(err) {
         res.status( 500 ).send({ error: err })
+    }
+})
+
+app.post('/api/subscribe', cors(), async( req, res, next ) => {
+    try {
+        const { emailAddress, subscriptionDate } = req.body;
+        let subscription = new subscriptionModel.save({ emailAddress, subscriptionDate });
+        let result = await subscription.save();
+        res.status( 200 ).json( result );
+    } catch( error ) {
+        res.status( 500 ).json( error);
     }
 })
 

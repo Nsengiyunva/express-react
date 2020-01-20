@@ -1,5 +1,7 @@
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar'
+import Footer from '../../components/Footer'
+
 import CountryLocationsCard from '../../components/CountryLocationsCard'
 import OverlayContent from '../../components/OverlayContent';
 
@@ -9,17 +11,44 @@ import './Bookstore.scss'
 
 export default () => {
     return (
-        <div>
+        <>
             <TopNavBar />
-            {/* <OverlayContent /> */}
-            <div className='image-header-container'>
-             <img src={map} alt='header-image' className='map-top-image'/>
+            <div>
+                <div className='image-header-container'>
+                <img src={map} alt='header-image' className='map-top-image'/>
+                <div className="left-content-container">
+                    <h1 className='headerText'>Willibooks Store</h1>
+                    <div className='tag'> 
+                        <span>is available</span>
+                        <span>in these countries</span>
+                    </div>
+                    <div className="lists-locations">
+                        <ul className="first-column">
+                            <li>Uganda</li>
+                            <li>Zambia</li>
+                        </ul> 
+                        <ul className="second-column">
+                            <li>Kenya</li>
+                            <li>Malawi</li>
+                        </ul> 
+                        <ul className="second-column">
+                            <li>Ghana</li>
+                            <li>Nigeria</li>
+                        </ul>
+                        <ul className="first-column">
+                            <li>Bostwana</li>
+                            <li>Sierra Leone</li>
+                        </ul> 
+                    </div>
+                </div>
+                </div>
+                <div className='vertical-cards-container'>
+                    {stores.map(({ country, locations }) => {
+                        return <CountryLocationsCard country={country} locations={locations} current="Uganda"/>
+                    })}
+                </div>
             </div>
-            <div className='vertical-cards-container'>
-                {stores.map(({ country, locations }) => {
-                    return <CountryLocationsCard country={country} locations={locations}/>
-                })}
-            </div>
-        </div>
+            <Footer />
+        </>
     )
 }
