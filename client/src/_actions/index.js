@@ -131,11 +131,11 @@ export const addToCart = (payload, success, error) => {
     }
 }
 
-export const sendOrderRequest = () => {
+export const sendOrderRequest = (items) => {
     return dispatch => {
         dispatch( placeOrderRequest() )
         axios.post(`${API_BASE}/forwardOrder`, {}).then( response => {
-            console.log( 'result',response )
+            console.log( 'result',response );
         })
     }
 }

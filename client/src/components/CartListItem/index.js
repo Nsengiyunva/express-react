@@ -1,29 +1,33 @@
 import React from 'react';
 import FormField from '../../components/FormField'
 
-import './CartListItem.css';
+import './CartListItem.scss';
 import picture1 from '../../images/dating.PNG'
 
 class CartListItem extends React.Component {
     render(){
-        const { currency = '$', imageUrl, title, subtitle, price } = this.props;
+        const { currency = 'UGX', title, subtitle = '', price, imageUrl, size } = this.props;
+        let totalPrice = parseFloat(size*price);
+        let formattedPrice = Number(totalPrice).toLocaleString()
         return (
             <>
-            <div className='place-order-btn'>
-                <FormField type='button' nameValue='placeOrder' color='green' value='Place Books Order' onPress={this.handleSubmit}/>
-            </div>
             <div className='cart-item-container'>
                 <div className='cart-image-container'>
-                    <img src={picture1} alt='cart-item-image'/>
+                    <img src={imageUrl} alt='cart-item-image'/>
                 </div>
                 <div className='cart-image-content-container'>
-                    <h4>Apple Iphone 7, 32 GB, Black - fully unlocked(Renewed)</h4>
-                    <span>This is the one od the product in the store and it is so cool. This is the
-                        greatest feeling in the world
-                    </span>
+                    <strong>{title}</strong>
+                    <span className='description'>{subtitle}</span>
+                    <div className='quantity-container'>
+                        <label>Quantity</label>
+                        <select read-only="true">
+                            <option>{size}</option>
+                        </select>
+                    </div>
+                    
                 </div>
                 <div className='cart-item-price-container'>
-                    <strong>{`${currency} 5,400`}</strong>
+                    <strong>{`${currency} ${formattedPrice}`}</strong>
                 </div>
             </div>
             </>

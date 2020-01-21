@@ -52,7 +52,14 @@ export const booklistings  = [
         rating: 3,
         title: 'Your Mind',
         category: 1,
-        author: 'Sir Andrew Williams'
+        author: 'Sir Andrew Williams',
+        isbn: '178347-74347374-627343',
+        publisher: 'Willibooks Publishing Limited',
+        releaseYear: 2019,
+        numberOfChapters: 30,
+        numberOfPages: 250,
+        price: 2500,
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance,management, and correct uses of the human mind'
     },
     {
         id: 2,
@@ -67,7 +74,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 3,
@@ -82,7 +89,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 4,
@@ -97,7 +104,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 5,
@@ -111,7 +118,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 6,
@@ -126,7 +133,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 7,
@@ -141,7 +148,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 8,
@@ -156,7 +163,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 9,
@@ -171,7 +178,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 10,
@@ -186,7 +193,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 11,
@@ -200,7 +207,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 12,
@@ -215,7 +222,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 13,
@@ -230,7 +237,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 14,
@@ -245,7 +252,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 15,
@@ -260,7 +267,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 16,
@@ -275,7 +282,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 17,
@@ -290,7 +297,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 18,
@@ -305,7 +312,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 19,
@@ -320,7 +327,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 20,
@@ -335,7 +342,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 21,
@@ -349,7 +356,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 22,
@@ -363,7 +370,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         imageUrl: grace,
@@ -377,7 +384,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 23,
@@ -392,7 +399,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 24,
@@ -407,7 +414,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 25,
@@ -422,7 +429,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 26,
@@ -437,7 +444,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 27,
@@ -452,7 +459,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 28,
@@ -467,7 +474,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 29,
@@ -482,7 +489,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 30,
@@ -497,7 +504,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 31,
@@ -512,7 +519,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 32,
@@ -527,7 +534,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 33,
@@ -542,7 +549,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 34,
@@ -557,7 +564,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 35,
@@ -572,7 +579,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 36,
@@ -587,7 +594,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 37,
@@ -602,7 +609,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
     {
         id: 38,
@@ -617,7 +624,7 @@ export const booklistings  = [
         numberOfChapters: 30,
         numberOfPages: 250,
         price: 2500,
-        description: 'This is a new book please'
+        description: 'In this mind-blowing book, Andrew Williams teaches on the power, importance'
     },
 
 ]

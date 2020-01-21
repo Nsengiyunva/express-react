@@ -162,32 +162,33 @@ app.post('/api/saveContactUs', cors(), async( req, res, next) => {
 })
 
 app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
-    try {
-        let transport = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'kingbecks07@gmail.com',
-                pass: 'kent@#2019'
-            }
-        });
-        const mailOptions = {
-            from: 'kingbecks07@gmail.com',
-            to: 'isaacnsengiyunva@gmail.com',
-            subject: 'mail sent to the willibooks',
-            html: '<p>This is a ecommerce mail</p>'
-        };
+    //res.status( 200 ).json({ success: true })
+    // try {
+    //     let transport = nodemailer.createTransport({
+    //         service: 'gmail',
+    //         auth: {
+    //             user: 'kingbecks07@gmail.com',
+    //             pass: 'kent@#2019'
+    //         }
+    //     });
+    //     const mailOptions = {
+    //         from: 'kingbecks07@gmail.com',
+    //         to: 'isaacnsengiyunva@gmail.com',
+    //         subject: 'mail sent to the willibooks',
+    //         html: '<p>This is a ecommerce mail</p>'
+    //     };
         
-        transport.sendMail( mailOptions, function(err, info){
-            if(err){
-                res.status( 500 ).json( err )
-            }
-            else {
-                res.status( 200 ).json( info )
-            }
-        })
-    } catch(err) {
-        res.status( 500 ).send({ error: err })
-    }
+    //     transport.sendMail( mailOptions, function(err, info){
+    //         if(err){
+    //             res.status( 500 ).json( err )
+    //         }
+    //         else {
+    //             res.status( 200 ).json( info )
+    //         }
+    //     })
+    // } catch(err) {
+    //     res.status( 500 ).send({ error: err })
+    // }
 })
 
 app.post('/api/subscribe', cors(), async( req, res, next ) => {

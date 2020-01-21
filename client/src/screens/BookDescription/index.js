@@ -52,12 +52,8 @@ class BookDescription extends React.Component {
     }
     placeOrder = () => {
         if(this.props.books && this.props.books.length > 0){
-            const emailAddress = localStorage.getItem('userLogged');
-            this.props.postOrder({ emailAddress, books: this.props.books }, () => {
-                console.log('success')
-            }, () => {
-                console.log('failed')
-            })
+            // const emailAddress = localStorage.getItem('userLogged');
+            this.props.history.push('/cart')
         }
         else {
             alert('No items in the cart yet')
@@ -115,7 +111,11 @@ class BookDescription extends React.Component {
                                     <ProductDetailsItem title='Number of chapters' value={selectedBook[0].numberOfChapters} />
                                     <ProductDetailsItem title='Number of pages' value={selectedBook[0].numberOfPages} />
                                     <div className='cart-btns'>
-                                        <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ id: 1, title, price, author})}/>
+                                        <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
+                                            id: selectedBook[0].id, 
+                                            title: selectedBook[0].title, 
+                                            price: selectedBook[0].price, 
+                                            author: selectedBook[0].author })}/>
                                         <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
                                     </div>
                                 </div>
