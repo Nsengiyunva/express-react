@@ -7,8 +7,10 @@ import picture1 from '../../images/dating.PNG'
 class CartListItem extends React.Component {
     render(){
         const { currency = 'UGX', title, subtitle = '', price, imageUrl, size } = this.props;
+        
         let totalPrice = parseFloat(size*price);
-        let formattedPrice = Number(totalPrice).toLocaleString()
+        let formattedPrice = Number(totalPrice).toLocaleString();
+
         return (
             <>
             <div className='cart-item-container'>

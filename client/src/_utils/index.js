@@ -1,3 +1,7 @@
+import React from 'react';
+import './UtilStyles.scss'
+
+
 export const countItemsinArray = (arrObj) => {
     let result = {};
     if(arrObj instanceof Array){
@@ -11,4 +15,11 @@ export const countItemsinArray = (arrObj) => {
         })
     }
     return result;
+}
+
+
+export const Loader = () => {
+    return (
+        <div className='loader' />
+    )
 }

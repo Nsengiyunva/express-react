@@ -134,8 +134,13 @@ export const addToCart = (payload, success, error) => {
 export const sendOrderRequest = (items) => {
     return dispatch => {
         dispatch( placeOrderRequest() )
-        axios.post(`${API_BASE}/forwardOrder`, {}).then( response => {
+        // console.log( items )
+        axios.post(`${API_BASE}/forwardOrder`, {
+            booksOrdered: items
+        }).then( response => {
             console.log( 'result',response );
+        }).catch( error => {
+            console.log('error', error)
         })
     }
 }

@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 import CartListItem from '../../components/CartListItem';
 import FormField from '../../components/FormField'
 
-import { countItemsinArray } from '../../_utils';
+import { countItemsinArray, Loader } from '../../_utils';
 import { booklistings } from '../../_fixtures';
 
 import { sendOrderRequest } from '../../_actions'
@@ -25,10 +25,9 @@ class Cart extends React.Component {
         return results;
     }
     handleSubmit = (orderedBooks, quantity) => {
+      this.setState({ loading: true })
        const emailAddress = localStorage.getItem('userLogged');
-    //    if( !emailAddress ){
-    //        return this.props.history.push('/login')
-    //    }
+    
        let filteredItems = [];
        orderedBooks.map( item => {
             quantity.map( value => {
@@ -53,12 +52,22 @@ class Cart extends React.Component {
             })[0]
             displayBooks.push( itemBook )
         })
+
+
+        if( this.state.loading){
+            return (
+                <div className='cart-items-container'>
+                 {Loader()}
+                </div>
+            )
+        }
+
         if( books.length == 0 ){
             return (
                 <>
                     <TopNavBar />
                         <div className='cart-items-container'>
-                            {this.state.loading ? <strong>Loading</strong> : <strong>No Items in the cart yet!</strong>}
+                            <strong>No Items in the cart yet!</strong>
                         </div>
                     <Footer />
                 </>
