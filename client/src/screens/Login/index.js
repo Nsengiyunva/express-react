@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import TopNavBar from '../../components/TopNavbar';
 import FormField from '../../components/FormField';
+import { Loader } from '../../_utils'
 import { MdAutorenew } from 'react-icons/md';
 
 import { sendLogin } from '../../_actions'
@@ -13,6 +14,7 @@ import './LoginStyles.css';
 
 class Login extends React.Component {
     state = {
+        loading: false,
         emailAddress:'',
         password: ''
     }
@@ -21,15 +23,29 @@ class Login extends React.Component {
         this.setState({ [field]: fieldValue })
     }
     handleSubmit = () => {
-        this.props.login( this.state, () => {
-            localStorage.setItem('userLogged', this.state.emailAddress )
-            this.props.history.push('/')
+        this.setState({ loading: true })
+
+        this.props.login( { emailAddress: this.state.emailAddress, password: this.state.password}, () => {
+            // if(localStorage.getItem('userLogged')){
+                this.setState({ loading: false })
+                this.props.history.push('/')
+            // }
         }, () => {
-            console.log('success')
+            this.setState({ loading: false })
+            alert('An error occured while logging in')
         })
     }
     render(){
-        console.log(this.state)
+        console.log('2 story',this.props.data && this.props.data.emailAddress)
+        if(this.state.loading){
+            return (
+                <div className='login-main-container'>
+                    <div className="login-form-wrapper">
+                        {Loader()}
+                    </div>
+                </div>
+            )
+        }
         return(
             <>
                 <TopNavBar />
@@ -57,7 +73,7 @@ class Login extends React.Component {
 }
 const mapStateToProps = state => {
     return {
-
+        data: state.user.result
     }
 }
 const mapDispatchToProps = dispatch => {

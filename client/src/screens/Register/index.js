@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import TopNavBar from '../../components/TopNavbar';
 import FormField from '../../components/FormField';
+import { Loader } from '../../_utils'
 import { MdAutorenew } from 'react-icons/md'
 import './RegistrationStyles.css';
 
@@ -9,6 +10,7 @@ import { register } from '../../_actions'
 
 class Register extends React.Component {
     state = {
+        loading: false,
         firstname: '',
         lastname: '',
         emailAddress: '',
@@ -21,6 +23,7 @@ class Register extends React.Component {
     sendPostRequest = async () => {
         await this.props.signUp(this.state, () => {
             this.clearForm();
+            this.setState({ loading: false })
             this.props.history.push('/login')
         }, () => {
            alert('An error occured while registering')
@@ -41,6 +44,7 @@ class Register extends React.Component {
             alert(error.error)
         }
         else {
+            this.setState({ loading: true })
             await this.sendPostRequest();
         }
     }
@@ -50,6 +54,13 @@ class Register extends React.Component {
         })
     }
     render(){
+        if(this.state.loading){
+            return (
+                <div style={{ display: 'flex',height:'100%', width:'100%', justifyContent:'center', alignItems: 'center'}}>
+                    {Loader()}
+                </div>
+            )
+        }
         return (
             <div>
                 <TopNavBar />

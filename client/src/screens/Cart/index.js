@@ -25,9 +25,11 @@ class Cart extends React.Component {
         return results;
     }
     handleSubmit = (orderedBooks, quantity) => {
-      this.setState({ loading: true })
+       this.setState({ loading: true })
        const emailAddress = localStorage.getItem('userLogged');
-    
+       if( emailAddress === null ){
+           this.props.history.push('/login')
+       }
        let filteredItems = [];
        orderedBooks.map( item => {
             quantity.map( value => {
@@ -36,7 +38,14 @@ class Cart extends React.Component {
                 }
             })
         })
-        this.props.sendOrderRequest(filteredItems);
+        this.props.sendOrderRequest(filteredItems,()=> {
+            this.setState({ loading: false })
+            window.location.reload()
+
+        }, ()=> {
+            this.setState({ loading: false })
+            window.location.reload()
+        });
     }
     render(){
         const { books } = this.props;
@@ -103,7 +112,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    sendOrderRequest: (items) => dispatch( sendOrderRequest(items) )
+    sendOrderRequest: (items, success, error) => dispatch( sendOrderRequest(items,success,error) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

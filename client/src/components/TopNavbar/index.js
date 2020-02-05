@@ -40,6 +40,7 @@ class TopNavbar extends React.Component {
         )
     }
     render(){
+        console.log( 'becks', localStorage.getItem('userLogged') )
         return (
             <div className='container' style={this.props.style}>
                  {this.state.isVisible ? (<div className='modal-container'>
@@ -80,7 +81,7 @@ class TopNavbar extends React.Component {
                      <input type='text' name='search' className='search-field' placeholder='search' />
                  </div>
                  <div>
-                     {localStorage.getItem('userLogged') ? <div><a href='javascript:void(0)' onClick={logout()}>Logout</a></div>: <Link to='/login'><MdAccountCircle size={30} color='white'/></Link> }
+                            {/* {localStorage.getItem('userLogged') ? <div><a href='javascript:void(0)' onClick={logout()}>Logout</a></div>: <Link to='/login'><MdAccountCircle size={30} color='white'/></Link> } */}
                  </div>
                  <div className='cart-top-icon-container'>
                      <Link to='/cart'><MdShoppingCart size={30} color='white'/></Link>

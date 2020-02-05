@@ -20,6 +20,9 @@ export const countItemsinArray = (arrObj) => {
 
 export const Loader = () => {
     return (
-        <div className='loader' />
+        <>
+            <span>Loading...please wait</span>
+            <div className='loader' />
+        </>
     )
 }

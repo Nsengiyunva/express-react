@@ -8,8 +8,8 @@ const nodemailer = require('nodemailer')
 
 dotenv.config();
 
-//const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
-const db = 'mongodb://localhost/willi'
+const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
+//const db = 'mongodb://localhost/willi'
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', function(){
@@ -81,7 +81,8 @@ const contactModel = mongoose.model('Contact', {
 })
 
 const orderedBooksModel = mongoose.model('BooksOrder', {
-    booksOrdered: mongoose.Schema.Types.Mixed
+    booksOrdered: mongoose.Schema.Types.Mixed,
+    emailAddress: String
 })
 
 
@@ -167,7 +168,7 @@ app.post('/api/saveContactUs', cors(), async( req, res, next) => {
 
 app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
     try {
-        const { booksOrdered } = req.body;
+        const { booksOrdered, emailAddress } = req.body;
         let booksOrder = new orderedBooksModel(req.body);
         const result = await booksOrder.save()
 
@@ -175,35 +176,26 @@ app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
         booksOrdered.forEach( value => {
             orderedBooks.push({ title: value.title, totalPrice: value.totalPrice, quantity: value.size})
         })
-        console.log( orderedBooks )
+        //res.status( 200 ).json( orderedBooks )
         
         let transport = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'kingbecks07@gmail.com',
-                pass: 'kent@#2019'
+                user: 'willibookslimited@gmail.com',
+                pass: 'sirwilliams'
             }
         });
+        var htmlContent = '<div><ul>';
+        orderedBooks.forEach( book => {
+            htmlContent += '<li> <b>Title: </b>' + book.title +'</li><li> <b>Total Amount Payable: $ </b>' + book.totalPrice +'</li><li><b>Number of books ordered: </b>' + book.quantity +'</li><br/>';
+        })
+        htmlContent += '</ul></div>';
+
         const mailOptions = {
-            from: 'kingbecks07@gmail.com',
-            to: 'isaacnsengiyunva@gmail.com',
-            subject: 'mail sent to the willibooks',
-            html: '<p>This is the order forwarded for processing</p><table>' +
-            '<thead>'+
-            '<th>Book</th>' +
-            '<th>Price</th>' +
-            '<th>Quantity</th>' +
-            '</thead>' + 
-            '<tbody>' +
-            orderedBooks.forEach( item => {
-                '<tr>' +
-                '<td>'+ item.title +'</td>' +
-                '<td>'+ item.totalPrice +'</td>' +
-                '<td>'+ item.size +'</td>' +
-                '</tr>'
-            }) + 
-            '</tbody>' +
-            '</table>'
+            from: 'willibookslimited@gmail.com',
+            to: emailAddress,
+            subject: 'This is the book order sent from you to Willibooks limited with the books you ordered',
+            html: '<p>This is the order forwarded for book processing</p><br/> The books ordered are:' + htmlContent
         };
         
         transport.sendMail( mailOptions, function(err, info){

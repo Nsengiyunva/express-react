@@ -115,6 +115,7 @@ export const sendLogin = (payload, success, error) => {
         axios.post(`${API_BASE}/login`, payload).then(
             response => {
                dispatch( postLoginSuccess( response.data ) )
+               localStorage.setItem('userLogged', payload.emailAddress )
                success()
             }
         ).catch( err => {
@@ -131,16 +132,18 @@ export const addToCart = (payload, success, error) => {
     }
 }
 
-export const sendOrderRequest = (items) => {
+export const sendOrderRequest = (items, success, errorCallback) => {
     return dispatch => {
         dispatch( placeOrderRequest() )
-        // console.log( items )
         axios.post(`${API_BASE}/forwardOrder`, {
-            booksOrdered: items
+            booksOrdered: items,
+            emailAddress: localStorage.getItem('userLogged')
         }).then( response => {
-            console.log( 'result',response );
+            success();
+            // console.log( 'result',response );
         }).catch( error => {
-            console.log('error', error)
+            errorCallback();
+            // console.log('error', error)
         })
     }
 }
