@@ -18,6 +18,15 @@ class Login extends React.Component {
         emailAddress:'',
         password: ''
     }
+    componentDidMount(){
+
+    }
+    componentDidUpdate(){
+        if(this.props.result && this.props.result.emailAddress !== 'undefined'){
+            //console.log('command')
+            //this.setState({ loading: false })
+        }
+    }
     handleInput = (field, val) => {
         let fieldValue = val.target.value;
         this.setState({ [field]: fieldValue })
@@ -26,17 +35,18 @@ class Login extends React.Component {
         this.setState({ loading: true })
 
         this.props.login( { emailAddress: this.state.emailAddress, password: this.state.password}, () => {
-            // if(localStorage.getItem('userLogged')){
+            if(localStorage.getItem('userLogged')){
+                console.log(localStorage.getItem('userLogged'))
                 this.setState({ loading: false })
-                this.props.history.push('/')
-            // }
+                this.props.history.push('/cart')
+            }
         }, () => {
             this.setState({ loading: false })
             alert('An error occured while logging in')
         })
     }
     render(){
-        console.log('2 story',this.props.data && this.props.data.emailAddress)
+        //console.log('2 story',this.props.data && this.props.data.emailAddress)
         if(this.state.loading){
             return (
                 <div className='login-main-container'>
@@ -73,7 +83,7 @@ class Login extends React.Component {
 }
 const mapStateToProps = state => {
     return {
-        data: state.user.result
+        result: state.user.result
     }
 }
 const mapDispatchToProps = dispatch => {

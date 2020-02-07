@@ -81,7 +81,8 @@ class TopNavbar extends React.Component {
                      <input type='text' name='search' className='search-field' placeholder='search' />
                  </div>
                  <div>
-                            {/* {localStorage.getItem('userLogged') ? <div><a href='javascript:void(0)' onClick={logout()}>Logout</a></div>: <Link to='/login'><MdAccountCircle size={30} color='white'/></Link> } */}
+                    {localStorage.getItem('userLogged')}
+                    {/* {localStorage.getItem('userLogged') ? <div><a href='javascript:void(0)' onClick={logout()}>Logout</a></div>: <Link to='/login'><MdAccountCircle size={30} color='white'/></Link> } */}
                  </div>
                  <div className='cart-top-icon-container'>
                      <Link to='/cart'><MdShoppingCart size={30} color='white'/></Link>
@@ -95,7 +96,7 @@ class TopNavbar extends React.Component {
 }
 const mapStateToProps = state => {
     return {
-        books: state.cart.books_ordered
+        books: state.cart.books_ordered,
     }
 }
 const mapDispatchToProps = dispatch => {

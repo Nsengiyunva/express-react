@@ -9,7 +9,7 @@ const nodemailer = require('nodemailer')
 dotenv.config();
 
 const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
-//const db = 'mongodb://localhost/willi'
+
 mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', function(){
@@ -18,7 +18,7 @@ mongoose.connection.once('open', function(){
     console.log('Error is: ', error);
 });
 const corsOptions = {
-    origin: "*",
+    origin: "*",  
     optionsSuccessStatus: 200
 };
 
@@ -135,7 +135,6 @@ app.post('/api/addAReview', cors(), async( req, res, next )=> {
 
 app.post('/api/getReviews', cors(), async(req, res, next) => {
     try {
-       //let id = req.params.bookId;
        const comments = await commentModel.find();
        res.status( 200 ).json( comments )
     } catch( err ){
@@ -193,7 +192,7 @@ app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
 
         const mailOptions = {
             from: 'willibookslimited@gmail.com',
-            to: emailAddress,
+            to: emailAddress,   
             subject: 'This is the book order sent from you to Willibooks limited with the books you ordered',
             html: '<p>This is the order forwarded for book processing</p><br/> The books ordered are:' + htmlContent
         };
