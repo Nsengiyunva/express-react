@@ -3,23 +3,36 @@ import { connect } from 'react-redux'
 
 import TopNavBar from '../../components/TopNavbar';
 import Footer from '../../components/Footer';
-import BookListingItem from '../../components/BookListingItem'
+import BookListingItem from '../../components/BookListingItem';
+import styled from 'styled-components';
+import StyledFooter from '../../components/StyledFooter';
 import './HomeStyle.scss';
-
 import { booklistings } from '../../_fixtures'
+
+
+const ContentItemContainer = styled.div`
+  display: flex;
+  flexDirection: row;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  padding: 2rem 2rem;
+`;
 
 class Home extends React.Component {
     state = {
       loading: false
     }
-    componentDidMount(){
-      //console.log('first time')
-    }
     render(){
       return (
         <>
         <TopNavBar />
-        <div className='items-wrapper-container'>
+        <ContentItemContainer>
+          Home
+          {/* {this.props.bookItems && this.props.bookItems.map( ({ id, title, imageUrl}) => {
+            return ( <BookListingItem key={title} bookId={id} imgUrl={imageUrl} title={title} />)
+          })} */}
+        </ContentItemContainer>
+        {/* <div className='items-wrapper-container'>
          <h2>{this.props.headingTitle || `Top Trending`}</h2>
           <div className='items-content'>
             {this.props.bookItems && this.props.bookItems.length > 0 ? 
@@ -34,8 +47,8 @@ class Home extends React.Component {
                 )
               })}
           </div>
-        </div>
-        <Footer />
+        </div> */}
+        <StyledFooter />
       </>
       )
     }

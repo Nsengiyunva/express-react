@@ -28,10 +28,8 @@ export default ({ bookId, imgUrl , star = 0, order='', subtitle= '', title= 'Gam
                 <div className='banner'><strong>NEW</strong></div>
                 <div className='home-image-details'>
                     <span><strong>{`Title: ${title}`}</strong></span>
-                    {/* <span><strong>{`Subtitle: ${subtitle}`}</strong></span> */}
-                    <span><strong>{`Year of release: ${year}`}</strong></span>
+                    <span><strong>{`Author: ${author}`}</strong></span>
                     <span><strong>{`Price: ${price}`}</strong></span>
-                    {/* <span><strong>{`Order: ${order}`}</strong></span> */}
                     {ratings(star)}
                 </div>
             </Link>

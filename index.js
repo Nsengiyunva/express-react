@@ -1,5 +1,4 @@
 const express = require('express');
-const cowsay = require('cowsay');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
@@ -7,10 +6,10 @@ const dotenv = require("dotenv");
 const nodemailer = require('nodemailer')
 
 dotenv.config();
-
 const db = 'mongodb+srv://kent:king2020@cluster0-ojmxk.mongodb.net/test?retryWrites=true&w=majority';
 
-mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost/willidb", {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect(db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.once('open', function(){
   console.log('Connection has been established!');
