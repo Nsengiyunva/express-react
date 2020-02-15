@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { MdShoppingCart } from 'react-icons/md';
+import logo from '../../images/williLogo.jpg'
 
 const Footer = styled.div`
    display: flex;
@@ -44,9 +45,9 @@ class StyledFooter extends Component {
             <Footer>
                 <ItemContainer>
                     <div>
-                        <strong>WBL</strong>
+                        <img src={logo} style={{ width: '10rem'}}/>
                         <p>Course View Tower</p>
-                        <p>Plot 21, View Tower</p>
+                        <p>Plot 21, Yusuf Lule Road</p>
                         <p>Kampala, Uganda</p>
                         <p>HQ</p>
                         <>

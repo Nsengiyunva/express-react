@@ -23,6 +23,7 @@ class Home extends React.Component {
       loading: false
     }
     render(){
+      console.log( 'items',booklistings )
       return (
         <>
         <TopNavBar />

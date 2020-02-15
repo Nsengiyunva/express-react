@@ -81,7 +81,6 @@
 // }
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer';
 import StyledFooter from '../../components/StyledFooter';
 import { MdCheckCircle,MdEmail, MdLocalPhone } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa'
