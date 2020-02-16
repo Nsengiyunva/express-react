@@ -5,6 +5,8 @@ import logo from '../../images/williLogo.jpg'
 
 const Footer = styled.div`
    display: flex;
+   justify-content: center;
+   align-items: flex-start;
    width: 100%;
    background-color: black;
    flex-direction: row;
