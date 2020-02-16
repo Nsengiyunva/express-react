@@ -2,12 +2,11 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 15%;
-    padding: 3em 3em;
+    margin: 2rem 2rem;
 
     .banner {
         position: absolute;
-        top: 3.8em;
+        top: .15rem;
         left: 10;
         width: auto;
         height: auto;
@@ -30,13 +29,12 @@
 
 
 img.list-item-image {
-    width: 250px;
+    width: 15rem;
 }
 .rating-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid red;
     padding: 0.5em;
     align-self: flex-start;
     padding-left: 0px;
