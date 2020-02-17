@@ -86,8 +86,6 @@ import { MdCheckCircle,MdEmail, MdLocalPhone } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa'
 import styled from 'styled-components'
 import picture from '../../images/organogram.png'
-// import './PartnerStyles.css';
-// import logo from '../../images/parental.png';
 
 const MainPartnerContainer = styled.div`
     display: flex;

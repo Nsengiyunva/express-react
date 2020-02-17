@@ -7,7 +7,6 @@ import BookListingItem from '../../components/BookListingItem';
 import styled from 'styled-components';
 import StyledFooter from '../../components/StyledFooter';
 import './HomeStyle.scss';
-// import { booklistings } from '../../_fixtures'
 import Slider from './Slider'
 
 
@@ -72,33 +71,12 @@ class Home extends React.Component {
       loading: false
     }
     render(){
-      // console.log( 'items',booklistings )
-      
       return (
         <>
         <TopNavBar />
-        <ContentItemContainer>
-          <Slider />
-          {/* {this.props.bookItems && this.props.bookItems.map( ({ id, title, imageUrl}) => {
-            return ( <BookListingItem key={title} bookId={id} imgUrl={imageUrl} title={title} />)
-          })} */}
-        </ContentItemContainer>
-        {/* <div className='items-wrapper-container'>
-         <h2>{this.props.headingTitle || `Top Trending`}</h2>
-          <div className='items-content'>
-            {this.props.bookItems && this.props.bookItems.length > 0 ? 
-              this.props.bookItems.map( (item) => {
-                return (
-                  <BookListingItem  bookId={item.id} key={item.title} imgUrl={item.imageUrl} title={item.title}/>
-                )
-              }) :  
-              booklistings.map( (item) => {
-                return (
-                  <BookListingItem  bookId={item.id} key={item.title} imgUrl={item.imageUrl} title={item.title}/>
-                )
-              })}
-          </div>
-        </div> */}
+          <ContentItemContainer>
+            <Slider />
+          </ContentItemContainer>
         <StyledFooter />
       </>
       )

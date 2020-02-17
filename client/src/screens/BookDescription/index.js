@@ -83,74 +83,74 @@ class BookDescription extends React.Component {
     }
     showCommentBox = () => this.setState({ showCommentBox: !this.state.showCommentBox })
     render() {
-            const { imgUrl,currency = '$' ,price ='3,500', author = 'Steven Lubwama', 
-                    title = 'Dont Make Me, Think', isbn = 'xxx', 
-                    publisher = 'willi books', year =  2020,
-                    chapters = 12, pages = 257 } = this.props;
-            const { selectedBook }= this.state;
-            
+            // const { imgUrl,currency = '$' ,price ='3,500', author = 'Steven Lubwama', 
+            //         title = 'Dont Make Me, Think', isbn = 'xxx', 
+            //         publisher = 'willi books', year =  2020,
+            //         chapters = 12, pages = 257 } = this.props;
+            // const { selectedBook }= this.state;
+            console.log('keryne')
 
             if(this.state.loading){
                 return <div>This is loading...</div>
             }
-            return (
-                <>
-                    <TopNavBar />
-                    <div className='book-description-container'>
-                       <div className='book-details'>
-                            <div className='book-details-info'>
-                                <div className='book-details-image'>
-                                    <img src={selectedBook[0].imageUrl} />
-                                </div>
-                                <div className='text-details-container'>
-                                    <h2>{selectedBook[0].title}</h2>
-                                    <ProductDetailsItem title='Author' value={selectedBook[0].author} />
-                                    <ProductDetailsItem title='ISBN' value={selectedBook[0].isbn} />
-                                    <ProductDetailsItem title='Publisher' value={selectedBook[0].publisher} />
-                                    <ProductDetailsItem title='Release Year' value={selectedBook[0].releaseYear} />
-                                    <ProductDetailsItem title='Number of chapters' value={selectedBook[0].numberOfChapters} />
-                                    <ProductDetailsItem title='Number of pages' value={selectedBook[0].numberOfPages} />
-                                    <div className='cart-btns'>
-                                        <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
-                                            id: selectedBook[0].id, 
-                                            title: selectedBook[0].title, 
-                                            price: selectedBook[0].price, 
-                                            author: selectedBook[0].author })}/>
-                                        <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='product-details-container'>
-                            <h2>Book Details</h2>
-                            <ProductDetailsItem title='Description' value={selectedBook[0].description} />
-                        </div>
-                        <div className='editor-container'>
-                            <p>About the Author</p>
-                            <p>
-                                Andrew Williams is an award-winning video game animator that
-                                has been bringing virtual characters to life since 2000.
-                            </p>
-                        </div>
-                        <div className='readers-container'>
-                            <h2>Reviews</h2>
-                            <a className='link-review' href='javascript:void(0)' onClick={this.showCommentBox}>Write your review</a>
-                            {this.state.showCommentBox ? (<div className='review-comment-container'>
-                                <form>
-                                    <FormField type="textarea" placeholder='Add your review' onChange={ (e) => this.setState({ comment: e.target.value }) }/>
-                                    <div className='top'>
-                                        <FormField type='button' nameValue='submit' color='green' value='Post Review' submit onPress={this.handleSubmit}/>
-                                    </div>
-                                </form>
-                            </div>) : null}
-                            {ReviewItem()}
-                            {ReviewItem()}
-                            {ReviewItem()}
-                        </div>
-                    </div>
-                    <Footer />
-                </>
-            )
+            // return (
+            //     <>
+            //         <TopNavBar />
+            //         <div className='book-description-container'>
+            //            <div className='book-details'>
+            //                 <div className='book-details-info'>
+            //                     <div className='book-details-image'>
+            //                         <img src={selectedBook[0].imageUrl} />
+            //                     </div>
+            //                     <div className='text-details-container'>
+            //                         <h2>{selectedBook[0].title}</h2>
+            //                         <ProductDetailsItem title='Author' value={selectedBook[0].author} />
+            //                         <ProductDetailsItem title='ISBN' value={selectedBook[0].isbn} />
+            //                         <ProductDetailsItem title='Publisher' value={selectedBook[0].publisher} />
+            //                         <ProductDetailsItem title='Release Year' value={selectedBook[0].releaseYear} />
+            //                         <ProductDetailsItem title='Number of chapters' value={selectedBook[0].numberOfChapters} />
+            //                         <ProductDetailsItem title='Number of pages' value={selectedBook[0].numberOfPages} />
+            //                         <div className='cart-btns'>
+            //                             <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
+            //                                 id: selectedBook[0].id, 
+            //                                 title: selectedBook[0].title, 
+            //                                 price: selectedBook[0].price, 
+            //                                 author: selectedBook[0].author })}/>
+            //                             <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <div className='product-details-container'>
+            //                 <h2>Book Details</h2>
+            //                 <ProductDetailsItem title='Description' value={selectedBook[0].description} />
+            //             </div>
+            //             <div className='editor-container'>
+            //                 <p>About the Author</p>
+            //                 <p>
+            //                     Andrew Williams is an award-winning video game animator that
+            //                     has been bringing virtual characters to life since 2000.
+            //                 </p>
+            //             </div>
+            //             <div className='readers-container'>
+            //                 <h2>Reviews</h2>
+            //                 <a className='link-review' href='javascript:void(0)' onClick={this.showCommentBox}>Write your review</a>
+            //                 {this.state.showCommentBox ? (<div className='review-comment-container'>
+            //                     <form>
+            //                         <FormField type="textarea" placeholder='Add your review' onChange={ (e) => this.setState({ comment: e.target.value }) }/>
+            //                         <div className='top'>
+            //                             <FormField type='button' nameValue='submit' color='green' value='Post Review' submit onPress={this.handleSubmit}/>
+            //                         </div>
+            //                     </form>
+            //                 </div>) : null}
+            //                 {ReviewItem()}
+            //                 {ReviewItem()}
+            //                 {ReviewItem()}
+            //             </div>
+            //         </div>
+            //         <Footer />
+            //     </>
+            // )
         }
 }
 const mapStateToProps = state => {

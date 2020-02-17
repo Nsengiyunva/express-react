@@ -73,14 +73,7 @@ export default () => {
             <MainPartnerContainer>
                 <LeftBox>
                     <div style={{ padding:'.75rem'}}>
-                        <h3>Organisational Structure</h3>
-                        {/* <div style={{ display: 'flex', flexWrap:'wrap', flexDirection:'row', 
-                                    width: '80%', height: 'auto' }}>
-                            <IconBox facebook/>
-                            <IconBox twitter/>
-                            <IconBox linkedin/>
-                            <IconBox youtube/>
-                        </div> */}
+                        <h3>Partners</h3>
                     </div>
                 </LeftBox>
                 <RightBox>

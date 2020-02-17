@@ -77,7 +77,7 @@ export default () => {
                         </div>
                         <div className='detail'>
                             <h2>Email</h2>
-                            <p className='subtitle'>willibooks@gmail.com</p>
+                            <p className='subtitle'>willibookslimited@gmail.com</p>
                         </div>
                         <div className='detail'>
                             <h2>Phone</h2>
