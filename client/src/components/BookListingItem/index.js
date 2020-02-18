@@ -19,7 +19,7 @@ const ratings = ( rate ) => {
 }
 
 export default ({ bookId, imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim video games', 
-                  author = 'Andrew Williams', price = 'UGX 29,600/=', year = '2019' }) => {
+                  author = 'Andrew Williams', price = 'UGX 30,000/=', year = '2019' }) => {
     return (
         <div className='image-container'>
             <Link to={`book-description/${bookId}`}>
