@@ -2,11 +2,10 @@ import React from 'react';
 import TopNavBar from '../../components/TopNavbar';
 import Footer from '../../components/Footer';
 import StyledFooter from '../../components/StyledFooter';
-import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import { MdCheckCircle,MdEmail, MdLocalPhone } from 'react-icons/md';
+import { FaFacebookF, FaTwitter, FaMapPin, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 import styled from 'styled-components'
 
-// import './PartnerStyles.css';
-// import logo from '../../images/parental.png';
 
 const MainPartnerContainer = styled.div`
     display: flex;
@@ -38,21 +37,22 @@ const PartnerListItem = styled.div`
     width: 25%;
 `;
 
-const ListDetail = ({ icon, label }) => (
-    <span style={{ height:'1.5rem',paddingLeft: '1.5rem',display: 'flex', flexDirection: 'row', width: 'auto'}}>
-        <p>{icon}</p>
-        <p style={{ marginLeft: '1rem', color: 'red'}}>{label}</p>
+const ListDetail = ({ icon, label, web, mail }) => (
+    <span style={{height:'1.5rem',paddingLeft: '1.5rem',display: 'flex', flexDirection: 'row', alignItems:'center', width: 'auto'}}>
+        {web && <FaMapPin size={15} color='green' />}
+        {mail && <MdEmail size={15} color='green' />}
+        <strong style={{ marginLeft: '1rem', color: 'green'}}>{label}</strong>
     </span>
 )
 
-const PartnerDetailComponent = ({ name = 'Willidocuments'}) => (
-    <div style={{ display: 'flex', flexDirection: 'column', marginBottom:'.5rem'}}>
-        <span style={{ height: '1.5rem',display: 'flex', flexDirection: 'row', width: 'auto'}}>
-            <p>1</p>
-            <p style={{ marginLeft: '1rem'}}>{name}</p>
+const PartnerDetailComponent = ({ name = 'Willidocument Limited'}) => (
+    <div style={{ display: 'flex', flexDirection: 'column', margin: '2rem 0', fontSize: '0.85rem'}}>
+        <span style={{ padding:12,display: 'flex', flexDirection: 'row', width: 'auto', justifyContent: 'flex-start', alignItems: 'center'}}>
+            <MdCheckCircle size={24} color='green'/>
+            <strong style={{ alignSelf: 'flex-end',marginLeft: '.5rem'}}>{name}</strong>
         </span>
-        <ListDetail icon='1' label='www.willidocument-ug.com'/>
-        <ListDetail icon='2' label='willidocument@gmail.com'/>
+        <ListDetail web label='www.willidocument-ug.com'/>
+        <ListDetail mail label='willidocument@gmail.com'/>
     </div>
 )
 
@@ -73,20 +73,22 @@ export default () => {
             <MainPartnerContainer>
                 <LeftBox>
                     <div style={{ padding:'.75rem'}}>
-                        <h3>Partners</h3>
+                        <h5>Partners</h5>
                     </div>
                 </LeftBox>
                 <RightBox>
                     <div style={{ position: 'relative', marginBottom:'2rem'}}>
-                        <h2 className="title-bar-high">Team</h2>
+                        <h2 className="title-bar-high">Partners</h2>
                     </div>
-                    <PartnerDetailComponent />
-                    <PartnerDetailComponent />
-                    <PartnerDetailComponent />
-                    <PartnerDetailComponent />
-                    <PartnerDetailComponent />
-                    <PartnerDetailComponent />
-                    <PartnerDetailComponent />
+                    <div style={{ border:'0px solid red'}}>
+                        <PartnerDetailComponent />
+                        <PartnerDetailComponent />
+                        <PartnerDetailComponent />
+                        <PartnerDetailComponent />
+                        <PartnerDetailComponent />
+                        <PartnerDetailComponent />
+                        <PartnerDetailComponent />
+                    </div>
                 </RightBox>
             </MainPartnerContainer>
             <StyledFooter />

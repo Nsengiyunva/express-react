@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdShoppingCart } from 'react-icons/md';
 import {  } from 'react-icons/fa'
-import logo from '../../images/williLogo.jpg'
-import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import logo from '../../images/williLogo.jpeg'
+import { MdKeyboardArrowRight,MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa'
 
 const Footer = styled.div`
    display: flex;
@@ -52,16 +53,18 @@ const IconContainer = styled.div`
     margin-top: 2rem;
 `;
 
-const ListItem = ({ value, facebook, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
+const ListItem = ({ value, insta, facebook, partner, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
     <div style={{ display:'flex',flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
         {facebook && <FaFacebookF size={30} color={`green`}/> }
         {twitter && <FaTwitter size={30} color={`green`}/> }
+        { insta && <FaInstagram size={30} color='green' /> }
         {whatsapp && <FaWhatsapp size={15} color={`green`}/> }
-        {phone && <FaWhatsapp size={15} color={`green`}/> }
+        {phone && <MdPhone size={15} color={`green`}/> }
         {linkedin && <FaLinkedinIn size={30} color={`green`}/> }
-        {email && <FaLinkedinIn size={15} color={`green`}/> }
-        {location && <FaFacebookF size={15} color={`green`}/> }
+        {email && <MdEmail size={15} color={`green`}/> }
+        {location && <MdLocationOn size={15} color={`green`}/> }
         {youtube && <FaYoutube size={30} color={`green`}/> }
+        {partner && <MdKeyboardArrowRight size={20} color={`green`} /> }
         <p style={{ marginLeft: '.75rem'}}>{value}</p>
     </div>
 )
@@ -88,7 +91,8 @@ class StyledFooter extends Component {
                     <div style={{ display: 'flex',flexDirection: 'column'}}>
                         <h3>Partners</h3>
                         <div>
-                            <ul style={{ lineHeight: '2rem', paddingLeft: '.75rem'}}>
+                            {/* <ul style={{ lineHeight: '2rem', paddingLeft: '.75rem'}}>
+                                
                                 <li style={{ paddingBottom: '.75rem'}}>Parental Africa Limited</li>
                                 <li style={{ paddingBottom: '.75rem'}}>Williolum Limited</li>
                                 <li style={{ paddingBottom: '.75rem'}}>Willifarm Limited</li>
@@ -98,7 +102,16 @@ class StyledFooter extends Component {
                                 <li style={{ paddingBottom: '.75rem'}}>Sir Williams Accounting firm</li>
                                 <li style={{ paddingBottom: '.75rem'}}>Sir Williams IT firm</li>
                                 <li style={{ paddingBottom: '.75rem'}}>Sir Williams business consultancy firm</li>
-                            </ul>
+                            </ul> */}
+                             <ListItem partner value={`Parental Africa Limited`} />
+                             <ListItem partner value={`Williolum Limited`} />
+                             <ListItem partner value={`Willifarm Limited`} />
+                             <ListItem partner value={`Willihead Limited`} />
+                             <ListItem partner value={`Willidocument Limited`} />
+                             <ListItem partner value={`Sir Williams Law firm`} />
+                             <ListItem partner value={`Sir Williams Accounting firm`} />
+                             <ListItem partner value={`Sir Williams Business Consultancy firm`} />
+                             <ListItem partner value={`Sir Williams IT firm`} />
                         </div>
                     </div>
                 </ItemContainer>
@@ -128,10 +141,9 @@ class StyledFooter extends Component {
                         <h3>Connect With Us</h3>
                             <div>
                                 <ListItem facebook value={`Follow Us On Facebook`} />
-                                <ListItem linkedin value={`Follow Us On Instagram`}/>
-                                <ListItem twitter value={`Follow Us on Twitter`} />
-                                <ListItem linkedin value={`Connect With Us On Linkedin`} />
-                                <ListItem linkedin value={`Contact Us on Skype`} />
+                                <ListItem insta value={`Follow Us On Instagram`}/>
+                                <ListItem twitter value={`Follow Us On Twitter`} />
+                                <ListItem linkedin value={`Follow Us On LinkedIn`} />
                             </div>
                             <div style={{ marginTop: '2rem' }}>
                                 <h5>Subscribe today and get latest updates</h5>
