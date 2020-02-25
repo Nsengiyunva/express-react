@@ -21,10 +21,7 @@ const ContentItemContainer = styled.div`
 export const SlideSection = styled.div`
   position: relative;
   display: flex;
-  justify-content:center;
-  align-items: center;
-  border: 1px solid #000;
-  height: auto;
+  padding: 0 2rem;
   
   ::before {
     content: '';
@@ -35,6 +32,7 @@ export const SlideSection = styled.div`
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 1;
     background-color: transparent;
   }
 `;

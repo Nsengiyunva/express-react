@@ -80,14 +80,14 @@ export default () => {
                     <div style={{ position: 'relative', marginBottom:'2rem'}}>
                         <h2 className="title-bar-high">Partners</h2>
                     </div>
-                    <div style={{ border:'0px solid red'}}>
+                    <div style={{ border:'1px solid red'}}>
+                        <PartnerDetailComponent />
+                        {/*<PartnerDetailComponent />
                         <PartnerDetailComponent />
                         <PartnerDetailComponent />
                         <PartnerDetailComponent />
                         <PartnerDetailComponent />
-                        <PartnerDetailComponent />
-                        <PartnerDetailComponent />
-                        <PartnerDetailComponent />
+                        <PartnerDetailComponent /> */}
                     </div>
                 </RightBox>
             </MainPartnerContainer>

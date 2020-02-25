@@ -88,21 +88,9 @@ class StyledFooter extends Component {
                     </div>
                 </ItemContainer>
                 <ItemContainer>
-                    <div style={{ display: 'flex',flexDirection: 'column'}}>
+                    <div style={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                         <h3>Partners</h3>
-                        <div>
-                            {/* <ul style={{ lineHeight: '2rem', paddingLeft: '.75rem'}}>
-                                
-                                <li style={{ paddingBottom: '.75rem'}}>Parental Africa Limited</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Williolum Limited</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Willifarm Limited</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Willihead Limited</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Willidocument Limited</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Sir Williams law firm</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Sir Williams Accounting firm</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Sir Williams IT firm</li>
-                                <li style={{ paddingBottom: '.75rem'}}>Sir Williams business consultancy firm</li>
-                            </ul> */}
+                        <div style={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                              <ListItem partner value={`Parental Africa Limited`} />
                              <ListItem partner value={`Williolum Limited`} />
                              <ListItem partner value={`Willifarm Limited`} />

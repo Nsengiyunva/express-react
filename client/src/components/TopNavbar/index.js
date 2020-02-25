@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import FormField from '../FormField'
 import { MdShoppingCart, MdAccountCircle } from 'react-icons/md';
-import { FaSearch } from 'react-icons/fa';
+import { FaHamburger } from 'react-icons/fa';
 import { categories, booklistings } from '../../_fixtures'
 import styled from 'styled-components';
 import { device, colors } from '../../_utils/devices';
@@ -16,16 +15,18 @@ import { sendFilterCategory } from '../../_actions'
 const TopBarContainer = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-color: ${colors.green};
-    opacity: .7;
     width: auto;
     height: 2rem;
     padding: .5rem;
 `;
 
 const MenuList = styled.div`
+    position: relative;
     display: flex;
-    flex: 2.8;
+    flex: 3;
 
     & ul {
         display: none;
@@ -42,7 +43,7 @@ const MenuList = styled.div`
             }
         }
 
-        @media ${device.laptop} and ${device.tablet} {
+        @media ${device.laptop} , @media ${device.tablet} {
             display: block;
             display: flex;
             flex-direction: row;
@@ -56,17 +57,13 @@ const MenuList = styled.div`
 `;
 
 const HamburgerMenu = styled.div`
-    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    @media ${device.laptop} {
-        display: none;
-    }
-    @media ${device.desktop}{
-        display: none;
-    }
-    @media ${device.tablet}{
+    @media ${device.tablet}, @media ${device.laptop},@media ${device.desktop}{
         display:none;
-        background-color: green;
     }
 `;
 
@@ -74,17 +71,14 @@ const HamburgerMenu = styled.div`
 const SearchField = styled.div`
     display: flex;
     flex: 1;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-top: .75rem;
+    margin-left: .5rem;
 
-    @media ${device.mobileS} and ${device.mobileM} and ${device.mobileL}{
+    @media ${device.mobileS}, @media ${device.mobileM}, @media ${device.mobileL}{
         display: none;
     }
-    @media ${device.tablet} {
-        display: block;
-    }
-    @media ${device.laptop} {
+    @media ${device.tablet}, @media ${device.laptop} {
         display: block;
     }
    
@@ -95,6 +89,28 @@ const CartContainer = styled.div`
     flex: 1;
     flex-direction: row;
     padding-top: .70rem;
+
+    @media ${device.mobileS}, @media ${device.mobileM}, @media ${device.mobileL}{
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1rem;
+    }
+    @media ${device.laptop}, @media ${device.desktop}{
+        justify-content: flex-start;
+    }
+`;
+
+
+const CountryDropdown = styled.div`
+    display: flex;
+    border: none;
+    outline: none;
+    
+    & select {
+        font-family: inherit;
+        padding: .25rem;
+        font-weight: bold;
+    }
 `;
 
 const logout =() => {
@@ -103,7 +119,8 @@ const logout =() => {
 
 class TopNavbar extends React.Component {
     state = {
-        isVisible: false
+        isVisible: false,
+        showMenu: false
     }
     showDropDown = () => {
         this.setState({ isVisible: !this.state.isVisible })
@@ -126,39 +143,57 @@ class TopNavbar extends React.Component {
     }
     render(){
         return (
+            <>
+            <div style={{ display: this.state.showMenu ? 'block' :'none',position: 'absolute',backgroundColor: '#666',top: '3rem', height: '100%', width:'100%', zIndex: '5'}}>
+                <div style={{ width: '90%',display:'flex',flexDirection: 'row', justifyContent: 'space-between',alignItems: 'center'}}>
+                    <a></a>
+                    <a onClick={ () => this.setState({showMenu: false })} style={{ cursor:'pointer', color: `${colors.white}`, fontSize:'1.5rem'}}>X</a>
+                </div>
+                <div style={{ display: 'flex',flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
+                    <ul style={{ listStyleType: 'none', padding: '2rem'}}>
+                        {[ 
+                            { name: 'Home', route: '/', }, 
+                            { name: 'About Us', route: '/aboutUs'},
+                            { name: 'Organisation', route: '/organisation'} ,
+                            { name: 'Partners', route: '/partners'} ,
+                            { name: 'Bookstore', route: '/bookstore'},
+                            { name: 'Events', route: '/events'} ,
+                            { name: 'Gallery', route: '/gallery'},
+                            { name: 'Contact Us', route: '/contact'} 
+                        ].map( item => (
+                            <li style={{ marginBottom:'1rem'}}>
+                             <Link style={{ textDecoration: 'none', color: 'white',fontSize: '1.5rem'}} to={item.route}>{item.name}</Link>
+                            </li>
+                            )
+                        )}
+                        
+                        
+                    </ul>
+                </div>
+            </div>
             <TopBarContainer>
                 <MenuList>
                     <HamburgerMenu>
-                        we got a hamburger 
+                        <a onClick={() => this.setState({showMenu: !this.state.showMenu })}>
+                            <FaHamburger size={25} color={`white`} />
+                        </a>
                     </HamburgerMenu>
                     <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About Us</Link>
-                        </li>
-                        <li>
-                            <Link>Books</Link>
-                        </li>
-                        <li>
-                            <Link to="/organisation">Organisation</Link>
-                        </li>
-                        <li>
-                            <Link to="/partners">Partners</Link>
-                        </li>
-                        <li>
-                            <Link to="/bookstore">Bookstore</Link>
-                        </li>
-                        <li>
-                             <Link to="/events">Events</Link>
-                        </li>
-                        <li>
-                            <Link to="/gallery">Gallery</Link>
-                        </li>
-                        <li>
-                         <Link to="/contact">Contact Us</Link>
-                        </li>
+                        {[ 
+                            { name: 'Home', route: '/', }, 
+                            { name: 'About Us', route: '/aboutUs'},
+                            { name: 'Books', route: '/'},
+                            { name: 'Organisation', route: '/organisation'} ,
+                            { name: 'Partners', route: '/partners'} ,
+                            { name: 'Bookstore', route: '/bookstore'},
+                            { name: 'Events', route: '/events'} ,
+                            { name: 'Gallery', route: '/gallery'},
+                            { name: 'Contact Us', route: '/contact'} 
+                        ].map( item => (
+                            <li>
+                                <Link to={item.route}>{item.name}</Link>
+                            </li>
+                        ))}
                     </ul>
                 </MenuList>
                 <SearchField>
@@ -166,65 +201,20 @@ class TopNavbar extends React.Component {
                 </SearchField>
                 <CartContainer>
                     <MdAccountCircle size={25} color='white' />
-                    <MdShoppingCart style={{ paddingLeft: '5rem'}} size={25} color='white' />
+                    <MdShoppingCart style={{ paddingLeft: '1rem'}} size={25} color='white' />
                 </CartContainer>
+                <CountryDropdown>
+                    <select onChange={ val => console.log(val.nativeEvent)}>
+                        <option value="Uganda" selected>Uganda</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Botswana">Botswana</option>
+                    </select>
+                </CountryDropdown>
             </TopBarContainer>
+            </>
         )
-        // console.log( 'becks', localStorage.getItem('userLogged') )
-        // return (
-        //     <div className='container' style={this.props.style}>
-        //          {this.state.isVisible ? (<div className='modal-container'>
-        //              {categories.map( (item) => {
-        //                  return this.bookBox(item.name, item.id)
-        //              })}
-        //          </div>) : null }
-        //          <div className='links'>
-        //              <ul>
-        //                  <li>
-        //                      <Link to="/">Home</Link>
-        //                  </li>
-        //                  <li>
-        //                      <a href="javascript:void(0)" onClick={this.showDropDown}>Books</a>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/organisation">Organisation</Link>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/partners">Partners</Link>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/bookstores">BookStore</Link>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/events">Events</Link>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/gallery">Gallery</Link>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/contact">Contact</Link>
-        //                  </li>
-        //                  <li>
-        //                      <Link to="/about">About Us</Link>
-        //                  </li>
-        //              </ul>
-
-        //          </div>
-        //          <div className='searchContainer'>
-        //              <input type='text' name='search' className='search-field' placeholder='search' />
-        //          </div>
-        //          <div>
-        //             {/* {localStorage.getItem('userLogged')} */}
-        //             {/* {localStorage.getItem('userLogged') ? <div><a href='javascript:void(0)' onClick={logout()}>Logout</a></div>: <Link to='/login'><MdAccountCircle size={30} color='white'/></Link> } */}
-        //          </div>
-        //          <div className='cart-top-icon-container'>
-        //              <Link to='/cart'><MdShoppingCart size={24} color='white'/></Link>
-        //              <div className='cart-number-items'>
-        //                 <strong>{this.props.books ? this.props.books.length : 0}</strong>
-        //              </div>
-        //          </div>
-        //      </div>
-        // )
     }
 }
 const mapStateToProps = state => {
