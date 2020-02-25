@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer';
+import StyledFooter from '../../components/StyledFooter';
 import FormField from '../../components/FormField';
 import './ContactStyles.css';
 
@@ -99,7 +99,7 @@ export default () => {
                 </div>
                  {socialMediaListing()}
             </div>
-            <Footer />
+            <StyledFooter />
         </>
     )
 }

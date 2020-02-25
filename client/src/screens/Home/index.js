@@ -23,8 +23,9 @@ export const SlideSection = styled.div`
   display: flex;
   justify-content:center;
   align-items: center;
-  height: auto
-  width: 100%;
+  border: 1px solid #000;
+  height: auto;
+  
   ::before {
     content: '';
     position: absolute;

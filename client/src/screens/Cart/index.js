@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer';
+import StyledFooter from '../../components/StyledFooter';
 import CartListItem from '../../components/CartListItem';
 import FormField from '../../components/FormField'
 
@@ -78,7 +78,7 @@ class Cart extends React.Component {
                         <div className='cart-items-container'>
                             <strong>No Items in the cart yet!</strong>
                         </div>
-                    <Footer />
+                    <StyledFooter />
                 </>
             )
         }
@@ -102,7 +102,7 @@ class Cart extends React.Component {
                         )
                     })}
                 </div>
-                <Footer />
+                <StyledFooter />
             </>
         )
     }

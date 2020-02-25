@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer';
+import StyledFooter from '../../components/StyledFooter';
 
 import './Styles.css'
 import library from '../../images/library.jpg'
@@ -59,7 +59,7 @@ export default () => {
                 </div>
             </div>
          </div>
-         <Footer />
+         <StyledFooter />
         </>
     )
 }

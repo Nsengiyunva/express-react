@@ -34,3 +34,49 @@ export default class App extends Component {
     )
   }
 }
+// import React from 'react';
+// import styled from 'styled-components';
+// import { device } from './_utils/devices'
+
+// const Page = styled.div`
+//   margin: auto;
+//   font-family: 'sans-serif',
+//   text-align: center;
+
+//   @media ${device.laptop} {
+//     max-width: 800px;
+//     border: 1px solid red;
+//   }
+
+//   @media ${device.desktop} {
+//     max-width: 1400px;
+//     border: 1px solid teal;
+//   }
+// `;
+
+// const Card = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   border: 1px solid gray;
+//   box-shadow: 5px 5px #ccc;
+//   padding: 10px;
+//   margin: 10px;
+
+//   @media ${device.laptop}{
+//     flex-direction: row;
+//   }
+
+// `;
+
+// const App =() => {
+//   return(
+//     <Page>
+//       <Card withPictureOf='cats' />
+//       <Card withPictureOf='coffee' />
+//       <Card withPictureOf='oranges' />
+//     </Page>
+//   )
+// }
+
+
+//export default App;

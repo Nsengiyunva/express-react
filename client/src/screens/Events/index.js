@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import TopNavBar from '../../components/TopNavbar'
-import Footer from'../../components/Footer'
-import OverlayContent from '../../components/OverlayContent';
+import StyledFooter from'../../components/StyledFooter';
 import EventTopContent from '../../components/EventTopContent';
 import EventDescription from '../../components/EventDescription';
 import FormField from '../../components/FormField'
@@ -108,7 +107,7 @@ class Events extends React.Component {
                    </form>
                 </div>
             </div>
-            <Footer />
+            <StyledFooter />
             </>
         )
     }

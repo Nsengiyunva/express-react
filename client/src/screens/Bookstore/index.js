@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar'
-import Footer from '../../components/Footer'
+import StyledFooter from '../../components/StyledFooter'
 
 import CountryLocationsCard from '../../components/CountryLocationsCard'
 import OverlayContent from '../../components/OverlayContent';
@@ -48,7 +48,7 @@ export default () => {
                     })}
                 </div>
             </div>
-            <Footer />
+            <StyledFooter />
         </>
     )
 }

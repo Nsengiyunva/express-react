@@ -1,28 +1,27 @@
 .container {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     width: 100%;
     background-color: #00b040;
-    height: 100px;
+    height: 3rem;
     color: white;
+    justify-content: space-between;
 }
 .top-icons {
     line-height: 24px;
 }
 .searchContainer {
     display: flex;
-    margin: 0px 15px;
-    width: 350px;
+    align-items: center;
+    margin: 0px 1rem;
 }
 .searchContainer .search-field {
     font-family: inherit;
-    border-radius: 8px;
+    border-radius: 2px;
     padding: 2px;
     border: 0px;
     width: 90%;
-    background-color: #ddd;
-    height: 20px;
+    background-color: white;
+    height: auto;
 }
 .links ul {
     display: flex;
@@ -30,6 +29,7 @@
     justify-content: space-between;
     align-items: flex-start;
     list-style-type: none;
+    font-size: .75rem;
 }
 .links li {
     padding: 10px;
@@ -101,6 +101,9 @@
     text-transform: uppercase;
 }
 .cart-top-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: auto;
     margin: 0px 50px;

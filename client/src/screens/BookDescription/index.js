@@ -88,10 +88,10 @@ class BookDescription extends React.Component {
             //         publisher = 'willi books', year =  2020,
             //         chapters = 12, pages = 257 } = this.props;
             // const { selectedBook }= this.state;
-            console.log('keryne')
+            console.log('ker')
 
             if(this.state.loading){
-                return <div>This is loading...</div>
+                return <div>Loading...</div>
             }
             // return (
             //     <>
