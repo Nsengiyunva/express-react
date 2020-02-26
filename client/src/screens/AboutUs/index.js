@@ -6,12 +6,13 @@ import { device } from '../../_utils/devices';
 import { ImageContainer, MainPartnerContainer, LeftBox } from '../Team';
 
 
+
 export default () => {
     return (
         <>
             <TopNavBar/>
             <ImageContainer>
-                <h1>About Us</h1>
+                <h1>About us</h1>
             </ImageContainer>
             <MainPartnerContainer>
                 <div style={{ display: 'flex', flexDirection: 'row'}}>
