@@ -20,7 +20,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/contact' component={Contact} />
-          <Route path='/bookstores' component={BookStore} />
+          <Route path='/bookstore' component={BookStore} />
           <Route path='/events' component={Events} />
           <Route path='/gallery' component={Gallery} />
           <Route path='/organisation' component={Organisation} />

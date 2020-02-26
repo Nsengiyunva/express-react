@@ -8,6 +8,7 @@ import { ListItem } from '../../components/StyledFooter';
 import { departments} from '../../_fixtures'
 import picture from '../../images/chart.png';
 import bgImage from '../../images/13.jpg';
+import { device } from '../../_utils/devices'
 
 const MainPartnerContainer = styled.div`
     display: flex;
@@ -15,6 +16,13 @@ const MainPartnerContainer = styled.div`
     background-color: #ddd;
     justify-content: center;
     padding: 1rem 2rem;
+
+    @media ${device.mobileS}, @media ${device.mobileM}, @media ${device.mobileL} {
+        flex-direction: column;
+    }
+    @media ${device.tablet}, @media ${device.laptop}, @media ${device.desktop}{
+        flex-direction: row;
+    }
 `;
 const LeftBox = styled.div`
     flex: 0.8;
@@ -23,6 +31,10 @@ const LeftBox = styled.div`
     display: flex;
     flex-direction:column;
     padding: 2rem;
+
+    @media ${device.mobileS}, @media ${device.mobileM}, @media ${device.mobileL} {
+        margin-bottom: 1rem;
+    }
 `;
 
 const RightBox = styled.div`
@@ -89,7 +101,7 @@ const ListItemContainer = ( {} ) => (
 
 
 const DeptListItem = ({ phone, whatsapp, email, title, content }) => (
-    <div>
+    <div style={{ margin: '2rem'}}>
         <ListItem department value={title}/>
         <span>
             <p style={{ paddingLeft: '2rem', fontSize:'.85rem', lineHeight: '1.5rem'}}>
