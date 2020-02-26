@@ -1,27 +1,29 @@
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer';
-import StyledFooter from '../../components/StyledFooter';
+import StyledFooter, { ListItem } from '../../components/StyledFooter';
 import { MdCheckCircle,MdEmail, MdLocalPhone } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaMapPin, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { device } from '../../_utils/devices';
+import { partners } from '../../_fixtures'
+import { ImageContainer, MainPartnerContainer, LeftBox } from '../Team'
 
 
-const MainPartnerContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    background-color: #ddd;
-    justify-content: center;
-    padding: 1rem 2rem;
-`;
-const LeftBox = styled.div`
-    flex: 0.8;
-    height: 12rem;
-    background-color: white;
-    display: flex;
-    flex-direction:column;
-    padding: 2rem;
-`;
+// const MainPartnerContainer = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     background-color: #ddd;
+//     justify-content: center;
+//     padding: 1rem 2rem;
+// `;
+// const LeftBox = styled.div`
+//     flex: 0.8;
+//     height: 12rem;
+//     background-color: white;
+//     display: flex;
+//     flex-direction:column;
+//     padding: 2rem;
+// `;
 
 const RightBox = styled.div`
     flex: 3;
@@ -70,6 +72,9 @@ export default () => {
     return (
         <>
             <TopNavBar/>
+            <ImageContainer>
+                <h1>Partners</h1>
+            </ImageContainer>
             <MainPartnerContainer>
                 <LeftBox>
                     <div style={{ padding:'.75rem'}}>
@@ -80,14 +85,18 @@ export default () => {
                     <div style={{ position: 'relative', marginBottom:'2rem'}}>
                         <h2 className="title-bar-high">Partners</h2>
                     </div>
-                    <div style={{ border:'1px solid red'}}>
-                        <PartnerDetailComponent />
-                        {/*<PartnerDetailComponent />
-                        <PartnerDetailComponent />
-                        <PartnerDetailComponent />
-                        <PartnerDetailComponent />
-                        <PartnerDetailComponent />
-                        <PartnerDetailComponent /> */}
+                    <div>
+                        {partners.map( item => {
+                            return (
+                                <div key={item.name} style={{ margin: '2rem'}}>
+                                    <ListItem department value={item.name} />
+                                        <span style={{ lineHeight:'.20rem',paddingLeft:'2rem', display: 'flex', flexDirection:'column' }}>
+                                            <ListItem location color='green' value={item.website} />
+                                            <ListItem email color='green' value={item.email} />
+                                        </span>
+                                 </div>
+                            )
+                        })}
                     </div>
                 </RightBox>
             </MainPartnerContainer>

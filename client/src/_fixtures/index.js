@@ -923,9 +923,44 @@ export const partners = [
         email: "sirwilliamsitfirm@gmail.com"
     },
     {
-        name: "Sir Williams Business Consultancy Firm",
+        name: "Sir Williams business investment and consultancy Firm",
         website: "www.sirwilliamsconsultancyfirm-ug.com",
         email: "sirwilliamsconsultancyfirm@gmail.com"
+    },
+    {
+        name: "Sir Williams Primary School",
+        website: "www.sirwilliamsprimary-sl.com",
+        email: "sirwilliamsprimary@gmail.com"
+    },
+    {
+        name: "Sir Williams Senior Secondary School",
+        website: "www.sirwilliamssecondary-sl.com",
+        email: "sirwilliamssecondary@gmail.com"
+    },
+    {
+        name: "Sir Williams University",
+        website: "www.sirwilliamsuniversity-sl.com",
+        email: "sirwilliamsuniversity@gmail.com"
+    },
+    {
+        name: "Sir Williams Radio Station",
+        website: "www.sirwilliamsradiostation-sl.com",
+        email: "sirwilliamsradio@gmail.com"
+    },
+    {
+        name: "Willihouse Limited",
+        website: "www.willihouselimited-ug.com",
+        email: "willihouse@gmail.com"
+    },
+    {
+        name: "Africa Faith Ministry",
+        website: "www.africafaithministry.com",
+        email: "africafaithministry@gmail.com"
+    },
+    {
+        name: "Sir Williams Foundation",
+        website: "www.sirwilliamsfoundation-sl.com",
+        email: "sirwilliamsfoundations@gmail.com"
     }
 ]
 

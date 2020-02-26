@@ -12,6 +12,7 @@ import Register from './screens/Register';
 import Cart from './screens/Cart';
 import BookDescription from './screens/BookDescription';
 import Login from './screens/Login';
+import AboutUs from './screens/AboutUs';
 
 export default class App extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/contact' component={Contact} />
+          <Route path='/aboutUs' component={AboutUs} />
           <Route path='/bookstore' component={BookStore} />
           <Route path='/events' component={Events} />
           <Route path='/gallery' component={Gallery} />

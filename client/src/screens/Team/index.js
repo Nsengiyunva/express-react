@@ -10,7 +10,7 @@ import picture from '../../images/chart.png';
 import bgImage from '../../images/13.jpg';
 import { device } from '../../_utils/devices'
 
-const MainPartnerContainer = styled.div`
+export const MainPartnerContainer = styled.div`
     display: flex;
     flex-direction: row;
     background-color: #ddd;
@@ -24,7 +24,7 @@ const MainPartnerContainer = styled.div`
         flex-direction: row;
     }
 `;
-const LeftBox = styled.div`
+export const LeftBox = styled.div`
     flex: 0.8;
     height: 4rem;
     background-color: white;
