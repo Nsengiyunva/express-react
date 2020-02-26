@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { MdShoppingCart } from 'react-icons/md';
+import { MdCheckCircle } from 'react-icons/md';
 import {  } from 'react-icons/fa'
 import logo from '../../images/williLogo.jpeg'
 import { MdKeyboardArrowRight,MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
@@ -53,7 +53,7 @@ const IconContainer = styled.div`
     margin-top: 2rem;
 `;
 
-const ListItem = ({ value, insta, facebook, partner, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
+export const ListItem = ({ value, department,color, insta, facebook, partner, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
     <div style={{ display:'flex',flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
         {facebook && <FaFacebookF size={30} color={`green`}/> }
         {twitter && <FaTwitter size={30} color={`green`}/> }
@@ -65,7 +65,8 @@ const ListItem = ({ value, insta, facebook, partner, twitter, whatsapp, linkedin
         {location && <MdLocationOn size={15} color={`green`}/> }
         {youtube && <FaYoutube size={30} color={`green`}/> }
         {partner && <MdKeyboardArrowRight size={20} color={`green`} /> }
-        <p style={{ marginLeft: '.75rem'}}>{value}</p>
+        {department && <MdCheckCircle size={25} color='green'/>}
+        {department ? <strong style={{ marginLeft: '.75rem'}}>{value}</strong>: <p style={{ marginLeft: '.75rem', color: color && color, fontWeight: color && 'bold' }}>{value}</p>}
     </div>
 )
 class StyledFooter extends Component {
@@ -90,7 +91,7 @@ class StyledFooter extends Component {
                 <ItemContainer>
                     <div style={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                         <h3>Partners</h3>
-                        <div style={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <div style={{ display: 'flex',flexDirection: 'column', padding: '0 1rem' }}>
                              <ListItem partner value={`Parental Africa Limited`} />
                              <ListItem partner value={`Williolum Limited`} />
                              <ListItem partner value={`Willifarm Limited`} />

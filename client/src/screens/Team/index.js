@@ -1,91 +1,13 @@
-// import React from 'react';
-// import TopNavBar from '../../components/TopNavbar';
-// import Footer from '../../components/Footer';
-// import TeamMember from '../../components/TeamMember';
-
-// import './TeamStyles.scss';
-// import { team, departments, committees } from '../../_fixtures'
-
-// const DepartmentDetail = ({ title, subtitle, email, committee, issues }) => {
-//     return (
-//         <div className='department-description-container'>
-//             <strong>{title}</strong>
-//             <span>{subtitle}</span>
-//             {!committee && <span>Contact us <a href="javascript:void(0)">{email}</a></span>}
-//             {committee && <span>{issues}</span>}
-//         </div>
-//     )
-// }
-
-// export default () => {
-//     return (
-//         <>
-//         <TopNavBar />
-        
-//         {/* <div className='team-content-container'>
-//             <div className='wrapper'>
-//                 <div>
-//                     <h1 className='title'>Meet our Team</h1>
-//                     <p className='subtitle'>Our team is your team. When
-//                         your mission is to be better, faster
-//                         and smarter,you need thenest people driving
-//                         yout vision forward. You need people who can
-//                         create focussed marketing strategies that 
-//                         align with business golas, who can infuse their
-//                         creativity into groundbreaking campaigns and who
-//                         can analyze data to optimise every tactic 
-//                         along the way. Yon need walker sands. get to know 
-//                         your team below.
-//                     </p>
-//                 </div>
-//                 <div className='owners-container'>
-//                     <h2 className='title'>Owners</h2>
-//                     <div className='owners-row'>
-//                         {team.map( item => {
-//                             return (
-//                                 item.owner && <TeamMember key={item.id} name={item.name} detail={item.detail} />
-//                             )
-//                         })}
-//                     </div>
-//                     <h2 className='title'>Directors</h2>
-//                     <div className='owners-row directors'>
-//                     {team.map( item => {
-//                             return (
-//                                 item.director && <TeamMember key={item.id} name={item.name} detail={item.detail} />
-//                             )
-//                         })}
-//                     </div>
-//                     <h2 className='title'>Departments</h2>
-//                     <div className='owners-row departments'>
-//                         {departments.map( item => {
-//                             return (
-//                                 <DepartmentDetail key={item.name} title={item.name} subtitle={item.description} email={item.emailAddress}/>
-//                             )
-//                         })}
-                        
-//                     </div>
-//                     <h2 className='title'>Internal Committee</h2>
-//                     <div className='owners-row departments'>
-//                         {committees.map( item => {
-//                             return (
-//                                 <DepartmentDetail committee key={item.name} title={item.name} subtitle={item.description} issues={item.issues}/>
-//                             )
-//                         })}
-                        
-//                     </div>
-//                 </div>
-//             </div>
-//         </div> */}
-//         </>
-//     )
-// }
 import React from 'react';
 import TopNavBar from '../../components/TopNavbar';
 import StyledFooter from '../../components/StyledFooter';
 import { MdCheckCircle,MdEmail, MdLocalPhone } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa'
-import styled from 'styled-components'
-import picture from '../../images/organogram.png'
+import styled from 'styled-components';
+import { ListItem } from '../../components/StyledFooter';
+import { departments} from '../../_fixtures'
+import picture from '../../images/chart.png';
+import bgImage from '../../images/13.jpg';
 
 const MainPartnerContainer = styled.div`
     display: flex;
@@ -96,7 +18,7 @@ const MainPartnerContainer = styled.div`
 `;
 const LeftBox = styled.div`
     flex: 0.8;
-    height: 12rem;
+    height: 4rem;
     background-color: white;
     display: flex;
     flex-direction:column;
@@ -115,6 +37,21 @@ const PartnerListItem = styled.div`
     display: flex;
     flex-direction: row;
     width: 25%;
+`;
+
+export const ImageContainer = styled.div`
+    display: flex;
+    color: white;
+    align-items: center;
+    padding-left: 3rem;
+    width: auto;
+    height: 20rem;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('${bgImage}');
+
+    & h1 {
+        color: white;
+        font-size: 2.5rem;
+    }
 `;
 
 const ListDetail = ({ icon, label }) => (
@@ -149,21 +86,37 @@ const ListItemContainer = ( {} ) => (
     </div>
 )
 
+
+
+const DeptListItem = ({ phone, whatsapp, email, title, content }) => (
+    <div>
+        <ListItem department value={title}/>
+        <span>
+            <p style={{ paddingLeft: '2rem', fontSize:'.85rem', lineHeight: '1.5rem'}}>
+                {content}
+            </p>
+        </span>
+        <div style={{ lineHeight: '0.025rem',display: 'flex', flexDirection: 'column',paddingLeft: '2rem', }}>
+            <h4>Contact Us</h4> 
+            <ListItem email value={email} color={`green`}/>
+            {whatsapp && <ListItem whatsapp value={whatsapp}/>}
+            {phone && <ListItem phone value={phone} />}
+        </div>
+    </div>
+)
 export default () => {
     return (
         <>
             <TopNavBar/>
+            <ImageContainer>
+                <h1>Organization Structure</h1>
+            </ImageContainer>
             <MainPartnerContainer>
                 <LeftBox>
                     <div style={{ padding:'.75rem'}}>
-                        <li>Organisational Structure</li>
-                        {/* <div style={{ display: 'flex', flexWrap:'wrap', flexDirection:'row', 
-                                    width: '80%', height: 'auto' }}>
-                            <IconBox facebook/>
-                            <IconBox twitter/>
-                            <IconBox linkedin/>
-                            <IconBox youtube/>
-                        </div> */}
+                        <li style={{ fontSize: '.75rem'}}>
+                            <strong>Organizational Structure</strong>
+                        </li>
                     </div>
                 </LeftBox>
                 <RightBox>
@@ -171,12 +124,20 @@ export default () => {
                         <h3 className="title-bar-high">1. Team</h3>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <img src={picture} style={{}} />
+                        <img src={picture}  />
                     </div>
                     <div>
                         <h3>2. Departments</h3>
-                        <ListItemContainer />
-                        <ListItemContainer />
+                        {departments.map( item => {
+                            return <DeptListItem    
+                                        key={item.name} 
+                                        title={item.name}
+                                        email={item.emailAddress}
+                                        whatsapp={item.whatsappNo}
+                                        phone={item.phone}
+                                        content={item.description}
+                                    />
+                        })}
                     </div>
                 </RightBox>
             </MainPartnerContainer>

@@ -153,13 +153,13 @@ class TopNavbar extends React.Component {
                     <ul style={{ listStyleType: 'none', padding: '2rem'}}>
                         {[ 
                             { name: 'Home', route: '/', }, 
-                            { name: 'About Us', route: '/aboutUs'},
+                            { name: 'About', route: '/aboutUs'},
                             { name: 'Organisation', route: '/organisation'} ,
                             { name: 'Partners', route: '/partners'} ,
                             { name: 'Bookstore', route: '/bookstore'},
                             { name: 'Events', route: '/events'} ,
                             { name: 'Gallery', route: '/gallery'},
-                            { name: 'Contact Us', route: '/contact'} 
+                            { name: 'Contact', route: '/contact'} 
                         ].map( item => (
                             <li style={{ marginBottom:'1rem'}}>
                              <Link style={{ textDecoration: 'none', color: 'white',fontSize: '1.5rem'}} to={item.route}>{item.name}</Link>
@@ -181,14 +181,14 @@ class TopNavbar extends React.Component {
                     <ul>
                         {[ 
                             { name: 'Home', route: '/', }, 
-                            { name: 'About Us', route: '/aboutUs'},
+                            { name: 'About', route: '/aboutUs'},
                             { name: 'Books', route: '/'},
                             { name: 'Organisation', route: '/organisation'} ,
                             { name: 'Partners', route: '/partners'} ,
                             { name: 'Bookstore', route: '/bookstore'},
                             { name: 'Events', route: '/events'} ,
                             { name: 'Gallery', route: '/gallery'},
-                            { name: 'Contact Us', route: '/contact'} 
+                            { name: 'Contact', route: '/contact'} 
                         ].map( item => (
                             <li>
                                 <Link to={item.route}>{item.name}</Link>
