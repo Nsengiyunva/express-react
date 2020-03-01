@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { SlideSection, Pagination, Button, Flex } from '.';
+import { SlideSection, Pagination, RightButton, LeftButton, Flex } from '.';
 import styled from 'styled-components';
 import BookListingItem from '../../components/BookListingItem';
+import left from '../../images/left-arrow.png';
+import right from '../../images/right-arrow.png'
 import { firstBatch, secondBatch, thirdBatch, fourBatch, fiveBatch } from '../../_fixtures';
 
 
@@ -85,10 +87,12 @@ class Slider extends Component {
                         }
                     })}
                 </Flex>
-                <Flex>
-                    {/* <Button onClick={this.previousState}>Prev</Button>
-                    <Button onClick={this.nextState}>Next</Button> */}
-                </Flex>
+                <LeftButton onClick={this.previousState}>
+                    <img src={left} style={{ width: '25px', height: '25px' }}/>
+                </LeftButton>
+                <RightButton onClick={this.nextState}>
+                <img src={right} style={{ width: '25px', height: '25px' }} />
+                </RightButton>
             </>
         )
     }

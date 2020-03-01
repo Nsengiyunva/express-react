@@ -24,14 +24,13 @@ const ratings = ( rate ) => {
 const BookListingItem = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     width: auto;
     height: auto;
+    margin: 1.5rem;
 `;
 
 const ItemContainer = styled.div`
     display: flex;
-    border: 1px solid red;
     width: 12rem;
     height: 12rem;
     justify-content: center;
@@ -50,7 +49,7 @@ const ItemImageDetail = styled.span`
 const Detail = styled.span`
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    justify-content: space-between;
     font-size: ${fonts.mid};
     padding-left: ${fonts.large};
 
@@ -61,8 +60,8 @@ const Detail = styled.span`
 
 const DetailText = ({label, answer}) => (
     <Detail>
-        <span>{label}</span>
-        <span>{answer}</span>
+        <span>{`${label}:`}</span>
+        <strong>{answer}</strong>
     </Detail>
 )
 export default ({ bookId, imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim video games', 
@@ -87,11 +86,11 @@ export default ({ bookId, imgUrl , star = 0, order='', subtitle= '', title= 'Gam
            </ItemContainer>
            <ItemImageDetail>
                {[
-                { label: 'Title', answer: 'Your Mind'}, 
-                { label: 'Author', answer: 'Andrew Williams'},
-                { label: 'Price', answer: '2500'}
+                { label: 'Title', answer: title }, 
+                { label: 'Author', answer: author },
+                { label: 'Price', answer: price }
                ].map( item => {
-                    return <DetailText label={item.label} answer={item.answer}/>
+                    return <DetailText label={item.label} answer={item.answer} />
                })}
            </ItemImageDetail>
         </BookListingItem>

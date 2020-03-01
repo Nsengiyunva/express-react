@@ -48,13 +48,21 @@ export const Pagination = styled.div`
   cursor: pointer;
 `;
 
-export const Button = styled.button`
-  padding: 15px 20px;
-  background-color: orange;
-  color: black;
-  outline: none;
-  margin: 5px;
+export const RightButton = styled.button`
+  position: absolute;
+  top: 20rem;
+  right: 1rem;
   cursor: pointer;
+  outline: none;
+  border: none;
+`;
+
+export const LeftButton = styled.button`
+  position: absolute;
+  top: 20rem;
+  left: 0.5rem;
+  cursor: pointer;
+  outline: none;
   border: none;
 `;
 
@@ -80,7 +88,7 @@ class Home extends React.Component {
         <TopNavBar />
           <ContentItemContainer>
             <Slider />
-            <a onClick={() => this.show()}>Show case</a>
+            {/* <a onClick={() => this.show()}>Show case</a> */}
             <Rodal customStyles={{ backgroundColor:'green', width: '80%', height: '70vh'}} visible={this.state.visible} onClose={() => this.hide()} animation='zoom'>
               <div>Content</div>
             </Rodal> 
