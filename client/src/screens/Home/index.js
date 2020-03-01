@@ -60,7 +60,7 @@ export const RightButton = styled.button`
 export const LeftButton = styled.button`
   position: absolute;
   top: 20rem;
-  left: 0.5rem;
+  left: .5rem;
   cursor: pointer;
   outline: none;
   border: none;
