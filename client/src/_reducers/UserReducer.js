@@ -8,6 +8,8 @@ const initialState = {
 }
 export default ( state = initialState, action ) => {
     switch(action.type){
+        case 'SELECTED_COUNTRY':
+            return { ...state, country: action.country  };
         case SEND_REGISTER_REQUEST:
             return { ...state, loading: true }
         case SEND_REGISTER_SUCCESS:

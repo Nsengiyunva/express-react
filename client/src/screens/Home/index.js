@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer';
 import BookListingItem from '../../components/BookListingItem';
 import styled from 'styled-components';
 import StyledFooter from '../../components/StyledFooter';
 import './HomeStyle.scss';
-import Slider from './Slider'
+import Slider from './Slider';
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css'
+
 
 
 const ContentItemContainer = styled.div`
@@ -67,15 +69,26 @@ export const Flex = styled.div`
 
 class Home extends React.Component {
     state = {
-      loading: false
+      loading: false,
+      visible: false
     }
+    show = () => this.setState({ visible: true });
+    hide = () => this.setState({ visible: false });
     render(){
       return (
         <>
         <TopNavBar />
           <ContentItemContainer>
             <Slider />
+            <a onClick={() => this.show()}>Show case</a>
+            <Rodal customStyles={{ backgroundColor:'green', width: '80%', height: '70vh'}} visible={this.state.visible} onClose={() => this.hide()} animation='zoom'>
+              <div>Content</div>
+            </Rodal> 
           </ContentItemContainer>
+          {/* <button onClick={() => this.show()}>Show</button>
+          <Rodal visible={this.state.visible} onClose={() => this.hide()} animation='zoom'>
+            <div>Content</div>
+          </Rodal> */}
         <StyledFooter />
       </>
       )

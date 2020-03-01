@@ -13,9 +13,7 @@ const BookRow = styled.div`
 const Slide = ({ info: { text, data } }) => (
     <SlideSection>
       <BookRow>
-        {data.map( value => {
-            return <BookListingItem  bookId={value.id} key={value.title} imgUrl={value.imageUrl} title={value.title}/>
-        })}
+        {data.map( ({ id, title, imageUrl}) => <BookListingItem  bookId={id} key={title} imgUrl={imageUrl} title={title}/> )}
       </BookRow>
     </SlideSection>
   ) 
@@ -88,8 +86,8 @@ class Slider extends Component {
                     })}
                 </Flex>
                 <Flex>
-                    <Button onClick={this.previousState}>Prev</Button>
-                    <Button onClick={this.nextState}>Next</Button>
+                    {/* <Button onClick={this.previousState}>Prev</Button>
+                    <Button onClick={this.nextState}>Next</Button> */}
                 </Flex>
             </>
         )

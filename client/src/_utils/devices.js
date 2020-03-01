@@ -25,3 +25,14 @@ export const colors = {
     lightGreen: `#c7eed5`,
     white: `#ffffff`
 }
+
+
+export const fonts = {
+    smaller: `0.25rem`,
+    small: `0.5rem`,
+    mid: `0.75rem`,
+    midLarge: `0.85rem`,
+    standard: `1rem`,
+    large: `1.5rem`,
+    larger: `2rem`
+}

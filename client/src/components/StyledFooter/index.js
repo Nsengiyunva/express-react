@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { MdCheckCircle } from 'react-icons/md';
-import {  } from 'react-icons/fa'
-import logo from '../../images/williLogo.jpeg'
+import logo from '../../images/logos2.png'
 import { MdKeyboardArrowRight,MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
-import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { addresses } from '../../_fixtures';
+import { fonts } from '../../_utils/devices'
+
 
 const Footer = styled.div`
    display: flex;
@@ -15,6 +18,7 @@ const Footer = styled.div`
    background-color: black;
    flex-direction: row;
    font-family: 'Montserrat', sans-serif;
+   font-size: ${fonts.mid};
 
    @media(max-width: 768px){
     flex-wrap: wrap;
@@ -32,9 +36,8 @@ const ItemContainer = styled.div`
     padding: 4rem 0;
 
     @media(max-width: 768px){
-        margin-top: 1.5rem;
+        margin-top: ${fonts.large};
         width: 25rem;
-        heighy: 30rem;
         height: auto;
     }
 `;
@@ -44,13 +47,13 @@ const IconContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 2rem;
+    border-radius: ${fonts.larger};
     width: 3rem;
     height: 3rem;
     border: 1px solid red;
     background-color: white;
-    margin-right: 0.75rem;
-    margin-top: 2rem;
+    margin-right: ${fonts.mid};
+    margin-top: ${fonts.larger};
 `;
 
 export const ListItem = ({ value, department,color, insta, facebook, partner, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
@@ -71,15 +74,19 @@ export const ListItem = ({ value, department,color, insta, facebook, partner, tw
 )
 class StyledFooter extends Component {
     render(){
+        const country = this.props.country ? this.props.country : 'Uganda';
+        let address = addresses.filter( value => {
+            return value.country === country
+        })[0];
         return(
             <Footer>
                 <ItemContainer>
                     <div>
                         <img src={logo} style={{ width: '10rem'}}/>
-                        <p>Course View Tower</p>
-                        <p>Plot 21, Yusuf Lule Road</p>
-                        <p>P.O. Box 11513</p>
-                        <p>Kampala, Uganda </p>
+                        <p>{address.building}</p>
+                        <p>{address.plot}</p>
+                        <p>{address.postOffice}</p>
+                        <p>{address.country}</p>
                         <div style={{ lineHeight: '.5rem', marginTop: '3rem'}}>
                             <ListItem phone value={`+256 200995993/4/5`} />
                             <ListItem whatsapp value={`+256780116681`} />
@@ -155,5 +162,10 @@ class StyledFooter extends Component {
         )
     }
 }
-
-export default StyledFooter;
+const mapStateToProps = state => {
+    return {
+        country: state.user.country
+    }
+}
+// export default StyledFooter;
+export default connect(mapStateToProps, null)(StyledFooter)

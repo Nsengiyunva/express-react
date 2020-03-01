@@ -90,6 +90,11 @@ export const addAReviewFailed = error => ({
     error
 })
 
+export const getCountryRequest = name => ({
+    type: 'SELECTED_COUNTRY',
+    country: name
+})
+
 
 
 
@@ -179,5 +184,11 @@ export const addReview = (payload) => {
         }).then( response => {
             console.log(response )
         })
+    }
+}
+
+export const obtainCountry = country => {
+    return dispatch => {
+        dispatch( getCountryRequest(country) )
     }
 }

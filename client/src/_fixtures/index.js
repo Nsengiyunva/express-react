@@ -38,6 +38,7 @@ import prayer from '../images/prayer.PNG'
 import boss from '../images/boss.PNG'
 import mind from '../images/your_mind.PNG'
 
+
 export const categories = [
     { id: 1, name: 'Wisdom Books'},
     { id: 2, name: 'Kingdom Books'},
@@ -1038,6 +1039,51 @@ export const team = [
     }
 ]
 
+
+export const addresses = [
+    {
+        country: 'Uganda',
+        building: 'Course View Tower',
+        plot: 'Plot 21, Yusuf Lule Road',
+        postOffice: 'P.O. Box 11513',
+        city: 'Kampala'
+    },
+    {
+        country: 'Kenya',
+        building: 'Vienna Court',
+        plot: 'State House Crescent Road',
+        postOffice: null,
+        city: 'Nairobi'
+    },
+    {
+        country: 'Ghana',
+        building: null,
+        plot: '19 Kofi Annan St.Accra',
+        postOffice: null,
+        city: 'Accra'
+    },
+    {
+        country: 'Botswana',
+        building: 'Ground and 1st Floor The Hub',
+        plot: 'iTowers New CBD Gaborone',
+        postOffice: null,
+        city: 'Gaborone'
+    },
+    {
+        country: 'Zambia',
+        building: '1st Floor,Blue House Part of Plot',
+        plot: null,
+        postOffice: '2374 ZM',
+        city: 'Lusaka'
+    },
+    {
+        country: 'Nigeria',
+        building: 'Mulliner Towers',
+        plot: '39 Alfred Rewane Road',
+        postOffice: 'Ikoyi 101233',
+        city: 'Lagos'
+    }
+]
 
 
 

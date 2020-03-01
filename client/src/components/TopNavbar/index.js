@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { MdShoppingCart, MdAccountCircle } from 'react-icons/md';
 import { FaHamburger } from 'react-icons/fa';
-import { categories, booklistings } from '../../_fixtures'
+import { categories, booklistings, addresses } from '../../_fixtures'
 import styled from 'styled-components';
 import { device, colors } from '../../_utils/devices';
 
 import './TopNavbar.css';
 
-import { sendFilterCategory } from '../../_actions'
+import { sendFilterCategory, obtainCountry } from '../../_actions'
 
 
 const TopBarContainer = styled.div`
@@ -204,12 +204,15 @@ class TopNavbar extends React.Component {
                     <MdShoppingCart style={{ paddingLeft: '1rem'}} size={25} color='white' />
                 </CartContainer>
                 <CountryDropdown>
-                    <select onChange={ val => console.log(val.nativeEvent)}>
-                        <option value="Uganda" selected>Uganda</option>
+                    <select onChange={ val => this.props.obtainCountry(val.target.value)}>
+                        {addresses.map( address => (
+                            <option key={address.country} value={address.country}>{address.country}</option>
+                        ))}
+                        {/* <option value="Uganda" selected>Uganda</option>
                         <option value="Kenya">Kenya</option>
                         <option value="Ghana">Ghana</option>
                         <option value="Sierra Leone">Sierra Leone</option>
-                        <option value="Botswana">Botswana</option>
+                        <option value="Botswana">Botswana</option> */}
                     </select>
                 </CountryDropdown>
             </TopBarContainer>
@@ -224,7 +227,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        addFilter: (term, books) => dispatch( sendFilterCategory(term, books) )
+        addFilter: (term, books) => dispatch( sendFilterCategory(term, books) ),
+        obtainCountry: country => dispatch( obtainCountry(country) )
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TopNavbar);
