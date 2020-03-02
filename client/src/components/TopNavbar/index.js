@@ -208,11 +208,6 @@ class TopNavbar extends React.Component {
                         {addresses.map( address => (
                             <option key={address.country} value={address.country}>{address.country}</option>
                         ))}
-                        {/* <option value="Uganda" selected>Uganda</option>
-                        <option value="Kenya">Kenya</option>
-                        <option value="Ghana">Ghana</option>
-                        <option value="Sierra Leone">Sierra Leone</option>
-                        <option value="Botswana">Botswana</option> */}
                     </select>
                 </CountryDropdown>
             </TopBarContainer>

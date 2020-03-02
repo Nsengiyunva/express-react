@@ -96,7 +96,10 @@ class BookDescription extends React.Component {
         })
     }
     sendToCart = (payload) => {
-        this.props.addToCart( payload, () => {}, ()=> {})
+        this.props.addToCart( payload, () => {
+        }, ()=> {});
+        this.props.history.push('/cart')
+        
     }
     placeOrder = () => {
         if(this.props.books && this.props.books.length > 0){
@@ -135,8 +138,8 @@ class BookDescription extends React.Component {
             //         title = 'Dont Make Me, Think', isbn = 'xxx', 
             //         publisher = 'willi books', year =  2020,
             //         chapters = 12, pages = 257 } = this.props;
-            const { selectedBook: { id, imageUrl, rating, title,author, publisher,  marketer, language, numberOfChapters, numberOfPages } }= this.state;
-            // console.log('book', selectedBook );
+            const { selectedBook: { id, imageUrl, rating, title,author, publisher,  marketer, language, numberOfChapters, numberOfPages, price } }= this.state;
+
             if(this.state.loading){
                 return <div>Loading...</div>
             }
@@ -181,10 +184,10 @@ class BookDescription extends React.Component {
                                  </CartButtonsContainer>
                                 <CartButtonsContainer>
                                         <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
-                                        id: 1, 
-                                        title: 'test', 
-                                        price: '350', 
-                                        author: 'Andrew' })}/>
+                                        id, 
+                                        title, 
+                                        price, 
+                                        author })}/>
                                     <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
                                 </CartButtonsContainer>
                                     

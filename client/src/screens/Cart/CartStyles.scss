@@ -1,11 +1,10 @@
 .cart-items-container {
-    // position: relative;
     display: flex;
     flex-direction: column;
     width:inherit;
-    height: 75vh;
-    // border: 1px solid red;
-    overflow-y: scroll;
+    height: auto;
+    overflow-y: hidden;
+    height: 25rem;
 }
 
 .place-order-btn {
