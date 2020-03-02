@@ -1082,6 +1082,13 @@ export const addresses = [
         plot: '39 Alfred Rewane Road',
         postOffice: 'Ikoyi 101233',
         city: 'Lagos'
+    },
+    {
+        country: 'Sierra Leone',
+        building: null,
+        plot: 'Wilkinson Road',
+        postOffice: null,
+        city: 'Freetown'
     }
 ]
 

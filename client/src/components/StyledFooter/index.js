@@ -6,7 +6,7 @@ import { MdCheckCircle } from 'react-icons/md';
 import logo from '../../images/logos2.png'
 import { MdKeyboardArrowRight,MdLocationOn, MdEmail, MdPhone } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa';
-import { addresses } from '../../_fixtures';
+import { addresses, stores } from '../../_fixtures';
 import { fonts } from '../../_utils/devices'
 
 
@@ -115,10 +115,15 @@ class StyledFooter extends Component {
                 </ItemContainer>
                 <ItemContainer>
                 <div style={{ display: 'flex',flexDirection: 'column'}}>
-                        <h3>About Us</h3>
+                        <h3>BookStores</h3>
                         <div>
                             <ul style={{ lineHeight: '2rem', paddingLeft: 0, listStyleType: 'none' }}>
-                                <li style={{ paddingBottom: '.75rem'}}>
+                                {stores.map( item => {
+                                    return <li style={{ paddingBottom: '.75rem'}}>
+                                        <span>{item.country}</span>
+                                    </li>
+                                })}
+                                {/* <li style={{ paddingBottom: '.75rem'}}>
                                     <Link style={{ color: 'white', textDecoration: 'none'}} to='/gallery'>Gallery</Link>
                                 </li>
                                 <li style={{ paddingBottom: '.75rem'}}>
@@ -129,7 +134,7 @@ class StyledFooter extends Component {
                                 </li>
                                 <li style={{ paddingBottom: '.75rem'}}>
                                     <Link style={{ color: 'white', textDecoration: 'none' }} to='/organisation'>Organisation</Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
