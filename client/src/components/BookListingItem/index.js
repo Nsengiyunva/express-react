@@ -3,8 +3,6 @@ import './BookListingItem.scss';
 import { Link } from 'react-router-dom'
 import { MdGrade } from "react-icons/md";
 import styled from 'styled-components';
-// import picture from '../../images/book1.jpg'
-// import { ListItem } from '../StyledFooter';
 import { fonts } from '../../_utils/devices'
 
 const ratings = ( rate ) => {
@@ -26,7 +24,7 @@ const BookListingItem = styled.div`
     flex-direction: column;
     width: auto;
     height: auto;
-    margin: 1.5rem;
+    margin: ${fonts.large};
 `;
 
 const ItemContainer = styled.div`
@@ -67,32 +65,21 @@ const DetailText = ({label, answer}) => (
 export default ({ bookId, imgUrl , star = 0, order='', subtitle= '', title= 'Game Anim video games', 
                   author = 'Andrew Williams', price = 'UGX 30,000/=', year = '2019' }) => {
     return (
-        // <div className='image-container'>
-        //     <Link to={`book-description/${bookId}`}>
-        //         {/* <img src={imgUrl} className='list-item-image' alt={imgUrl} /> */}
-        //         <img src={picture} className='list-item-image' />
-        //         <div className='banner'><strong>NEW</strong></div>
-        //         <div className='home-image-details'>
-        //             <span><strong>{`Title: ${title}`}</strong></span>
-        //             <span><strong>{`Author: ${author}`}</strong></span>
-        //             <span><strong>{`Price: ${price}`}</strong></span>
-        //             {ratings(star)}
-        //         </div>
-        //     </Link>
-        // </div>
-        <BookListingItem>
-           <ItemContainer>
-               <Image src={imgUrl}/>
-           </ItemContainer>
-           <ItemImageDetail>
-               {[
-                { label: 'Title', answer: title }, 
-                { label: 'Author', answer: author },
-                { label: 'Price', answer: price }
-               ].map( item => {
-                    return <DetailText label={item.label} answer={item.answer} />
-               })}
-           </ItemImageDetail>
-        </BookListingItem>
+          <BookListingItem>
+                <Link to={`book-description/${bookId}`} style={{ cursor: 'pointer', textDecoration: 'none', color: 'black'}}>
+                    <ItemContainer>
+                        <Image src={imgUrl}/>
+                    </ItemContainer>
+                    <ItemImageDetail>
+                        {[
+                            { label: 'Title', answer: title }, 
+                            { label: 'Author', answer: author },
+                            { label: 'Price', answer: price }
+                        ].map( ({ label, answer }) => {
+                                return <DetailText label={label} answer={answer} />
+                        })}
+                    </ItemImageDetail>
+                </Link>
+          </BookListingItem>
     )
 }

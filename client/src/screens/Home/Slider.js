@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import { SlideSection, Pagination, RightButton, LeftButton, Flex } from '.';
 import styled from 'styled-components';
 import BookListingItem from '../../components/BookListingItem';
@@ -15,7 +16,9 @@ const BookRow = styled.div`
 const Slide = ({ info: { text, data } }) => (
     <SlideSection>
       <BookRow>
-        {data.map( ({ id, title, imageUrl}) => <BookListingItem  bookId={id} key={title} imgUrl={imageUrl} title={title}/> )}
+        {data.map( ({ id, title, imageUrl}) => {
+            return <BookListingItem  bookId={id} key={title} imgUrl={imageUrl} title={title}/>
+         } )}
       </BookRow>
     </SlideSection>
   ) 

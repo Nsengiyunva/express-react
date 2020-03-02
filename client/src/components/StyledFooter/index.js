@@ -56,11 +56,11 @@ const IconContainer = styled.div`
     margin-top: ${fonts.larger};
 `;
 
-export const ListItem = ({ value, department,color, insta, facebook, partner, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
+export const ListItem = ({ bookKey, bookDetail, value, department,color, insta, facebook, partner, twitter, whatsapp, linkedin, email, phone, location, youtube }) => (
     <div style={{ display:'flex',flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
         {facebook && <FaFacebookF size={30} color={`green`}/> }
         {twitter && <FaTwitter size={30} color={`green`}/> }
-        { insta && <FaInstagram size={30} color='green' /> }
+        {insta && <FaInstagram size={30} color='green' /> }
         {whatsapp && <FaWhatsapp size={15} color={`green`}/> }
         {phone && <MdPhone size={15} color={`green`}/> }
         {linkedin && <FaLinkedinIn size={30} color={`green`}/> }
@@ -68,8 +68,10 @@ export const ListItem = ({ value, department,color, insta, facebook, partner, tw
         {location && <MdLocationOn size={15} color={`green`}/> }
         {youtube && <FaYoutube size={30} color={`green`}/> }
         {partner && <MdKeyboardArrowRight size={20} color={`green`} /> }
+        {bookDetail && <strong style={{ fontSize: '.85rem'}}>{`${bookKey}:`}</strong>}
         {department && <MdCheckCircle size={25} color='green'/>}
-        {department ? <strong style={{ marginLeft: '.75rem'}}>{value}</strong>: <p style={{ marginLeft: '.75rem', color: color && color, fontWeight: color && 'bold' }}>{value}</p>}
+        {department ? <strong style={{ marginLeft: '.75rem'}}>{value}</strong>: 
+            <p style={{ fontSize: bookDetail && '.85rem', marginLeft: '.75rem', color: color && color, fontWeight: color && 'bold' }}>{value}</p>}
     </div>
 )
 class StyledFooter extends Component {

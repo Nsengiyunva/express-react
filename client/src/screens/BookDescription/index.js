@@ -1,17 +1,63 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+// import ReactZoomify from '"react-zoomify';
 
 import TopNavBar from '../../components/TopNavbar';
-import Footer from '../../components/Footer'
+import StyledFooter, { ListItem }  from '../../components/StyledFooter';
 import ProductDetailsItem from '../../components/ProductDetailsItem';
 import ProfileThumbnail from '../../components/ProfileThumbnail';
-import FormField from '../../components/FormField'
+import FormField from '../../components/FormField';
+
 
 import './BookDescriptionStyles.css'
 import mind from '../../images/your_mind.PNG'
-import { booklistings } from '../../_fixtures'
+import playstore from '../../images/googleplay.png';
+import apple from '../../images/appstore.png'
+import { firstBatch, secondBatch, thirdBatch, fourBatch, fiveBatch } from '../../_fixtures'
 
-import { addToCart, sendOrderRequest,addReview, getAllReviews } from '../../_actions'
+import { addToCart, sendOrderRequest,addReview, getAllReviews } from '../../_actions';
+
+const ContentItemContainer = styled.div`
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    
+`;
+const BookContainer = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 1rem 0rem;
+    width: 50%;    
+`; 
+
+const ImageContainer = styled.span`
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: flex-start;
+`;
+const Image= styled.img`
+    width: 100%;
+    object-fit: contain;
+`;
+
+const BookDetails = styled.div`
+    width: 45%;
+    display: flex;
+    padding: 0 2rem;
+    flex-direction: column;
+    line-height: .25rem;
+`;
+
+const CartButtonsContainer = styled.span`
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+`;
 
 
 const ReviewItem = () => {
@@ -39,9 +85,11 @@ class BookDescription extends React.Component {
     }
     componentDidMount(){
         const { match: { params } } = this.props;
-        let book = booklistings.filter( value => {
+        const booklistings = [ ...[],firstBatch, secondBatch, thirdBatch, fourBatch, fiveBatch ];
+        // console.log( booklistings.flat() );
+        let book = booklistings.flat().filter( value => {
          return parseInt(value.id) === parseInt(params.bookId)
-        });
+        })[0];
         this.setState({
             loading: false,
             selectedBook: book
@@ -87,12 +135,65 @@ class BookDescription extends React.Component {
             //         title = 'Dont Make Me, Think', isbn = 'xxx', 
             //         publisher = 'willi books', year =  2020,
             //         chapters = 12, pages = 257 } = this.props;
-            // const { selectedBook }= this.state;
-            console.log('ker')
-
+            const { selectedBook: { id, imageUrl, rating, title,author, publisher,  marketer, language, numberOfChapters, numberOfPages } }= this.state;
+            // console.log('book', selectedBook );
             if(this.state.loading){
                 return <div>Loading...</div>
             }
+            return (
+                <>
+                  <TopNavBar />
+                    <ContentItemContainer>
+                        <BookContainer>
+                            <ImageContainer>
+                                <Image src={imageUrl}/>
+                                {/* <ReactZoomify
+                                    width={300} 
+                                    src={imageUrl}
+                                    s={150} 
+                                    magnification={4}
+                                    zoomedImgLeft={500}
+                                    zoomedImgTop={100}
+                                /> */}
+                            </ImageContainer>
+                            <BookDetails>
+                                <div style={{ marginLeft: '0.4rem'}}>
+                                <h3>{title}</h3>
+                                {[ { key: 'Author', value: author }, 
+                                   { key: 'ISBN', value: '123'},
+                                   { key: 'Publisher', value: publisher },
+                                   { key: 'Price', value: 'UGX 30,0000'},
+                                   { key: 'Marketer', value: marketer},
+                                   { key: 'Language', value: language },
+                                   { key: 'Chapters', value: numberOfChapters },
+                                   { key: 'Pages', value: numberOfPages } 
+                                ].map( item => {
+                                    return <ListItem key={item.key} bookDetail bookKey={item.key} value={item.value} color='#666'/>
+                                })}
+                                </div>
+                                 <CartButtonsContainer>
+                                     <button style={{ outline: 'none', border: 'none' }} onClick={() => alert('test')}>
+                                         <img src={playstore} style={{ width: '8rem'}}/>
+                                    </button>
+                                    <button style={{ outline: 'none', border: 'none' }}>
+                                        <img src={apple} style={{ width: '8rem'}} />
+                                    </button>
+                                 </CartButtonsContainer>
+                                <CartButtonsContainer>
+                                        <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
+                                        id: 1, 
+                                        title: 'test', 
+                                        price: '350', 
+                                        author: 'Andrew' })}/>
+                                    <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
+                                </CartButtonsContainer>
+                                    
+                            </BookDetails>
+                        </BookContainer>
+                    </ContentItemContainer>
+                  <StyledFooter />  
+                </>
+            )
             // return (
             //     <>
             //         <TopNavBar />

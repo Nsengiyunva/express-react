@@ -12,7 +12,7 @@ import 'rodal/lib/rodal.css'
 
 
 
-const ContentItemContainer = styled.div`
+export const ContentItemContainer = styled.div`
   display: flex;
   flexDirection: row;
   flex-wrap: wrap;
@@ -24,19 +24,6 @@ export const SlideSection = styled.div`
   position: relative;
   display: flex;
   padding: 0 2rem;
-  
-  ::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top:0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    background-color: transparent;
-  }
 `;
 
 export const Pagination = styled.div`
