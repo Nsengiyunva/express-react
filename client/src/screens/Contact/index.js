@@ -13,12 +13,12 @@ const socialIcon = ( icon, size ) => {
     let iconSize = size === 'small' ? 15 : 30;
 
     return (
-        <div className='icon-container' style={{ 
+        <div className='icon-container' style={{
                     width: size === 'small' && '25px',
-                    height: size === 'small' && '25px', 
+                    height: size === 'small' && '25px',
                     marginRight: size === 'small' && '2px',
-                    padding: size === 'small' && '1px', 
-                    backgroundColor: size === 'small' && 'white', 
+                    padding: size === 'small' && '1px',
+                    backgroundColor: size === 'small' && 'white',
                     borderRadius: size === 'small' && '20px',
                     marginTop: size === 'small' && '10px',
                    }}>
@@ -49,7 +49,7 @@ export const socialMediaListing = (size) => {
             {socialIcon('whatsapp', size )}
             {socialIcon('linkedin', size )}
             {socialIcon('youtube', size )}
-        </div> 
+        </div>
     )
 }
 export default () => {
@@ -60,7 +60,7 @@ export default () => {
                 <div className='contact-title-container'>
                     <h1>Contact Us</h1>
                     <h2>Contact Us</h2>
-                </div> 
+                </div>
                 <div className='contact-content-wrapper'>
                     <div className='contact-details'>
                         <div className='detail'>
@@ -72,8 +72,8 @@ export default () => {
                         <div className='detail'>
                             <h2>Business Hours</h2>
                             <p>Monday-Friday: 8am to 6pm</p>
-                            <p>Saturday: closed</p>
-                            <p>Sunday: closed</p>
+                            <p>Saturday: 9am to 2pm</p>
+                            <p>Sunday: Closed</p>
                         </div>
                         <div className='detail'>
                             <h2>Email</h2>
@@ -81,7 +81,7 @@ export default () => {
                         </div>
                         <div className='detail'>
                             <h2>Phone</h2>
-                            <p className='subtitle'>+256 7088343983</p>
+                            <p className='subtitle'>+256 200 995 993/4/5</p>
                         </div>
                     </div>
                     <div className='contact-form'>
@@ -97,7 +97,6 @@ export default () => {
                         </form>
                     </div>
                 </div>
-                 {socialMediaListing()}
             </div>
             <StyledFooter />
         </>

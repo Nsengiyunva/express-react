@@ -4,7 +4,7 @@ import marriage from '../images/marriage.PNG'
 import sin from '../images/sin.PNG'
 import growth from '../images/growth.PNG'
 import laws_kingdom from '../images/sin.PNG'
-import confidence from '../images/confidence.PNG' 
+import confidence from '../images/confidence.PNG'
 import strong_courageous from '../images/strong_courageous.PNG'
 import devil from '../images/devil.PNG'
 import leaders from '../images/leaders.PNG'
@@ -745,7 +745,7 @@ export const stores = [
     },
     {
         country: 'Zambia',
-        locations: [ 'Lusaka', 'Kitwe', 'Ndola', 'Kabwe', 'Tamale' ]
+        locations: [ 'Lusaka', 'Kitwe', 'Ndola', 'Kabwe' ]
     },
     {
         country: 'Nigeria',
@@ -895,37 +895,32 @@ export const partners = [
     },
     {
         name: "Willidocument Limited",
-        website: "www.willidocument-ug.com",
+        website: "www.willidocument-ug.org",
         email: "willidocument@gmail.com"
     },
     {
         name: "Willihead Limited",
-        website: "www.willihead-ug.com",
+        website: "www.willihead-ug.org",
         email: "willihead@gmail.com"
     },
     {
         name: "Willifarm Limited",
-        website: "www.willifarm-ug.com",
+        website: "www.willifarm-ug.org",
         email: "willifarm@gmail.com"
     },
     {
-        name: "Sir Williams Law Firm",
-        website: "www.sirwilliamslawyers-ug.com",
-        email: "sirwilliamslawyers@gmail.com"
-    },
-    {
         name: "Sir Williams Accounting Firm",
-        website: "www.sirwilliamsaccountants-ug.com",
+        website: "www.sirwilliamsaccountants-ug.org",
         email: "sirwilliamsaccountants@gmail.com"
     },
     {
         name: "Sir Williams IT Firm",
-        website: "www.sirwilliamsitfirm-ug.com",
+        website: "www.sirwilliamsitfirm-ug.org",
         email: "sirwilliamsitfirm@gmail.com"
     },
     {
         name: "Sir Williams business investment and consultancy Firm",
-        website: "www.sirwilliamsconsultancyfirm-ug.com",
+        website: "www.sirwilliamsconsultancyfirm-ug.org",
         email: "sirwilliamsconsultancyfirm@gmail.com"
     },
     {
@@ -950,17 +945,17 @@ export const partners = [
     },
     {
         name: "Willihouse Limited",
-        website: "www.willihouselimited-ug.com",
+        website: "www.willihouselimited-ug.org",
         email: "willihouse@gmail.com"
     },
     {
         name: "Africa Faith Ministry",
-        website: "www.africafaithministry.com",
+        website: "www.africafaithministry.org",
         email: "africafaithministry@gmail.com"
     },
     {
         name: "Sir Williams Foundation",
-        website: "www.sirwilliamsfoundation-sl.com",
+        website: "www.sirwilliamsfoundation-sl.org",
         email: "sirwilliamsfoundations@gmail.com"
     }
 ]
@@ -971,7 +966,7 @@ export const eventsData = [
     {
         title: 'Authors Hour',
         description: "Attend our author's day event. This event is held once in a year at our business locations across Africa; 18:00 to 20:00 GMT last Saturday of January every year. Come and meet with Andrew Williams and other African Authors face to face as they talk about their passions, motivations and stories.",
-    
+
     },
     {
         title: 'New book launching',
@@ -1091,6 +1086,3 @@ export const addresses = [
         city: 'Freetown'
     }
 ]
-
-
-

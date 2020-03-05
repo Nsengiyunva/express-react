@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import { device } from '../../_utils/devices';
 import { ImageContainer, MainPartnerContainer, LeftBox } from '../Team';
 
-const Title = styled.span`
+export const Title = styled.span`
   font-size: ${props => `${props.size}rem`};
   font-weight: bold;
   color: ${props => props.color};
   margin-bottom: ${props => props.belowSpaced && `0.5rem`}
 `;
 
-const Titled = styled.span`
+export const Titled = styled.span`
   position: relative;
   font-size: ${props => `${props.size}rem`};
   font-weight: bold;

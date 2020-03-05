@@ -9,6 +9,7 @@ import { departments} from '../../_fixtures'
 import picture from '../../images/chart.png';
 import bgImage from '../../images/13.jpg';
 import { device } from '../../_utils/devices'
+import { Title } from '../AboutUs';
 
 export const MainPartnerContainer = styled.div`
     display: flex;
@@ -121,7 +122,7 @@ export default () => {
         <>
             <TopNavBar/>
             <ImageContainer>
-                <h1>Organization Structure</h1>
+                <Title size={4} color='white'>Organisation Structure</Title>
             </ImageContainer>
             <MainPartnerContainer>
                 <LeftBox>

@@ -6,7 +6,8 @@ import { FaFacebookF, FaTwitter, FaMapPin, FaLinkedinIn, FaYoutube } from 'react
 import styled from 'styled-components';
 import { device } from '../../_utils/devices';
 import { partners } from '../../_fixtures'
-import { ImageContainer, MainPartnerContainer, LeftBox } from '../Team'
+import { ImageContainer, MainPartnerContainer, LeftBox } from '../Team';
+import { Title } from '../AboutUs';
 
 
 // const MainPartnerContainer = styled.div`
@@ -73,7 +74,7 @@ export default () => {
         <>
             <TopNavBar/>
             <ImageContainer>
-                <h1>Partners</h1>
+              <Title size={4} color='white'>Partners</Title>
             </ImageContainer>
             <MainPartnerContainer notJustified={false}>
                 <LeftBox>

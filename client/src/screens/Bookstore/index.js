@@ -4,6 +4,7 @@ import StyledFooter from '../../components/StyledFooter'
 
 import CountryLocationsCard from '../../components/CountryLocationsCard'
 import OverlayContent from '../../components/OverlayContent';
+import { Title } from '../AboutUs'
 
 import { stores } from '../../_fixtures';
 import map from '../../images/africa_map.png';
@@ -17,20 +18,20 @@ export default () => {
                 <div className='image-header-container'>
                 <img src={map} alt='header-image' className='map-top-image'/>
                 <div className="left-content-container">
-                    <h1 className='headerText'>Willibooks Store</h1>
-                    <div className='tag'> 
-                        <span>is available</span>
+                    <Title size={4} color='white'>WilliBook Stores</Title>
+                    <div className='tag'>
+                        <span>are available</span>
                         <span>in these countries</span>
                     </div>
                     <div className="lists-locations">
                         <ul className="first-column">
                             <li>Uganda</li>
                             <li>Zambia</li>
-                        </ul> 
+                        </ul>
                         <ul className="second-column">
                             <li>Kenya</li>
                             <li>Malawi</li>
-                        </ul> 
+                        </ul>
                         <ul className="second-column">
                             <li>Ghana</li>
                             <li>Nigeria</li>
@@ -38,7 +39,7 @@ export default () => {
                         <ul className="first-column">
                             <li>Bostwana</li>
                             <li>Sierra Leone</li>
-                        </ul> 
+                        </ul>
                     </div>
                 </div>
                 </div>
