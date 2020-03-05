@@ -75,7 +75,7 @@ export default () => {
             <ImageContainer>
                 <h1>Partners</h1>
             </ImageContainer>
-            <MainPartnerContainer>
+            <MainPartnerContainer notJustified={false}>
                 <LeftBox>
                     <div style={{ padding:'.75rem'}}>
                         <h5>Partners</h5>

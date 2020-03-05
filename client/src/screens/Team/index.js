@@ -12,9 +12,9 @@ import { device } from '../../_utils/devices'
 
 export const MainPartnerContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: ${props => props.column ? `column` : `row`};
     background-color: #ddd;
-    justify-content: center;
+    justify-content: ${props => props.notJustified ? `flex-start` : `center`};
     padding: 1rem 2rem;
 
     @media ${device.mobileS}, @media ${device.mobileM}, @media ${device.mobileL} {
@@ -109,7 +109,7 @@ const DeptListItem = ({ phone, whatsapp, email, title, content }) => (
             </p>
         </span>
         <div style={{ lineHeight: '0.025rem',display: 'flex', flexDirection: 'column',paddingLeft: '2rem', }}>
-            <h4>Contact Us</h4> 
+            <h4>Contact Us</h4>
             <ListItem email value={email} color={`green`}/>
             {whatsapp && <ListItem whatsapp value={whatsapp}/>}
             {phone && <ListItem phone value={phone} />}
@@ -141,8 +141,8 @@ export default () => {
                     <div>
                         <h3>2. Departments</h3>
                         {departments.map( item => {
-                            return <DeptListItem    
-                                        key={item.name} 
+                            return <DeptListItem
+                                        key={item.name}
                                         title={item.name}
                                         email={item.emailAddress}
                                         whatsapp={item.whatsappNo}

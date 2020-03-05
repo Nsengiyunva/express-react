@@ -70,7 +70,7 @@ export const ListItem = ({ bookKey, bookDetail, value, department,color, insta, 
         {partner && <MdKeyboardArrowRight size={20} color={`green`} /> }
         {bookDetail && <strong style={{ fontSize: '.85rem'}}>{`${bookKey}:`}</strong>}
         {department && <MdCheckCircle size={25} color='green'/>}
-        {department ? <strong style={{ marginLeft: '.75rem'}}>{value}</strong>: 
+        {department ? <strong style={{ marginLeft: '.75rem'}}>{value}</strong>:
             <p style={{ fontSize: bookDetail && '.85rem', marginLeft: '.75rem', color: color && color, fontWeight: color && 'bold' }}>{value}</p>}
     </div>
 )
@@ -93,8 +93,8 @@ class StyledFooter extends Component {
                             <ListItem phone value={`+256 200995993/4/5`} />
                             <ListItem whatsapp value={`+256780116681`} />
                             <ListItem email value={`willibookslimited@gmail.com`} />
-                            <ListItem location value={`www.willibookslimited.com`} />
-                        </div>   
+                            <ListItem location value={`www.willibookslimited.org`} />
+                        </div>
                     </div>
                 </ItemContainer>
                 <ItemContainer>
@@ -102,12 +102,8 @@ class StyledFooter extends Component {
                         <h3>Partners</h3>
                         <div style={{ display: 'flex',flexDirection: 'column', padding: '0 1rem' }}>
                              <ListItem partner value={`Parental Africa Limited`} />
-                             <ListItem partner value={`Williolum Limited`} />
                              <ListItem partner value={`Willifarm Limited`} />
                              <ListItem partner value={`Willihead Limited`} />
-                             <ListItem partner value={`Willidocument Limited`} />
-                             <ListItem partner value={`Sir Williams Law firm`} />
-                             <ListItem partner value={`Sir Williams Accounting firm`} />
                              <ListItem partner value={`Sir Williams Business Consultancy firm`} />
                              <ListItem partner value={`Sir Williams IT firm`} />
                         </div>
