@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { MdShoppingCart, MdAccountCircle } from 'react-icons/md';
 import { FaHamburger } from 'react-icons/fa';
+import { SlideDown } from 'react-slidedown';
 import { categories, booklistings, addresses } from '../../_fixtures'
 import styled from 'styled-components';
 import { device, colors } from '../../_utils/devices';
+import 'react-slidedown/lib/slidedown.css';
 
 import './TopNavbar.css';
 
@@ -34,7 +36,7 @@ const MenuList = styled.div`
 
         & li {
             padding-left: 1rem;
-            
+
             & a {
                 font-size: .85rem;
                 font-weight: bold;
@@ -52,7 +54,7 @@ const MenuList = styled.div`
         }
         @media ${device.mobileL} {
         }
-       
+
     }
 `;
 
@@ -81,7 +83,7 @@ const SearchField = styled.div`
     @media ${device.tablet}, @media ${device.laptop} {
         display: block;
     }
-   
+
 `;
 
 const CartContainer = styled.div`
@@ -105,7 +107,7 @@ const CountryDropdown = styled.div`
     display: flex;
     border: none;
     outline: none;
-    
+
     & select {
         font-family: inherit;
         padding: .25rem;
@@ -120,7 +122,8 @@ const logout =() => {
 class TopNavbar extends React.Component {
     state = {
         isVisible: false,
-        showMenu: false
+        showMenu: false,
+        showDrop: false
     }
     showDropDown = () => {
         this.setState({ isVisible: !this.state.isVisible })
@@ -141,6 +144,10 @@ class TopNavbar extends React.Component {
                 </div>
         )
     }
+    renderMenuDropdown = () => (
+
+      this.setState({ showDrop: true })
+    )
     render(){
         return (
             <>
@@ -151,23 +158,23 @@ class TopNavbar extends React.Component {
                 </div>
                 <div style={{ display: 'flex',flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
                     <ul style={{ listStyleType: 'none', padding: '2rem'}}>
-                        {[ 
-                            { name: 'Home', route: '/', }, 
+                        {[
+                            { name: 'Home', route: '/', },
                             { name: 'About', route: '/aboutUs'},
                             { name: 'Organisation', route: '/organisation'} ,
                             { name: 'Partners', route: '/partners'} ,
                             { name: 'Bookstore', route: '/bookstore'},
                             { name: 'Events', route: '/events'} ,
                             { name: 'Gallery', route: '/gallery'},
-                            { name: 'Contact', route: '/contact'} 
+                            { name: 'Contact', route: '/contact'}
                         ].map( item => (
                             <li style={{ marginBottom:'1rem'}}>
                              <Link style={{ textDecoration: 'none', color: 'white',fontSize: '1.5rem'}} to={item.route}>{item.name}</Link>
                             </li>
                             )
                         )}
-                        
-                        
+
+
                     </ul>
                 </div>
             </div>
@@ -178,22 +185,32 @@ class TopNavbar extends React.Component {
                             <FaHamburger size={25} color={`white`} />
                         </a>
                     </HamburgerMenu>
-                    <ul>
-                        {[ 
-                            { name: 'Home', route: '/', }, 
-                            { name: 'About', route: '/aboutUs'},
+                    <ul style={{position: 'relative'}}>
+                      <div style={{ position: 'absolute', top: 10, left: 50,backgroundColor: 'red', height: '0px', width: '0px'}}>Menu</div>
+                        {[
+                            { name: 'Home', route: '/', },
+                            { name: 'About ', route: '/about'},
                             { name: 'Books', route: '/'},
                             { name: 'Organisation', route: '/organisation'} ,
                             { name: 'Partners', route: '/partners'} ,
                             { name: 'Bookstore', route: '/bookstore'},
                             { name: 'Events', route: '/events'} ,
                             { name: 'Gallery', route: '/gallery'},
-                            { name: 'Contact', route: '/contact'} 
-                        ].map( item => (
-                            <li>
-                                <Link to={item.route}>{item.name}</Link>
-                            </li>
-                        ))}
+                            { name: 'Contact', route: '/contact'}
+                        ].map( item => {
+                            if(item.name === 'Books'){
+                              return (
+                                <li>
+                                    <Link onClick={() => this.renderMenuDropdown()}>{item.name}</Link>
+                                </li>
+                              )
+                            }
+                            return (
+                              <li>
+                                  <Link to={item.route}>{item.name}</Link>
+                              </li>
+                            )
+                        })}
                     </ul>
                 </MenuList>
                 <SearchField>
