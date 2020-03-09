@@ -21,7 +21,7 @@ const Slide = ({ info: { text, data } }) => (
          } )}
       </BookRow>
     </SlideSection>
-  ) 
+  )
 class Slider extends Component {
     constructor(props){
         super( props );
@@ -29,7 +29,7 @@ class Slider extends Component {
             slide: [
                 {
                     id: "1",
-                    text: "Image One Slider",
+                    text: "image one slider",
                     data: firstBatch
                 },
                 {

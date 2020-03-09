@@ -17,7 +17,7 @@ mongoose.connection.once('open', function(){
     console.log('Error is: ', error);
 });
 const corsOptions = {
-    origin: "*",  
+    origin: "*",
     optionsSuccessStatus: 200
 };
 
@@ -116,13 +116,13 @@ app.post('/api/login', cors(), async( req, res, next ) => {
 app.post('/api/addAReview', cors(), async( req, res, next )=> {
     try {
         let emailAddress = req.body.emailAddress;
-        let comment = req.body.comment;
+        let review = req.body.review;
         let bookReviewed =  req.body.bookReviewed;
         let completed = req.body.completed;
 
        let result = new commentModel({ 
-           emailAddress, 
-           comment, 
+           emailAddress,
+           review,
            bookReviewed,
            completed })
        const response = await result.save();
@@ -175,7 +175,7 @@ app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
             orderedBooks.push({ title: value.title, totalPrice: value.totalPrice, quantity: value.size})
         })
         //res.status( 200 ).json( orderedBooks )
-        
+
         let transport = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -191,11 +191,11 @@ app.post('/api/forwardOrder', cors(), async( req, res, next ) => {
 
         const mailOptions = {
             from: 'willibookslimited@gmail.com',
-            to: emailAddress,   
+            to: emailAddress,
             subject: 'This is the book order sent from you to Willibooks limited with the books you ordered',
             html: '<p>This is the order forwarded for book processing</p><br/> The books ordered are:' + htmlContent
         };
-        
+
         transport.sendMail( mailOptions, function(err, info){
             if(err){
                 res.status( 500 ).json( err )

@@ -1,11 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import TopNavBar from '../../components/TopNavbar';
 import StyledFooter from '../../components/StyledFooter';
 import FormField from '../../components/FormField';
+import { device } from '../../_utils/devices'
 import './ContactStyles.css';
 
 import { FaFacebookF, FaTwitter, FaWhatsapp, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+
+
+const ContactContentWrapper = styled.div`
+  height: auto;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+
+  @media ${device.laptop}, @media ${device.desktop}{
+    flex-direction: row;
+  }
+  @media ${device.mobileS} , @media ${device.mobileM}, @media ${device.mobileL}{
+    flex-direction: column;
+  }
+`;
+
+
+const ContactFormContainer = styled.div`
+    display: flex;
+    flex: 1;
+
+    @media ${device.laptop}, @media ${device.tablet} {
+
+    }
+    @media ${device.mobileS} {
+
+    }
+`;
 
 const socialIcon = ( icon, size ) => {
 
@@ -61,7 +91,7 @@ export default () => {
                     <h1>Contact Us</h1>
                     <h2>Contact Us</h2>
                 </div>
-                <div className='contact-content-wrapper'>
+                <ContactContentWrapper>
                     <div className='contact-details'>
                         <div className='detail'>
                             <h2>Address</h2>
@@ -96,7 +126,7 @@ export default () => {
                             </div>
                         </form>
                     </div>
-                </div>
+                </ContactContentWrapper>
             </div>
             <StyledFooter />
         </>

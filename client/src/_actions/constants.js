@@ -1,4 +1,5 @@
-export const API_BASE = 'http://localhost:5000/api'
+//Rubags road, Access building opposite Fedivaro hotel at 2:30pm
+export const API_BASE = 'http://192.168.3.223:5000/api'
 
 export const SEND_REGISTER_REQUEST = 'SEND_REGISTER_REQUEST';
 export const SEND_REGISTER_SUCCESS = 'SEND_REGISTER_SUCCESS';

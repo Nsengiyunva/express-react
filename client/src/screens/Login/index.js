@@ -36,7 +36,7 @@ class Login extends React.Component {
 
         this.props.login( { emailAddress: this.state.emailAddress, password: this.state.password}, () => {
             if(localStorage.getItem('userLogged')){
-                console.log(localStorage.getItem('userLogged'))
+                // console.log(localStorage.getItem('userLogged'))
                 this.setState({ loading: false })
                 this.props.history.push('/cart')
             }
@@ -46,7 +46,6 @@ class Login extends React.Component {
         })
     }
     render(){
-        //console.log('2 story',this.props.data && this.props.data.emailAddress)
         if(this.state.loading){
             return (
                 <div className='login-main-container'>

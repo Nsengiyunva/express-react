@@ -78,7 +78,7 @@ class Home extends React.Component {
             {/* <a onClick={() => this.show()}>Show case</a> */}
             <Rodal customStyles={{ backgroundColor:'green', width: '80%', height: '70vh'}} visible={this.state.visible} onClose={() => this.hide()} animation='zoom'>
               <div>Content</div>
-            </Rodal> 
+            </Rodal>
           </ContentItemContainer>
           {/* <button onClick={() => this.show()}>Show</button>
           <Rodal visible={this.state.visible} onClose={() => this.hide()} animation='zoom'>

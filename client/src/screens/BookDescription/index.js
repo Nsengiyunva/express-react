@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css'
 // import ReactZoomify from '"react-zoomify';
 
 import TopNavBar from '../../components/TopNavbar';
@@ -18,21 +20,22 @@ import { firstBatch, secondBatch, thirdBatch, fourBatch, fiveBatch } from '../..
 
 import { addToCart, sendOrderRequest,addReview, getAllReviews } from '../../_actions';
 
+
 const ContentItemContainer = styled.div`
     display: flex;
     width: auto;
     height: auto;
     justify-content: center;
     align-items: center;
-    
+
 `;
 const BookContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     padding: 1rem 0rem;
-    width: 50%;    
-`; 
+    width: 50%;
+`;
 
 const ImageContainer = styled.span`
     display: flex;
@@ -80,8 +83,10 @@ class BookDescription extends React.Component {
     state = {
         loading: true,
         selectedBook: [],
-        showCommentBox: false,
-        comment:''
+        visible: false,
+        comment: '',
+        email: '',
+        review: ''
     }
     componentDidMount(){
         const { match: { params } } = this.props;
@@ -99,7 +104,7 @@ class BookDescription extends React.Component {
         this.props.addToCart( payload, () => {
         }, ()=> {});
         this.props.history.push('/cart')
-        
+
     }
     placeOrder = () => {
         if(this.props.books && this.props.books.length > 0){
@@ -110,36 +115,37 @@ class BookDescription extends React.Component {
             alert('No items in the cart yet')
         }
     }
-    handleSubmit = () => {
-       console.log(this.state.comment)
-    //    if(this.state.comment.length === 0 ){
-    //        alert('no value is provided')
-    //    }
-    //   else {
-           let user = localStorage.getItem('userLogged');
-        //    if(!user){
-        //       alert('you must be logged in to comment')
-        //       this.props.history.push('/login')
-        //    }
-        //    else {
-               this.props.addReview({
-                   emailAddress: user,
-                   comment: this.state.comment,
-                   bookReviewed: this.state.selectedBook[0].id,                                                                                                                                              bookReviewed: this.state.selectedBook[0].id,
-                   completed: true
-               })
-               this.showCommentBox();
-        //   }
-       //}
-    }
-    showCommentBox = () => this.setState({ showCommentBox: !this.state.showCommentBox })
+    // handleSubmit = () => {
+    //    console.log(this.state.comment)
+    // //    if(this.state.comment.length === 0 ){
+    // //        alert('no value is provided')
+    // //    }
+    // //   else {
+    //        let user = localStorage.getItem('userLogged');
+    //     //    if(!user){
+    //     //       alert('you must be logged in to comment')
+    //     //       this.props.history.push('/login')
+    //     //    }
+    //     //    else {
+    //            this.props.addReview({
+    //                emailAddress: user,
+    //                comment: this.state.comment,
+    //                bookReviewed: this.state.selectedBook[0].id,                                                                                                                                              bookReviewed: this.state.selectedBook[0].id,
+    //                completed: true
+    //            })
+    //            this.showCommentBox();
+    //     //   }
+    //    //}
+    // }
+    show = () => this.setState({ visible: true })
+    hide = () => this.setState({ visible: false });
+    updateValues = (input, prop) => this.setState({[prop]: input.target.value } )
     render() {
-            // const { imgUrl,currency = '$' ,price ='3,500', author = 'Steven Lubwama', 
-            //         title = 'Dont Make Me, Think', isbn = 'xxx', 
+            // const { imgUrl,currency = '$' ,price ='3,500', author = 'Steven Lubwama',
+            //         title = 'Dont Make Me, Think', isbn = 'xxx',
             //         publisher = 'willi books', year =  2020,
             //         chapters = 12, pages = 257 } = this.props;
             const { selectedBook: { id, imageUrl, rating, title,author, publisher,  marketer, language, numberOfChapters, numberOfPages, price } }= this.state;
-
             if(this.state.loading){
                 return <div>Loading...</div>
             }
@@ -147,13 +153,36 @@ class BookDescription extends React.Component {
                 <>
                   <TopNavBar />
                     <ContentItemContainer>
+                      <Rodal visible={this.state.visible} onClose={() => this.hide()} animation='zoom'>
+                        <div>
+                          <h5>Write A Review about this Book</h5>
+                          <form method='post' role='form'>
+                            <FormField nameValue='emailAddress' placeholder='Email Address' onChange={input => this.updateValues(input, 'email')}/>
+                            <FormField type='textarea' nameValue='comment' placeholder='Write a Review' onChange={input => this.updateValues(input, 'review')}/>
+                            <div style={{ display: 'flex',alignSelf: 'flex-end',marginTop: '2rem'}}>
+                              <FormField type='button'
+                                color='green'
+                                value='Post Review'
+                                onPress={() => this.props.addReview({
+                                  emailAddress: this.state.email,
+                                  review: this.state.review,
+                                  bookReviewed: id,
+                                  completed: true
+                                }, () => {
+                                  this.hide()
+                                }, () => {} ) }
+                              />
+                            </div>
+                          </form>
+                        </div>
+                      </Rodal>
                         <BookContainer>
                             <ImageContainer>
                                 <Image src={imageUrl}/>
                                 {/* <ReactZoomify
-                                    width={300} 
+                                    width={300}
                                     src={imageUrl}
-                                    s={150} 
+                                    s={150}
                                     magnification={4}
                                     zoomedImgLeft={500}
                                     zoomedImgTop={100}
@@ -162,14 +191,14 @@ class BookDescription extends React.Component {
                             <BookDetails>
                                 <div style={{ marginLeft: '0.4rem'}}>
                                 <h3>{title}</h3>
-                                {[ { key: 'Author', value: author }, 
+                                {[ { key: 'Author', value: author },
                                    { key: 'ISBN', value: '123'},
                                    { key: 'Publisher', value: publisher },
-                                   { key: 'Price', value: 'UGX 30,0000'},
+                                   { key: 'Price', value: 'UGX 30,000'},
                                    { key: 'Marketer', value: marketer},
                                    { key: 'Language', value: language },
                                    { key: 'Chapters', value: numberOfChapters },
-                                   { key: 'Pages', value: numberOfPages } 
+                                   { key: 'Pages', value: numberOfPages }
                                 ].map( item => {
                                     return <ListItem key={item.key} bookDetail bookKey={item.key} value={item.value} color='#666'/>
                                 })}
@@ -183,18 +212,24 @@ class BookDescription extends React.Component {
                                     </button>
                                  </CartButtonsContainer>
                                 <CartButtonsContainer>
-                                        <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
-                                        id, 
-                                        title, 
-                                        price, 
+                                        <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({
+                                        id,
+                                        title,
+                                        price,
                                         author })}/>
                                     <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
                                 </CartButtonsContainer>
-                                    
+                                <>
+                                  <FormField
+                                    type='button'
+                                    color='orange'
+                                    value='Write A Review'
+                                    onPress={this.show}/>
+                                </>
                             </BookDetails>
                         </BookContainer>
                     </ContentItemContainer>
-                  <StyledFooter />  
+                  <StyledFooter />
                 </>
             )
             // return (
@@ -215,10 +250,10 @@ class BookDescription extends React.Component {
             //                         <ProductDetailsItem title='Number of chapters' value={selectedBook[0].numberOfChapters} />
             //                         <ProductDetailsItem title='Number of pages' value={selectedBook[0].numberOfPages} />
             //                         <div className='cart-btns'>
-            //                             <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({ 
-            //                                 id: selectedBook[0].id, 
-            //                                 title: selectedBook[0].title, 
-            //                                 price: selectedBook[0].price, 
+            //                             <FormField type='button' color='green' value='Add to Cart' onPress={() => this.sendToCart({
+            //                                 id: selectedBook[0].id,
+            //                                 title: selectedBook[0].title,
+            //                                 price: selectedBook[0].price,
             //                                 author: selectedBook[0].author })}/>
             //                             <FormField type='button' color='green' value='Order Now' transparent onPress={() => this.placeOrder()}/>
             //                         </div>
@@ -267,7 +302,7 @@ const mapDispatchToProps = dispatch => {
         addToCart: (payload, success, error ) => dispatch( addToCart( payload, success, error )),
         postOrder: (payload, success, error) => dispatch( sendOrderRequest(payload, success, error) ),
         reviews: () => dispatch( getAllReviews() ),
-        addReview: (payload) => dispatch( addReview(payload) )
+        addReview: (payload, success, error ) => dispatch( addReview(payload, success, error ) )
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(BookDescription)

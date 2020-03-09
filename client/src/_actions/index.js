@@ -1,6 +1,6 @@
 import { API_BASE, SEND_REGISTER_REQUEST, SEND_REGISTER_SUCCESS, SEND_REGISTER_ERROR,
                    SEND_LOGIN_REQUEST,SEND_LOGIN_SUCCESS, SEND_LOGIN_ERROR,
-                   ADD_TO_CART_REQUEST, PLACE_ORDER_REQUEST, 
+                   ADD_TO_CART_REQUEST, PLACE_ORDER_REQUEST,
                    ADD_DROPDOWN_FILTER,CLEAR_DROPDOWN_FILTER, GET_ALL_REVIEWS,
                    GET_ALL_REVIEWS_SUCCESS, GET_ALL_REVIEWS_FAILED,
                    ADD_A_REVIEW_REQUEST, ADD_A_REVIEW_SUCCESS, ADD_A_REVIEW_FAILED
@@ -173,16 +173,21 @@ export const getAllReviews = () => {
     }
 }
 
-export const addReview = (payload) => {
+export const addReview = (payload, success, error) => {
+   const { emailAddress, review, bookReviewed, completed } = payload;
     return dispatch => {
         dispatch( addAReviewRequest() )
         axios.post(`${API_BASE}/addAReview`, {
-            emailAddress: payload.emailAddress,
-            comment: payload.comment,
-            bookReviewed: payload.bookReviewed,
-            completed: payload.completed
+            emailAddress,
+            review,
+            bookReviewed,
+            completed
         }).then( response => {
-            console.log(response )
+            dispatch( addAReviewSuccess(response.data ) )
+            success();
+        }).catch( err => {
+          dispatch( addAReviewFailed( err ) )
+          error();
         })
     }
 }
